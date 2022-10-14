@@ -1,0 +1,43 @@
+.showroom-data-table-wrapper {
+    height: 100%;
+    width: 100%;
+    .showroom-data-table {
+        height: 100%;
+        .ReactVirtualized__Table {
+            border-radius: 5px;
+            .ReactVirtualized__Table__headerRow {
+                border: 1px solid #ddd;
+                border-radius: 5px 5px 0px 0px;
+    
+                .ReactVirtualized__Table__headerColumn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .ReactVirtualized__Grid{
+                border: 1px solid #ddd;
+                border-radius: 0px 0px 5px 5px;
+                border-top: none;
+            }
+    
+            .ReactVirtualized__Table__row {
+                border-bottom: 1px solid #ddd;
+                &:nth-child(even){
+                    background-color: #f2f2f2;
+                }
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+            
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
