@@ -3,7 +3,9 @@
         "module": "commonjs",
         "baseUrl": ".",
         "paths": {
-          "@/components/*": ["components/*"]
+          "@/components/*": ["components/*"],
+          "@/utils/*":["utils/*"],
+          "@/service/*":["service/*"]
         }
       }
 }

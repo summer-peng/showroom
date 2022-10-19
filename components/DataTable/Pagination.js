@@ -30,7 +30,11 @@ const DataTablePagination = ({
       .concat(
         range(1, 5, 1).map((value) => {
           return (
-            <Pagination.Item key={value} onClick={() => onPageChange(value)}>
+            <Pagination.Item
+              active={value === page ? true : false}
+              key={value}
+              onClick={() => onPageChange(value)}
+            >
               {value}
             </Pagination.Item>
           )
@@ -45,18 +49,26 @@ const DataTablePagination = ({
           {totalPages}
         </Pagination.Item>,
       )
-  } else if (page >= totalPages - 3) {
+  } else if (page > totalPages - 3) {
     items = items
       .concat(
-        <Pagination.Item key={1} onClick={() => onPageChange(1)}>
+        <Pagination.Item
+          active={1 === page ? true : false}
+          key={1}
+          onClick={() => onPageChange(1)}
+        >
           1
         </Pagination.Item>,
       )
       .concat(<Pagination.Ellipsis key="first-ellipsis" />)
       .concat(
-        range(page - 3, totalPages, 1).map((value) => {
+        range(totalPages - 3, totalPages, 1).map((value) => {
           return (
-            <Pagination.Item key={value} onClick={() => onPageChange(value)}>
+            <Pagination.Item
+              active={value === page ? true : false}
+              key={value}
+              onClick={() => onPageChange(value)}
+            >
               {value}
             </Pagination.Item>
           )
@@ -67,9 +79,13 @@ const DataTablePagination = ({
       .concat(<Pagination.Item key={1}>{1}</Pagination.Item>)
       .concat(<Pagination.Ellipsis key="first-ellipsis" />)
       .concat(
-        range(page - 3, page + 3, 1).map((value) => {
+        range(page - 2, page + 2, 1).map((value) => {
           return (
-            <Pagination.Item key={value} onClick={() => onPageChange(value)}>
+            <Pagination.Item
+              active={value === page ? true : false}
+              key={value}
+              onClick={() => onPageChange(value)}
+            >
               {value}
             </Pagination.Item>
           )
@@ -89,9 +105,7 @@ const DataTablePagination = ({
   return (
     <Pagination {...restProps}>
       <Pagination.First onClick={() => onPageChange(1)} />
-      <Pagination.Prev onClick={() => onPageChange(page - 1)} />
       {items}
-      <Pagination.Next onClick={() => onPageChange(page + 1)} />
       <Pagination.Last onClick={() => onPageChange(totalPages)} />
     </Pagination>
   )

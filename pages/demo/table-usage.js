@@ -1,16 +1,13 @@
-import React from 'react'
-import { PrismaClient } from '@prisma/client'
+import React, { useState } from 'react'
 
 import DataTable from '@/components/DataTable'
+import { getUserList } from '@/service/usersService'
+import API from '@/utils/apiUtils'
 
 import { tableConfig } from './configs'
 
-const prisma = new PrismaClient()
-
 export const getServerSideProps = async () => {
-  const samples = await prisma.table_sample.findMany()
-  const users = await prisma.users.findMany()
-  const count = await prisma.users.count()
+  const users = await getUserList({ page: 1, rows: 10 })
   const breadCrumbItems = [
     {
       name: 'Home',
@@ -24,30 +21,24 @@ export const getServerSideProps = async () => {
   ]
   return {
     props: {
-      initialSamples: samples,
-      users: {
-        page: 1,
-        rows: 10,
-        totalRecords: count,
-        dataList: [
-          ...users,
-          ...users,
-          ...users,
-          ...users,
-          ...users,
-          ...users,
-          ...users,
-          ...users,
-          ...users,
-        ],
-      },
+      users,
       breadCrumbItems,
     },
   }
 }
 
-export default function TableUsage({ users }) {
-  console.log('users', users)
+export default function TableUsage({ users: initialUsers }) {
+  const [users, setUsers] = useState(initialUsers)
+  const query = (params) => {
+    return API.post('/api/get-users', params).then((data) => {
+      setUsers(data)
+    })
+  }
+
+  const pageQuery = (page) => {
+    return query({ page, rows: 10 })
+  }
+
   return (
     <div>
       <h1>Table Usage</h1>
@@ -56,6 +47,7 @@ export default function TableUsage({ users }) {
         style={{ 'pointer-events': '' }}
         tableConfig={tableConfig}
         {...users}
+        onPageChange={pageQuery}
       />
     </div>
   )
