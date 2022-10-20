@@ -1,4 +1,8 @@
+import { withTranslation } from 'react-i18next'
+
 import Layout from '@/components/Layout'
+
+import '../i18n.config.js'
 
 import 'bootstrap/scss/bootstrap.scss'
 import 'react-virtualized/styles.css'
@@ -13,4 +17,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default withTranslation()(MyApp)

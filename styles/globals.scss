@@ -5,6 +5,19 @@ body {
   #__next {
     height: 100%;
     width: 100%;
+    .header-section{
+      justify-content: space-between;
+      width: 100%;
+      .header-left-section {
+        display: flex;
+        width: 100%
+      }
+      .header-right-section {
+        display: flex;
+      }
+    }
+
+
     .main-layout {
       height: 100%;
       width: 100%;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import DataTable from '@/components/DataTable'
 import { getUserList } from '@/service/usersService'
@@ -28,6 +29,7 @@ export const getServerSideProps = async () => {
 }
 
 export default function TableUsage({ users: initialUsers }) {
+  const { t } = useTranslation()
   const [users, setUsers] = useState(initialUsers)
   const query = (params) => {
     return API.post('/api/get-users', params).then((data) => {
@@ -41,7 +43,7 @@ export default function TableUsage({ users: initialUsers }) {
 
   return (
     <div>
-      <h1>Table Usage</h1>
+      <h1>Table Usage {t('title')}</h1>
       <DataTable
         /* other props */
         style={{ 'pointer-events': '' }}
