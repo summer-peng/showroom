@@ -1,3 +1,4 @@
+import SSRProvider from 'react-bootstrap/SSRProvider'
 import { withTranslation } from 'react-i18next'
 
 import Layout from '@/components/Layout'
@@ -11,9 +12,11 @@ import '/styles/showroom-datatable.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout {...pageProps}>
-      <Component {...pageProps} />
-    </Layout>
+    <SSRProvider>
+      <Layout {...pageProps}>
+        <Component {...pageProps} />
+      </Layout>
+    </SSRProvider>
   )
 }
 

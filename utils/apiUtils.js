@@ -4,7 +4,6 @@ const defaultOptions = {
   credentials: 'same-origin', // include, *same-origin, omit
   headers: {
     'Content-Type': 'application/json',
-    // 'Content-Type': 'application/x-www-form-urlencoded',
   },
   redirect: 'follow', // manual, *follow, error
   referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
@@ -23,10 +22,19 @@ const get = (url = '', params = {}, options = {}) => {
 const post = (url = '', params = {}, options = {}) => {
   return fetch(url, {
     ...defaultOptions,
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    body: JSON.stringify(params), // body data type must match "Content-Type" header
+    method: 'POST',
+    body: JSON.stringify(params),
     ...options,
-  }).then((response) => response.json())
+  }).then((response) => {
+    const { status } = response
+    if (status !== 200) {
+      return response.json().then((err) => {
+        return Promise.reject(err)
+      })
+    }
+
+    return response.json()
+  })
 }
 
 const API = {
