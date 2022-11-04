@@ -19,7 +19,11 @@ const DataTablePagination = ({
     items = items.concat(
       range(1, totalPages, 1).map((value) => {
         return (
-          <Pagination.Item key={value} onClick={() => onPageChange(value)}>
+          <Pagination.Item
+            active={value === page ? true : false}
+            key={value}
+            onClick={() => onPageChange(value)}
+          >
             {value}
           </Pagination.Item>
         )

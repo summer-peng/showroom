@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 
 import LanguageSelection from './LanguageSelection'
 
@@ -13,7 +13,7 @@ export default function Navigation() {
             <div className="header-left-section">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">Link</Nav.Link>
-              <Nav.Link href="/demo/table-usage">Table Usage</Nav.Link>
+              <Nav.Link href="/users/userQuery">User</Nav.Link>
             </div>
             <div className="header-right-section">
               <LanguageSelection />

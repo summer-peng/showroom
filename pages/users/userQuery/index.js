@@ -35,12 +35,17 @@ export default function UserQuery({ users: initialUsers }) {
   const router = useRouter()
   const [users, setUsers] = useState(initialUsers)
   const query = (params) => {
-    return API.post('/api/getUsers', params).then((data) => {
-      setUsers(data)
-    })
+    return API.post('/api/users/getUsers', params)
+      .then((data) => {
+        setUsers(data)
+      })
+      .catch((e) => {
+        console.error(e)
+      })
   }
 
   const pageQuery = (page) => {
+    console.log('page', page)
     return query({ page, rows: 10 })
   }
 

@@ -25,16 +25,21 @@ const post = (url = '', params = {}, options = {}) => {
     method: 'POST',
     body: JSON.stringify(params),
     ...options,
-  }).then((response) => {
-    const { status } = response
-    if (status !== 200) {
-      return response.json().then((err) => {
-        return Promise.reject(err)
-      })
-    }
-
-    return response.json()
   })
+    .then((response) => {
+      const { status } = response
+      if (status !== 200) {
+        console.log('status', status)
+        return response.text().then((err) => {
+          throw new Error(err)
+        })
+      }
+
+      return response.json()
+    })
+    .catch((e) => {
+      throw new Error(e)
+    })
 }
 
 const API = {

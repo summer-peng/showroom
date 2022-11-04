@@ -3,10 +3,19 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 export const getUserList = (params) => {
-  const { page = 1, rows = 10 } = params
+  const { page = 1, rows = 10, id } = params
+
+  const whereCondtion = {}
+  if (id) {
+    whereCondtion.id = id
+  }
 
   return prisma.users
-    .findMany({ skip: (page - 1) * rows, take: rows })
+    .findMany({
+      where: whereCondtion,
+      skip: (page - 1) * rows,
+      take: rows,
+    })
     .then((data) => {
       return prisma.users.count().then((count) => {
         return {
