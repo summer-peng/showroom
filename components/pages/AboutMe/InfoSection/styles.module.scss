@@ -1,0 +1,26 @@
+.info-section {
+    margin: 10px 20px 0px 20px;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-bottom: 14px;
+    span {
+        font-size: 15px;
+        color: #4A4A4A;
+        line-height: 18px;
+        font-weight: 600;
+    }
+
+    hr {
+        width: 100%;
+        margin: 5px 0px 0px 10px;
+    }
+}
+
+.content-section {
+    color: #4a4a4a;
+    font-size: 13px;
+}

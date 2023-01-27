@@ -24,3 +24,9 @@ export const tableConfig = [
     width: 100,
   },
 ]
+
+const configs = {
+  tableConfig,
+}
+
+export default configs
