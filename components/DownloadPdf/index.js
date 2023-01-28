@@ -1,7 +1,9 @@
-import { Button } from 'react-bootstrap'
+import classnames from 'classnames'
 import html2pdf from 'html2pdf.js'
 
-const DownloadPdf = ({ element }) => {
+import styles from './styles.module.scss'
+
+const DownloadPdf = ({ element, className }) => {
   const opt = {
     margin: 0.5,
     filename: 'chen-tsung-resume.pdf',
@@ -10,9 +12,14 @@ const DownloadPdf = ({ element }) => {
   }
 
   return (
-    <Button variant="primary" onClick={() => html2pdf(element.current, opt)}>
-      Download
-    </Button>
+    <i
+      className={classnames(
+        'fa-solid fa-cloud-arrow-down',
+        styles['download-icon'],
+        className,
+      )}
+      onClick={() => html2pdf(element.current, opt)}
+    />
   )
 }
 

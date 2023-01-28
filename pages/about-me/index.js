@@ -33,7 +33,7 @@ const AboutMePage = () => {
 
   return (
     <div>
-      <div className={styles['download-button']}>
+      <div className={styles['download-icon']}>
         <DownloadPdf element={cvRef} />
       </div>
       <div ref={cvRef}>
@@ -41,12 +41,11 @@ const AboutMePage = () => {
         <div className={styles['contact-info']}>zjone.peng@gmail.com</div>
         <InfoSection title="Summary">
           <div>
-            Software Engineer with 7 years experience working in IT industry.
+            Software Engineer with 7 years work experience in IT industry.
             Excels at developing and optimizing the core modules to web
-            application. Able to design a web app to attract users with
-            aesthetically pleasing interfaces and exceptional UX elements.
-            Willing to adopt new technologies and embrace friendly changes to
-            improve abilities and enhance projects.
+            applications. Able to maintain strong object-oriented and software
+            architecture fundamentals. Willing to adopt new technologies and
+            embrace industry changes to improve abilities and enhance projects.
           </div>
         </InfoSection>
         <InfoSection title="Skills">
@@ -56,10 +55,10 @@ const AboutMePage = () => {
               jQuery, HTML, CSS, Bootstrap
             </li>
             <li>Version Control Systems: Git, Github</li>
-            <li>
-              Back-End and Database Skills: Java, Spring, Oracle, ORM tools
-            </li>
             <li>Time Management and Prioritization</li>
+            <li>
+              Backend and Database Skills: Java, Spring, Oracle, ORM tools
+            </li>
           </ul>
         </InfoSection>
         <InfoSection title="Experience">
@@ -70,9 +69,9 @@ const AboutMePage = () => {
             startDate="04/2020"
             endDate="04/2022"
             experienceList={[
-              'Launched several systems to help our administrator, warehouse employees, and our clients to manage and track their shipments by React, React Hook, Formik (Including User Mgmt, Shipment Mgmt, Tracking Mgmt, Cargo Mgmt)',
-              'Led junior engineers to develop the features and deployment for a product by Github flow.',
-              'Negotiated requirements and release schedule with business analyst and backend engineers to ensure that our business model would provide satisfactory results.',
+              'Launched several systems to help administrators, warehouse employees, and clients to manage and track shipments by React, React Hook, Formik (Including User Mgmt, Shipment Mgmt, Tracking Mgmt, Cargo Mgmt)',
+              'Led junior engineers to develop the features and deployment for a product by Github flow',
+              'Negotiated requirements and release schedule with business analyst and backend engineers to ensure that our business model would provide satisfactory results',
             ]}
           />
           <ExperienceSection
@@ -82,7 +81,7 @@ const AboutMePage = () => {
             startDate="10/2017"
             endDate="04/2020"
             experienceList={[
-              'Launched new systems by Java, Oracle Spring framework, MyBatis, Hibernate, JQuery, Reactjs.',
+              'Launched new systems by Java, Oracle Spring framework, MyBatis, Hibernate, JQuery, Reactjs',
               'Assisted team members to learn new frontend framework and develop new features',
               'Analyzed and integrated old system to present system',
             ]}
@@ -104,7 +103,7 @@ const AboutMePage = () => {
             startDate="09/2014"
             endDate="09/2015"
             experienceList={[
-              'Developed and maintained content management system for online shopping mall by Java, Spring MVC, Oracle, MyBatis.',
+              'Developed and maintained content management system for online shopping mall by Java, Spring MVC, Oracle, MyBatis',
             ]}
           />
           <ExperienceSection
@@ -122,7 +121,7 @@ const AboutMePage = () => {
             schoolName="National Taiwan Normal University"
             location="Taipei, Taiwan"
             degree="Master of Science"
-            major="Computer Science and Imformation Engineering"
+            major="Computer Science and Information Engineering"
             gradiatedDate="07/2013"
           />
         </InfoSection>
