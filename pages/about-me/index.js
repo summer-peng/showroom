@@ -41,26 +41,25 @@ const AboutMePage = () => {
         <div className={styles['contact-info']}>zjone.peng@gmail.com</div>
         <InfoSection title="Summary">
           <div>
-            Experienced Software Engineer working in IT industry for 7 years.
-            Excels at developing and optimization the core modules to web
-            application. Willing to design a web app to attract users with
-            aesthetically pleasing interfaces and exceptional UX elements. As
-            software industry could be changed frequently, I am willing to adopt
-            new techs and embrace changes if it can improve our abilities or
-            enhance our projects.
+            Software Engineer with 7 years experience working in IT industry.
+            Excels at developing and optimizing the core modules to web
+            application. Able to design a web app to attract users with
+            aesthetically pleasing interfaces and exceptional UX elements.
+            Willing to adopt new technologies and embrace friendly changes to
+            improve abilities and enhance projects.
           </div>
         </InfoSection>
         <InfoSection title="Skills">
           <ul className={styles['skills-ul']}>
             <li>
-              Frontend Programming: Javascript, React and React Hooks, jQuery,
-              HTML, CSS, Bootstrap
+              Frontend Programming: Javascript, React and <br /> React Hooks,
+              jQuery, HTML, CSS, Bootstrap
             </li>
             <li>Version Control Systems: Git, Github</li>
-            <li>Time Management and Prioritization</li>
             <li>
               Back-End and Database Skills: Java, Spring, Oracle, ORM tools
             </li>
+            <li>Time Management and Prioritization</li>
           </ul>
         </InfoSection>
         <InfoSection title="Experience">
@@ -71,9 +70,9 @@ const AboutMePage = () => {
             startDate="04/2020"
             endDate="04/2022"
             experienceList={[
-              'Lunched several system to help our administrator, warehouse employee, and our clients to manage and track their shipment by React, React Hook, Formik (Including User Mgmt, Shipement Mgmt, Tracking Mgmt, Cargo Mgmt)',
-              'Led junior engineers to develop the features and deployment to a product by Github flow.',
-              'Negotiated requirements and releasing schedule with business analyst and backend engineers ensure the result can be satisfied by our business model.',
+              'Launched several systems to help our administrator, warehouse employees, and our clients to manage and track their shipments by React, React Hook, Formik (Including User Mgmt, Shipment Mgmt, Tracking Mgmt, Cargo Mgmt)',
+              'Led junior engineers to develop the features and deployment for a product by Github flow.',
+              'Negotiated requirements and release schedule with business analyst and backend engineers to ensure that our business model would provide satisfactory results.',
             ]}
           />
           <ExperienceSection
@@ -83,9 +82,9 @@ const AboutMePage = () => {
             startDate="10/2017"
             endDate="04/2020"
             experienceList={[
-              'Launched the new system by Java, Oracle Spring framework, MyBatis, Hibernate, JQuery, Reactjs.',
-              'Assisted team members to learn new frontend framework and develop the new features',
-              'Analyzed and integrated the old system to the present system',
+              'Launched new systems by Java, Oracle Spring framework, MyBatis, Hibernate, JQuery, Reactjs.',
+              'Assisted team members to learn new frontend framework and develop new features',
+              'Analyzed and integrated old system to present system',
             ]}
           />
           <ExperienceSection
@@ -95,7 +94,7 @@ const AboutMePage = () => {
             startDate="10/2015"
             endDate="10/2017"
             experienceList={[
-              'Design and implement new features to our systems by Java, Spring framework, Hibernate, Jquery',
+              'Designed and implemented new features to systems by Java, Spring framework, Hibernate, Jquery',
             ]}
           />
           <ExperienceSection
@@ -105,7 +104,16 @@ const AboutMePage = () => {
             startDate="09/2014"
             endDate="09/2015"
             experienceList={[
-              'Develop and maintain content management system for the online shopping mall by Java, Spring MVC, Oracle, MyBatis.',
+              'Developed and maintained content management system for online shopping mall by Java, Spring MVC, Oracle, MyBatis.',
+            ]}
+          />
+          <ExperienceSection
+            companyName="Substitute Military Service"
+            city="Taiwan"
+            startDate="08/2013"
+            endDate="08/2014"
+            experienceList={[
+              'Maintained campus safety and dealt with general affairs in elementary school',
             ]}
           />
         </InfoSection>
