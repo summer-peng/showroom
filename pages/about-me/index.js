@@ -26,9 +26,12 @@ export const getServerSideProps = () => {
 }
 
 const AboutMePage = () => {
-  const DownloadPdf = dynamic(() => import('@/components/DownloadPdf'), {
-    ssr: false,
-  })
+  const DownloadPdf = dynamic(
+    () => import('@/components/commons/DownloadPdf'),
+    {
+      ssr: false,
+    },
+  )
   const cvRef = useRef()
 
   return (

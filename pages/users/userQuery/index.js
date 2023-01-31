@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { useRouter } from 'next/router'
 
-import DataTable from '@/components/DataTable'
+import DataTable from '@/components/commons/DataTable'
 import { tableConfig } from '@/components/pages/Users/configs'
 import { getUserList } from '@/service/usersService'
 import API from '@/utils/apiUtils'

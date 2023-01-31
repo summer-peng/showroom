@@ -4,7 +4,7 @@ import { Formik } from 'formik'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 
-import FormField from '@/components/Forms/FormField'
+import FormField from '@/components/commons/Forms/FormField'
 import API from '@/utils/apiUtils'
 import MessageUtils from '@/utils/messageUtils'
 
