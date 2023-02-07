@@ -2,8 +2,9 @@ import { useContext } from 'react'
 
 import Modal from '@/components/commons/Modal'
 
+import Spinner from '../Spinner'
+
 import context from './context'
-import Spinner from './Spinner'
 
 import styles from './styles.module.scss'
 

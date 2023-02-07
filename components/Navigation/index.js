@@ -12,8 +12,9 @@ export default function Navigation() {
           <Nav className="me-auto header-section">
             <div className="header-left-section">
               <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <Nav.Link href="/users/userQuery">User</Nav.Link>
+              <Nav.Link href="/autocomplete">Autocomplete test</Nav.Link>
+              <Nav.Link href="/users/userQuery">Form & List</Nav.Link>
+              <Nav.Link href="/about-me">About me</Nav.Link>
             </div>
             <div className="header-right-section">
               <LanguageSelection />

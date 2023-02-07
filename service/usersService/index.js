@@ -1,15 +1,41 @@
 import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient()
+// TODO: use define plugin to enable local log
+const prisma = new PrismaClient(/*{ log: ['query', 'info', 'warn', 'error'] }*/)
 
 export const getUserList = (params) => {
-  const { page = 1, rows = 10, id } = params
+  const { page = 1, rows = 10, id, firstName, lastName, name } = params
 
   const whereCondtion = {}
   if (id) {
     whereCondtion.id = id
   }
 
+  if (firstName) {
+    whereCondtion.first_name = firstName
+  }
+
+  if (lastName) {
+    whereCondtion.last_name = lastName
+  }
+
+  if (name) {
+    console.log(name)
+    whereCondtion.OR = [
+      {
+        last_name: {
+          contains: name,
+        },
+      },
+      {
+        first_name: {
+          contains: name,
+        },
+      },
+    ]
+  }
+
+  console.log(whereCondtion)
   return prisma.users
     .findMany({
       where: whereCondtion,
