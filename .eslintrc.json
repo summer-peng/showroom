@@ -10,6 +10,9 @@
       "rootDir": "showroom/"
     }
   },
+  "env": {
+    "es6": true
+  },
   "rules": {
     //if we want to group imports can use below.
     "simple-import-sort/imports": "error",
