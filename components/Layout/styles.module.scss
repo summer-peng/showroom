@@ -1,0 +1,15 @@
+.content-container {
+    display: flex;
+    padding: 0px 10px;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.left-section {
+    width: 15%;
+    border-right: 1px solid #e0e3e8;
+}
+
+.right-section {
+    width: 85%;
+}

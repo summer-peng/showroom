@@ -1,10 +1,6 @@
 html,
 body {
-  height: 100%;
-  width: 100%;
   #__next {
-    height: 100%;
-    width: 100%;
     .header-section{
       justify-content: space-between;
       width: 100%;
@@ -14,20 +10,6 @@ body {
       }
       .header-right-section {
         display: flex;
-      }
-    }
-
-
-    .main-layout {
-      height: 100%;
-      width: 100%;
-      .content-container {
-        height: 100%;
-        width: 100%;
-        & > div {
-          height: 100%;
-          width: 100%;
-        } 
       }
     }
   }

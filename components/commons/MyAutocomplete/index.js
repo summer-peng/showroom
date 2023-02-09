@@ -12,6 +12,7 @@ const MyAutocomplete = ({
   defaultValue,
   asyncOptions,
   onSelected,
+  components,
   ...restProps
 }) => {
   const [value, setValue] = useState(defaultValue)
@@ -37,9 +38,17 @@ const MyAutocomplete = ({
     setShowOptions(false)
   })
 
+  const onOptionClick = (option) => {
+    const { label } = option
+    setShowOptions(false)
+    setValue(label)
+    onSelected(option)
+  }
+
   return (
     <div ref={autocompleteRef} className={styles['my-autocomplete']}>
       <input
+        className={classnames(showOptions ? styles['input-on-focus'] : null)}
         type="text"
         name={name}
         placeholder="Please typing..."
@@ -58,12 +67,8 @@ const MyAutocomplete = ({
           <OptionList
             loading={loading}
             options={options}
-            onOptionClick={(option) => {
-              const { label } = option
-              setShowOptions(false)
-              setValue(label)
-              onSelected(option)
-            }}
+            onOptionClick={onOptionClick}
+            components={components}
           />
         </div>
       )}
@@ -74,11 +79,13 @@ const MyAutocomplete = ({
 MyAutocomplete.defaultProps = {
   defaultValue: '',
   onSelected: () => null,
+  components: {},
 }
 MyAutocomplete.propTypes = {
   name: PropTypes.string.isRequired,
   defaultValue: PropTypes.string,
   asyncOptions: PropTypes.func.isRequired,
+  components: PropTypes.object,
   onSelected: PropTypes.func,
 }
 
