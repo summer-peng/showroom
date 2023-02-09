@@ -1,6 +1,7 @@
 import Image from 'next/image'
+import PropTypes from 'prop-types'
 
-export default function CustomizedOption({ option, onOptionClick }) {
+const CustomizedOption = ({ option, onOptionClick }) => {
   const { label, value, addtionalInfo = {} } = option
   const {
     imgUrl = 'https://cdn-icons-png.flaticon.com/512/5039/5039041.png',
@@ -13,3 +14,15 @@ export default function CustomizedOption({ option, onOptionClick }) {
     </div>
   )
 }
+
+CustomizedOption.option = {
+  option: {},
+  onOptionClick: () => null,
+}
+
+CustomizedOption.propTypes = {
+  option: PropTypes.object,
+  onOptionClick: PropTypes.func,
+}
+
+export default CustomizedOption
