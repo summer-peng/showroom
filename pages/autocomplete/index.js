@@ -27,8 +27,8 @@ const queryUsers = (inputValue) => {
   return API.post('/api/users/getUsers', { name: inputValue }).then(
     (response) => {
       const { dataList } = response
-      return dataList.map(({ first_name, last_name, id }) => ({
-        label: `${first_name} ${last_name}`,
+      return dataList.map(({ firstName, lastName, id }) => ({
+        label: `${firstName} ${lastName}`,
         value: id,
       }))
     },

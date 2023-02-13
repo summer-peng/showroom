@@ -1,3 +1,20 @@
-.breadcrumb {
-   margin-top: 8px;
+.breadcrumb-container {
+  display: flex;
+  margin:12px;
+
+   a {
+      color: #000000;
+      text-decoration: none;
+      cursor: pointer;
+
+      &::after {
+         content: '/';
+         margin: 0px 5px;
+         opacity: 0.6;
+      }
+   }
+}
+
+.breadcrumb-item {
+   opacity: 0.6;
 }

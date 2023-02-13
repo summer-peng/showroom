@@ -6,6 +6,7 @@ export default function handler(req, res) {
       res.status(200).json(true)
     })
     .catch((e) => {
+      console.error(e)
       res.status(500).json(e)
     })
 }

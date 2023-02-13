@@ -5,37 +5,34 @@ const prisma = new PrismaClient(/*{ log: ['query', 'info', 'warn', 'error'] }*/)
 
 export const getUserList = (params) => {
   const { page = 1, rows = 10, id, firstName, lastName, name } = params
-
   const whereCondtion = {}
   if (id) {
     whereCondtion.id = id
   }
 
   if (firstName) {
-    whereCondtion.first_name = firstName
+    whereCondtion.firstName = firstName
   }
 
   if (lastName) {
-    whereCondtion.last_name = lastName
+    whereCondtion.lastName = lastName
   }
 
   if (name) {
-    console.log(name)
     whereCondtion.OR = [
       {
-        last_name: {
+        lastName: {
           contains: name,
         },
       },
       {
-        first_name: {
+        firstName: {
           contains: name,
         },
       },
     ]
   }
 
-  console.log(whereCondtion)
   return prisma.users
     .findMany({
       where: whereCondtion,
@@ -48,7 +45,7 @@ export const getUserList = (params) => {
           page,
           rows,
           // for test
-          totalRecords: count,
+          totalRecords: 3000,
           dataList: data,
         }
       })
@@ -56,7 +53,6 @@ export const getUserList = (params) => {
 }
 
 export const upsertUser = (user) => {
-  console.log('user', user)
   const { id, ...restProps } = user
   if (id) {
     return prisma.users.update({

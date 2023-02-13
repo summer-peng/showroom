@@ -1,4 +1,4 @@
-import { Breadcrumb, Container } from 'react-bootstrap'
+import Link from 'next/link'
 import PropTypes from 'prop-types'
 
 import styles from './styles.module.scss'
@@ -9,25 +9,23 @@ const MyBreadcrumb = ({ items }) => {
   }
 
   return (
-    <Container className={styles['breadcrumb']}>
-      <Breadcrumb>
-        {items.map(({ name, url, active }, index) => {
-          if (active) {
-            return (
-              <Breadcrumb.Item key={index} active>
-                {name}
-              </Breadcrumb.Item>
-            )
-          }
-
+    <div className={styles['breadcrumb-container']}>
+      {items.map(({ name, url, active }, index) => {
+        if (active) {
           return (
-            <Breadcrumb.Item key={index} href={url}>
+            <div className={styles['breadcrumb-item']} key={index}>
               {name}
-            </Breadcrumb.Item>
+            </div>
           )
-        })}
-      </Breadcrumb>
-    </Container>
+        }
+
+        return (
+          <Link href={url} key={index}>
+            {name}
+          </Link>
+        )
+      })}
+    </div>
   )
 }
 

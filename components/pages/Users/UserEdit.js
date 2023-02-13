@@ -1,14 +1,17 @@
-import { Button, Col, Container, Form, Row } from 'react-bootstrap'
+import { Col, Container, Form, Row } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { Formik } from 'formik'
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types'
 
+import { BackButton, SubmitButton } from '@/components/commons/Buttons'
 import FormField from '@/components/commons/Forms/FormField'
 import API from '@/utils/apiUtils'
 import MessageUtils from '@/utils/messageUtils'
 
 import validationSchema from './validations'
+
+import styles from './styles.module.scss'
 
 const UserEdit = ({ title, initialValues }) => {
   const router = useRouter()
@@ -20,7 +23,7 @@ const UserEdit = ({ title, initialValues }) => {
         return MessageUtils.success()
       })
       .then(() => {
-        router.push('/users/userQuery')
+        router.push('/users/user-query')
       })
       .catch((e) => {
         MessageUtils.error({ text: e })
@@ -39,18 +42,17 @@ const UserEdit = ({ title, initialValues }) => {
             <h2>{title}</h2>
             <Row>
               <Col>
-                <FormField label={t('first_name')} name="first_name" />
+                <FormField label={t('firstName')} name="firstName" />
               </Col>
             </Row>
             <Row>
               <Col>
-                <FormField label={t('last_name')} name="last_name" />
+                <FormField label={t('lastName')} name="lastName" />
               </Col>
             </Row>
-            <div>
-              <Button variant="primary" onClick={handleSubmit}>
-                Submit
-              </Button>
+            <div className={styles['button-section']}>
+              <BackButton />
+              <SubmitButton onClick={handleSubmit} />
             </div>
           </Container>
         </Form>

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && cp ./prisma/showroom.db ./node_modules/.prisma/client/",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-schema": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "4.3.1",

@@ -8,7 +8,7 @@ export const getServerSideProps = () => {
     },
     {
       name: 'User Query',
-      url: '/users/userQuery',
+      url: '/users/user-query',
     },
     {
       name: 'User Create',
@@ -24,8 +24,8 @@ export const getServerSideProps = () => {
 
 const UserCreatePage = () => {
   const initialValues = {
-    first_name: '',
-    last_name: '',
+    firstName: '',
+    lastName: '',
   }
 
   return <UserEdit initialValues={initialValues} />

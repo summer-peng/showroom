@@ -7,7 +7,7 @@ export const menuService = () => {
       },
       {
         name: 'List & Form',
-        link: '/users/userQuery',
+        link: '/users/user-query',
       },
       {
         name: 'Autocomplete',

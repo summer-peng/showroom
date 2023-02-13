@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Button } from 'react-bootstrap'
 import { useRouter } from 'next/router'
 
+import { CreateButton } from '@/components/commons/Buttons'
 import DataTable from '@/components/commons/DataTable'
 import { tableConfig } from '@/components/pages/Users/configs'
 import { getUserList } from '@/service/usersService'
@@ -44,25 +44,21 @@ export default function UserQuery({ users: initialUsers }) {
   }
 
   const pageQuery = (page) => {
-    console.log('page', page)
     return query({ page, rows: 10 })
   }
 
   const createNewUser = () => {
-    router.push('/users/userEdit')
+    router.push('/users/user-edit')
   }
 
   return (
     <div>
       <div className={styles['title-sction']}>
         <h1>User list</h1>
-        <Button
+        <CreateButton
           className={styles['create-btn']}
-          variant="primary"
           onClick={createNewUser}
-        >
-          Create
-        </Button>
+        />
       </div>
       <DataTable
         tableConfig={tableConfig}

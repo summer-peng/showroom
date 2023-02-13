@@ -11,7 +11,7 @@ export const getServerSideProps = async ({ params }) => {
     },
     {
       name: 'User Query',
-      url: '/users/userQuery',
+      url: '/users/user-query',
     },
     {
       name: 'User edit',
@@ -20,7 +20,7 @@ export const getServerSideProps = async ({ params }) => {
   ]
 
   try {
-    const user = await getUserList({ id: parseInt(uid) })
+    const user = await getUserList({ id: uid })
     const { dataList = [] } = user || {}
     if (dataList.length === 0) {
       return { notFound: true }

@@ -6,18 +6,13 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:showroom.db"
-}
-
-model table_sample {
-  id          Int    @id @default(autoincrement())
-  timestamp   String
-  description String
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 model users {
-  id         Int    @id @default(autoincrement())
-  first_name String
-  last_name  String
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  firstName String
+  lastName  String
+  userId    Int? @unique
 }

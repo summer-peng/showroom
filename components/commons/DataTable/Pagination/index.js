@@ -1,5 +1,6 @@
-import Pagination from 'react-bootstrap/Pagination'
 import PropTypes from 'prop-types'
+
+import Pagination from '../PaginationItem'
 
 const range = (start, stop, step) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step)
@@ -80,7 +81,11 @@ const DataTablePagination = ({
       )
   } else {
     items = items
-      .concat(<Pagination.Item key={1}>{1}</Pagination.Item>)
+      .concat(
+        <Pagination.Item onClick={() => onPageChange(1)} key={1}>
+          {1}
+        </Pagination.Item>,
+      )
       .concat(<Pagination.Ellipsis key="first-ellipsis" />)
       .concat(
         range(page - 2, page + 2, 1).map((value) => {
@@ -107,11 +112,11 @@ const DataTablePagination = ({
   }
 
   return (
-    <Pagination {...restProps}>
+    <Pagination.Container {...restProps}>
       <Pagination.First onClick={() => onPageChange(1)} />
       {items}
       <Pagination.Last onClick={() => onPageChange(totalPages)} />
-    </Pagination>
+    </Pagination.Container>
   )
 }
 

@@ -29,7 +29,6 @@ const post = (url = '', params = {}, options = {}) => {
     .then((response) => {
       const { status } = response
       if (status !== 200) {
-        console.log('status', status)
         return response.text().then((err) => {
           throw new Error(err)
         })
