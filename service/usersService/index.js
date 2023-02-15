@@ -44,8 +44,7 @@ export const getUserList = (params) => {
         return {
           page,
           rows,
-          // for test
-          totalRecords: 3000,
+          totalRecords: count,
           dataList: data,
         }
       })

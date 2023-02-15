@@ -1,3 +1,4 @@
+import { Container } from 'react-bootstrap'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
@@ -9,23 +10,25 @@ const MyBreadcrumb = ({ items }) => {
   }
 
   return (
-    <div className={styles['breadcrumb-container']}>
-      {items.map(({ name, url, active }, index) => {
-        if (active) {
-          return (
-            <div className={styles['breadcrumb-item']} key={index}>
-              {name}
-            </div>
-          )
-        }
+    <Container>
+      <div className={styles['breadcrumb-container']}>
+        {items.map(({ name, url, active }, index) => {
+          if (active) {
+            return (
+              <div className={styles['breadcrumb-item']} key={index}>
+                {name}
+              </div>
+            )
+          }
 
-        return (
-          <Link href={url} key={index}>
-            {name}
-          </Link>
-        )
-      })}
-    </div>
+          return (
+            <Link href={url} key={index}>
+              {name}
+            </Link>
+          )
+        })}
+      </div>
+    </Container>
   )
 }
 
