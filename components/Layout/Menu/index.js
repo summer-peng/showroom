@@ -22,11 +22,14 @@ export default function Menu() {
   return (
     <nav className={styles['menu']}>
       <ul>
-        {menu.map(({ name, link }, index) => {
+        {menu.map(({ name, link, children = [] }, index) => {
+          const childNode = children.find(({ link }) => {
+            return link === pathname
+          })
           return (
             <li
               className={classnames(
-                pathname === link ? styles['nav-active'] : null,
+                pathname === link || childNode ? styles['nav-active'] : null,
               )}
               key={index}
             >

@@ -38,6 +38,10 @@ export const getServerSideProps = async ({ params }) => {
   }
 }
 
-export default function UserEditPage({ user }) {
+const UserEditPage = ({ user }) => {
   return <UserEdit initialValues={user} />
 }
+
+UserEditPage.auth = true
+
+export default UserEditPage

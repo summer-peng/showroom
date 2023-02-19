@@ -1,5 +1,6 @@
 {
     "title": "標題",
     "language": "語言",
-    "zh_TW": "繁中"
+    "zh_TW": "繁中",
+    "required":"必填"
 }

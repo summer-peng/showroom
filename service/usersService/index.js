@@ -1,7 +1,18 @@
-import { PrismaClient } from '@prisma/client'
+import { getHashBySha256 } from '@/service/utils/hashUtil'
 
-// TODO: use define plugin to enable local log
-const prisma = new PrismaClient(/*{ log: ['query', 'info', 'warn', 'error'] }*/)
+import prisma from '../utils/dbUtil'
+
+export const getUserByEmail = (email) => {
+  return prisma.users.findUnique({
+    where: {
+      email: email,
+    },
+    select: {
+      password: true,
+      email: true,
+    },
+  })
+}
 
 export const getUserList = (params) => {
   const { page = 1, rows = 10, id, firstName, lastName, name } = params
@@ -45,14 +56,22 @@ export const getUserList = (params) => {
           page,
           rows,
           totalRecords: count,
-          dataList: data,
+          dataList: data.map((d) => {
+            return {
+              ...d,
+              password: '',
+            }
+          }),
         }
       })
     })
 }
 
 export const upsertUser = (user) => {
-  const { id, ...restProps } = user
+  const { id, password, ...restProps } = user
+
+  const hash = getHashBySha256(password)
+
   if (id) {
     return prisma.users.update({
       where: {
@@ -60,6 +79,7 @@ export const upsertUser = (user) => {
       },
       data: {
         ...restProps,
+        password: hash,
       },
     })
   } else {

@@ -1,4 +1,5 @@
 import AsyncSelect from '@/components/commons/Forms/AsyncSelect'
+import PasswordInput from '@/components/commons/Forms/PasswordInput'
 import MyAutocomplete from '@/components/commons/MyAutocomplete'
 import API from '@/utils/apiUtils'
 
@@ -38,6 +39,7 @@ const queryUsers = (inputValue) => {
 export default function AutoComplete() {
   return (
     <div>
+      <PasswordInput label={'password'} />
       <h3>Test AutoComplete</h3>
       <div>
         <AsyncSelect

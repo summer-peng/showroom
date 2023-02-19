@@ -1,0 +1,21 @@
+@import '/styles/variables.scss';
+
+.registration-container {
+    display: flex;
+    background-color: $primary-color;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-form {
+    padding: 20px 10px;
+    background-color: #ffffff;
+    max-width: 1200px;
+    border-radius: 5px;
+}
+
+.title {
+    margin-top: 30px;
+}

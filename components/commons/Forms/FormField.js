@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { Field } from 'formik'
 
 import AsyncSelect from './AsyncSelect'
+import PasswordInput from './PasswordInput'
 import TextInput from './TextInput'
 
 const FormField = ({ name, type, ...restProps }) => {
@@ -9,6 +10,9 @@ const FormField = ({ name, type, ...restProps }) => {
     switch (type) {
       case 'text': {
         return TextInput
+      }
+      case 'password': {
+        return PasswordInput
       }
       case 'async-select': {
         return AsyncSelect

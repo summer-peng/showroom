@@ -13,7 +13,7 @@ import validationSchema from './validations'
 
 import styles from './styles.module.scss'
 
-const UserEdit = ({ title, initialValues }) => {
+const UserEdit = ({ title, initialValues, afterSubmit }) => {
   const router = useRouter()
   const { t } = useTranslation()
 
@@ -23,7 +23,11 @@ const UserEdit = ({ title, initialValues }) => {
         return MessageUtils.success()
       })
       .then(() => {
-        router.push('/users/user-query')
+        if (afterSubmit) {
+          afterSubmit()
+        } else {
+          router.push('/users/user-query')
+        }
       })
       .catch((e) => {
         MessageUtils.error({ text: e })
@@ -42,10 +46,22 @@ const UserEdit = ({ title, initialValues }) => {
             <h2>{title}</h2>
             <Row>
               <Col>
-                <FormField label={t('firstName')} name="firstName" />
+                <FormField label={t('email')} name="email" />
               </Col>
             </Row>
             <Row>
+              <Col>
+                <FormField
+                  type="password"
+                  label={t('password')}
+                  name="password"
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <FormField label={t('firstName')} name="firstName" />
+              </Col>
               <Col>
                 <FormField label={t('lastName')} name="lastName" />
               </Col>
@@ -69,6 +85,7 @@ UserEdit.defaultProps = {
 UserEdit.propTypes = {
   title: PropTypes.string,
   initialValues: PropTypes.object,
+  afterSubmit: PropTypes.func,
 }
 
 export default UserEdit

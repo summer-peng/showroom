@@ -8,6 +8,12 @@ export const menuService = () => {
       {
         name: 'List & Form',
         link: '/users/user-query',
+        children: [
+          {
+            name: 'Edit',
+            link: '/users/user-edit/[uid]',
+          },
+        ],
       },
       {
         name: 'Autocomplete',

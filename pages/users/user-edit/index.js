@@ -26,6 +26,8 @@ const UserCreatePage = () => {
   const initialValues = {
     firstName: '',
     lastName: '',
+    email: '',
+    password: '',
   }
 
   return <UserEdit initialValues={initialValues} />

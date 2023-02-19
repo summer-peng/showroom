@@ -1,7 +1,9 @@
 import SSRProvider from 'react-bootstrap/SSRProvider'
 import { withTranslation } from 'react-i18next'
 import useToggle from 'hooks/useToggle.js'
+import { SessionProvider } from 'next-auth/react'
 
+import Auth from '@/components/Auth'
 import BlockUI from '@/components/commons/BlockUI'
 import BlockUIContext from '@/components/commons/BlockUI/context'
 import Layout from '@/components/Layout'
@@ -16,19 +18,32 @@ import 'react-virtualized/styles.css'
 import '../styles/globals.scss'
 import '../styles/showroom-datatable.scss'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, session, pageProps }) {
   const { toggle, open, close } = useToggle()
+
+  if (Component.customizedPage) {
+    return <Component {...pageProps} />
+  }
+
   return (
-    <SSRProvider>
-      <Layout {...pageProps}>
-        <BlockUIContext.Provider
-          value={{ show: toggle, blockUI: open, unBlockUI: close }}
-        >
-          <Component {...pageProps} />
-          <BlockUI />
-        </BlockUIContext.Provider>
-      </Layout>
-    </SSRProvider>
+    <SessionProvider session={session}>
+      <SSRProvider>
+        <Layout {...pageProps}>
+          <BlockUIContext.Provider
+            value={{ show: toggle, blockUI: open, unBlockUI: close }}
+          >
+            {Component.auth ? (
+              <Auth>
+                <Component {...pageProps} />
+              </Auth>
+            ) : (
+              <Component {...pageProps} />
+            )}
+            <BlockUI />
+          </BlockUIContext.Provider>
+        </Layout>
+      </SSRProvider>
+    </SessionProvider>
   )
 }
 

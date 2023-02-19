@@ -23,12 +23,7 @@ const Layout = ({ breadCrumbItems, children }) => {
         <Navigation setToggle={() => setToggle(!toggle)} />
         <div className={styles['content-container']}>
           {toggle && (
-            <div
-              className={classnames(
-                styles['left-section'],
-                // toggle ? stlyes['active'] : null,
-              )}
-            >
+            <div className={classnames(styles['left-section'])}>
               <Menu />
             </div>
           )}

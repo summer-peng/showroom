@@ -1,5 +1,6 @@
 {
     "title": "簡中標題",
     "language": "簡中語言",
-    "zh_CN": "簡中"
+    "zh_CN": "簡中",
+    "required":"必填"
 }

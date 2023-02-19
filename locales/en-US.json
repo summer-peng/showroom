@@ -1,5 +1,6 @@
 {
     "title": "US Title",
     "language": "Language",
-    "en_US": "English(U.S.)"
+    "en_US": "English(U.S.)",
+    "required":"Required"
 }

@@ -11,8 +11,20 @@ datasource db {
 }
 
 model users {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
   firstName String
   lastName  String
-  userId    Int? @unique
+  email     String  @unique
+  password  String?
+  userId    Int?    @unique
+}
+
+model resumes {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  email      String
+  title      String
+  summary    String
+  reamrk     String
+  createDate DateTime
+  updateDate DateTime
 }

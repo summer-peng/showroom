@@ -1,4 +1,5 @@
 import classnames from 'classnames'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import PropTypes from 'prop-types'
 
 import LanguageSelection from './LanguageSelection'
@@ -6,6 +7,8 @@ import LanguageSelection from './LanguageSelection'
 import styles from './styles.module.scss'
 
 export default function Navigation({ setToggle }) {
+  const { data: session } = useSession()
+
   return (
     <div className={styles['nav-bar']}>
       <i
@@ -14,7 +17,28 @@ export default function Navigation({ setToggle }) {
       ></i>
       <div className={classnames(styles['nav-content'])}>
         <div>Just for Fun</div>
-        <LanguageSelection />
+        <div className={styles['sign-in-section']}>
+          <LanguageSelection />
+          {session ? (
+            <i
+              title="Sign out"
+              onClick={() => signOut()}
+              className={classnames(
+                'fa-solid fa-arrow-right-from-bracket',
+                styles['sign-out-btn'],
+              )}
+            />
+          ) : (
+            <i
+              title="Sign in"
+              className={classnames(
+                'fa-regular fa-user',
+                styles['sign-in-btn'],
+              )}
+              onClick={() => signIn()}
+            />
+          )}
+        </div>
       </div>
     </div>
   )
