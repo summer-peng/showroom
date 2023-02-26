@@ -1,0 +1,60 @@
+@import '/styles/variables.scss';
+
+$triangle-size: 23px;
+.step-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.triangle-common {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    width: 100%;
+
+    &::after {
+        @extend .triangle-common;
+        border-top: 22px solid transparent;
+        border-bottom: 22px solid transparent;
+        border-left: 22px solid #ffffff;
+        right: -22px;
+    }
+    &::before {
+        @extend .triangle-common;
+        border-top: $triangle-size solid transparent;
+        border-bottom: $triangle-size solid transparent;
+        border-left: $triangle-size solid $primary-color;
+        right: -24px;
+        
+    }
+}
+
+.active {
+    background-color: $primary-color;
+    color: #ffffff;
+    &::before {
+        border-left: $triangle-size solid #ffffff;
+    }
+    &::after {
+        border-left: $triangle-size solid $primary-color;
+    }
+}
+
+.last-active {
+    &::before {
+        border-left: $triangle-size solid $primary-color;
+    }
+}

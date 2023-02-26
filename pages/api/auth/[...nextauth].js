@@ -5,6 +5,10 @@ import { getUserByEmail } from '@/service/usersService'
 import { getHashBySha256 } from '@/service/utils/hashUtil'
 
 export const authOptions = {
+  secret: process.env.AUTH_SECRET,
+  session: {
+    strategy: 'jwt',
+  },
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
@@ -14,7 +18,6 @@ export const authOptions = {
         const user = await getUserByEmail(email)
         const hash = getHashBySha256(password)
         const isValid = hash === user.password
-
         if (!isValid) {
           throw new Error('Wrong credentials. Try again.')
         }
@@ -23,6 +26,18 @@ export const authOptions = {
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.uid = user.userId
+      }
+      return token
+    },
+    async session({ session, token }) {
+      session.user.userId = token.uid
+      return session
+    },
+  },
   pages: {
     signIn: '/signin',
   },

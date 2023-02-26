@@ -1,0 +1,48 @@
+@import '/styles/variables.scss';
+
+.wrapper {
+    margin-top: 20px;
+    .item-container {
+        display: flex;
+        position: relative;
+        .list-common {
+            border: 1px solid $primary-color;
+            padding: 6px 12px;
+            margin-bottom: 5px;
+        }
+        .list-symbol {
+            @extend .list-common;
+            cursor: move;
+            border-right: none;
+            border-radius: 5px 0px 0px 5px;
+            color: $primary-color;
+            position: relative;
+            display: flex;
+            align-items: center;
+            &::after {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                content: '';
+                height: 50%;
+                border-right: 1px solid $primary-color;
+                right: 0;
+            }
+        }
+
+        .item {
+            @extend .list-common;
+            width: 100%;
+            border-left: none;
+            border-radius: 0px 5px 5px 0px;
+        }
+
+        .remove {
+            color: $dangerous-color;
+            cursor: pointer;
+            position: absolute;
+            top:3px;
+            right:3px;
+        }
+    }
+}

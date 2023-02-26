@@ -3,6 +3,7 @@ import { Field } from 'formik'
 
 import AsyncSelect from './AsyncSelect'
 import PasswordInput from './PasswordInput'
+import Textarea from './Textarea'
 import TextInput from './TextInput'
 
 const FormField = ({ name, type, ...restProps }) => {
@@ -10,6 +11,9 @@ const FormField = ({ name, type, ...restProps }) => {
     switch (type) {
       case 'text': {
         return TextInput
+      }
+      case 'textarea': {
+        return Textarea
       }
       case 'password': {
         return PasswordInput

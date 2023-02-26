@@ -16,7 +16,8 @@
     display: flex;
     margin-top: 20px;
     position: absolute;
-    left: calc(50% - 187px);
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 
 .item {

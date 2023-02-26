@@ -1,0 +1,50 @@
+@import '/styles/variables.scss';
+
+.education-container {
+    .education-item {
+        display: flex;
+        padding: 20px 10px;
+        cursor: pointer;
+        align-items: baseline;
+        position: relative;
+        &:hover {
+            background-color: $border-color;
+            border-radius: 5px;
+        }
+
+        & > div {
+            padding: 6px 12px;
+        }
+        .index {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .title {
+            .major {
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .name {
+                font-size: 16px;
+                margin-right: 50px;
+            }
+            .date {
+                opacity: 0.7;
+                font-size: 12px;
+                & > span {
+                    margin: 0px 3px;
+                }
+            }
+        }
+
+        .function {
+            display: flex;
+            position: absolute;
+            right: 20px;
+            i {
+                cursor: pointer;
+                margin: 0px 3px;
+            }
+        }
+    }
+}

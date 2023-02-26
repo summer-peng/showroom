@@ -20,7 +20,7 @@ const Registration = () => {
           title="Registration"
           initialValues={initialValues}
           afterSubmit={() => {
-            router.push('/login')
+            router.push('/signin')
           }}
         />
       </div>

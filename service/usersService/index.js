@@ -10,6 +10,9 @@ export const getUserByEmail = (email) => {
     select: {
       password: true,
       email: true,
+      userId: true,
+      firstName: true,
+      lastName: true,
     },
   })
 }
@@ -86,6 +89,7 @@ export const upsertUser = (user) => {
     return prisma.users.create({
       data: {
         ...restProps,
+        password: hash,
       },
     })
   }
