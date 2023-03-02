@@ -39,6 +39,15 @@ const Experience = ({ resumes, onSubmit, onBack }) => {
           onNext={() => {
             onSubmit(myExperience)
           }}
+          onCreate={() => {
+            setState((prev) => {
+              return {
+                ...prev,
+                page: ACTION.EDIT,
+                currentIndex: myExperience.length,
+              }
+            })
+          }}
           nextTitle="Next"
         />
       )}

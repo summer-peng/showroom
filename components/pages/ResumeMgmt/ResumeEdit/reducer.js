@@ -4,7 +4,8 @@ const reducer = (state, action) => {
   const { type, payload } = action
   const { steps } = state
   const changeStep = (nextPhase) => {
-    const newStepStatus = [...steps]
+    // deep copy the steps array
+    const newStepStatus = JSON.parse(JSON.stringify(steps))
     const nextIndex = steps.map((s) => s.id).indexOf(nextPhase)
     for (let i = 0; i < steps.length; i++) {
       if (i <= nextIndex) {

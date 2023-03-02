@@ -25,7 +25,7 @@ model resumes {
   email       String
   phoneNumber String
   title       String?
-  summary     String?
+  summary     Json?
   reamrk      String?
   firstName   String?
   lastName    String?

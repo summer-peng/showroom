@@ -44,11 +44,20 @@ const AboutMePage = () => {
         <div className={styles['contact-info']}>zjone.peng@gmail.com</div>
         <InfoSection title="Summary">
           <div>
-            Software Engineer with 7 years work experience in IT industry.
-            Excels at developing and optimizing the core modules to web
-            applications. Able to maintain strong object-oriented and software
-            architecture fundamentals. Willing to adopt new technologies and
-            embrace industry changes to improve abilities and enhance projects.
+            <ul>
+              <li>
+                I am looking for a frontend engineer position, and need a visa
+                sponsorship.
+              </li>
+              <li>
+                Software Engineer with 7 years work experience in IT industry.
+                Excels at developing and optimizing the core modules to web
+                applications. Able to maintain strong object-oriented and
+                software architecture fundamentals. Willing to adopt new
+                technologies and embrace industry changes to improve abilities
+                and enhance projects.
+              </li>
+            </ul>
           </div>
         </InfoSection>
         <InfoSection title="Skills">

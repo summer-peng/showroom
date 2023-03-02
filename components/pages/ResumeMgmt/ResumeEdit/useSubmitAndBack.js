@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router'
 
+import MessageUtils from '@/utils/messageUtils'
+
 import {
   educationAction,
   experienceAction,
@@ -34,10 +36,13 @@ const useSubmitAndBack = ({ state, dispatch }) => {
         education,
       }
 
-      upsertResume(resumes).then(() => {
-        //TODO POP UP
-        alert('Success')
-      })
+      upsertResume(resumes)
+        .then(() => {
+          return MessageUtils.success()
+        })
+        .then(() => {
+          router.push('/resume-mgmt/resume-query')
+        })
     },
   }
 

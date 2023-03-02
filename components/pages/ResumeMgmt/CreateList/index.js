@@ -7,10 +7,11 @@ import ListItem from './ListItem'
 
 import styles from './styles.module.scss'
 
-const CreateList = ({ valueList, setValueList, placeholder }) => {
+const CreateList = ({ label, valueList, setValueList, placeholder }) => {
   return (
     <div>
       <TextAddingInput
+        label={label}
         placeholder={placeholder}
         onAdd={(val) => {
           const newValueList = [...valueList, val]

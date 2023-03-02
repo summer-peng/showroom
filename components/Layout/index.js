@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Container } from 'react-bootstrap'
 import ThemeProvider from 'react-bootstrap/ThemeProvider'
 import classnames from 'classnames'
+import Head from 'next/head'
 import PropTypes from 'prop-types'
 
 import Breadcrumb from '@/components/Layout/BreadCrumb'
@@ -19,6 +20,10 @@ const Layout = ({ breadCrumbItems, children }) => {
       breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
       minBreakpoint="xxs"
     >
+      <Head>
+        <meta charset="utf-8" />
+      </Head>
+
       <div className="main-layout">
         <Navigation setToggle={() => setToggle(!toggle)} />
         <div className={styles['content-container']}>

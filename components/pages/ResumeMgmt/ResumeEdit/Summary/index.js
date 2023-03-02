@@ -1,20 +1,28 @@
-import { Formik } from 'formik'
+import { useRef } from 'react'
+import dynamic from 'next/dynamic'
 
-import FormField from '@/components/commons/Forms/FormField'
 import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
 
 const Summary = ({ resumes, onSubmit, onBack }) => {
+  const DraftEditor = dynamic(() => import('@/components/commons/DraftEditor'))
+
+  const state = useRef(null)
+
   return (
-    <Formik initialValues={{ summary: resumes.summary }} onSubmit={onSubmit}>
-      {({ handleSubmit }) => {
-        return (
-          <div>
-            <FormField type="textarea" name="summary" label="Summary" />
-            <ButtonGroup onBack={onBack} onNext={handleSubmit} />
-          </div>
-        )
-      }}
-    </Formik>
+    <div>
+      <DraftEditor
+        onChange={(contentState) => {
+          state.current = contentState
+        }}
+        initialVale={resumes.summary}
+      />
+      <ButtonGroup
+        onBack={onBack}
+        onNext={() => {
+          onSubmit({ summary: state.current })
+        }}
+      />
+    </div>
   )
 }
 

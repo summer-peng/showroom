@@ -11,6 +11,8 @@ import Layout from '@/components/Layout'
 import '../i18n.config.js'
 
 import 'bootstrap/scss/bootstrap.scss'
+import 'draft-js/dist/Draft.css'
+import 'styles/RichEditor.css'
 import 'self-maintenance-lib/fontawesome-free-6.2.1-web/scss/fontawesome.scss'
 import 'self-maintenance-lib/fontawesome-free-6.2.1-web/scss/regular.scss'
 import 'self-maintenance-lib/fontawesome-free-6.2.1-web/scss/solid.scss'

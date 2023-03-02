@@ -1,5 +1,3 @@
-import { getServerSession } from 'next-auth/next'
-
 import prisma from '../utils/dbUtil'
 
 export const getResumesByUserId = (userId) => {
@@ -31,8 +29,8 @@ export const getResumeList = (params) => {
           dataList: data.map(({ createDate, updateDate, ...restProps }) => {
             return {
               ...restProps,
-              createDate: createDate.toString(),
-              updateDate: updateDate.toString(),
+              createDate: JSON.stringify(createDate),
+              updateDate: JSON.stringify(updateDate),
             }
           }),
         }

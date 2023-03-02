@@ -10,7 +10,16 @@ const Header = ({ resumes, onSubmit, onBack }) => {
       {({ handleSubmit }) => {
         return (
           <div>
-            <h1>Fill out your header</h1>
+            <h3>About this resume</h3>
+            <Row>
+              <Col>
+                <FormField name="title" label="Title" />
+              </Col>
+              <Col>
+                <FormField name="remark" label="remark" />
+              </Col>
+            </Row>
+            <h3>Fill out your header</h3>
             <Row>
               <Col>
                 <FormField name="firstName" label="First name" />

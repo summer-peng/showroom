@@ -9,7 +9,7 @@ import CreateList from '@/components/pages/ResumeMgmt/CreateList'
 import { ACTION } from '../utils'
 
 const Edit = ({ experience, currentIndex, setState }) => {
-  const exp = experience[currentIndex]
+  const exp = experience[currentIndex] || {}
 
   const onBack = useCallback(() => {
     setState((prev) => ({
@@ -80,6 +80,8 @@ const Edit = ({ experience, currentIndex, setState }) => {
                 {/** detail */}
                 <Col>
                   <CreateList
+                    label="Experience Detail"
+                    placeholder="Please input some details"
                     valueList={detail}
                     setValueList={(valueList) => {
                       setFieldValue('detail', valueList)
