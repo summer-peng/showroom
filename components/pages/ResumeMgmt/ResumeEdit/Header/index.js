@@ -10,7 +10,7 @@ const Header = ({ resumes, onSubmit, onBack }) => {
       {({ handleSubmit }) => {
         return (
           <div>
-            <h3>About this resume</h3>
+            <h3>About this Resume</h3>
             <Row>
               <Col>
                 <FormField name="title" label="Title" />

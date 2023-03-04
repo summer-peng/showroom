@@ -1,0 +1,25 @@
+.experience-section {
+    display: flex;
+    margin-bottom: 14px;
+    ul {
+        margin-bottom: 0;
+    }
+}
+
+.job-intro {
+    color: #4a4a4a;
+    width: 35%;
+}
+
+.job-detail {
+    width: 65%;
+}
+
+.job-title {
+    font-weight: 600;
+    color: #000000;
+}
+
+.duration {
+    font-style: italic;
+}

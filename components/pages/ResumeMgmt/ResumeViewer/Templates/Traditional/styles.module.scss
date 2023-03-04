@@ -1,0 +1,66 @@
+.container {
+    width: 21cm;
+    margin: 0 auto;
+    .download-section {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: right;
+    }
+}
+
+.wrapper {
+    //A4 SIZE
+    width: 21cm;
+    height: 29.7cm;
+    border: 1px solid #d3d3d3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.resume {
+    margin: 0.5cm;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.summary-section {
+    ul {
+        padding-left: 14px;
+    }
+}
+
+.skills-ul {
+    list-style: decimal;
+    columns: 2;
+    padding-left: 14px;
+}
+
+.author-name {
+    font-size: 31px;
+    line-height: 46px;
+    text-align: center;
+}
+
+.contact-info {
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    & > span {
+        position: relative;
+        padding: 3px;
+    }
+}
+
+.page-bottom-space {
+    height: 200px;
+}
+

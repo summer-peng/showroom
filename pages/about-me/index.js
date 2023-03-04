@@ -39,7 +39,7 @@ const AboutMePage = () => {
       <div className={styles['download-icon']}>
         <DownloadPdf element={cvRef} />
       </div>
-      <div ref={cvRef}>
+      <div className={styles['resume']} ref={cvRef}>
         <h2 className={styles['author-name']}>Chen-Tsung, Peng</h2>
         <div className={styles['contact-info']}>zjone.peng@gmail.com</div>
         <InfoSection title="Summary">

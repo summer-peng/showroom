@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 
+import useBlockUI from '@/hooks/useBlockUI'
 import MessageUtils from '@/utils/messageUtils'
 
 import {
@@ -14,6 +15,7 @@ import { upsertResume } from './api'
 import { PHASES } from './utils'
 
 const useSubmitAndBack = ({ state, dispatch }) => {
+  const { blockUI, unBlockUI } = useBlockUI()
   const router = useRouter()
 
   const SUBMIT_MAPPING = {
@@ -30,6 +32,7 @@ const useSubmitAndBack = ({ state, dispatch }) => {
       dispatch(experienceAction(experience, PHASES.EDUCATION))
     },
     [PHASES.EDUCATION]: (education) => {
+      blockUI()
       dispatch(educationAction(education, PHASES.EDUCATION))
       const resumes = {
         ...state.resumes,
@@ -38,10 +41,14 @@ const useSubmitAndBack = ({ state, dispatch }) => {
 
       upsertResume(resumes)
         .then(() => {
+          unBlockUI()
           return MessageUtils.success()
         })
         .then(() => {
           router.push('/resume-mgmt/resume-query')
+        })
+        .catch(() => {
+          unBlockUI()
         })
     },
   }

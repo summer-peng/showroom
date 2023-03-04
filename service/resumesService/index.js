@@ -1,3 +1,5 @@
+import { convertToDateString, convertToDateTimeString } from '@/utils/dateUtils'
+
 import prisma from '../utils/dbUtil'
 
 export const getResumesByUserId = (userId) => {
@@ -29,8 +31,8 @@ export const getResumeList = (params) => {
           dataList: data.map(({ createDate, updateDate, ...restProps }) => {
             return {
               ...restProps,
-              createDate: JSON.stringify(createDate),
-              updateDate: JSON.stringify(updateDate),
+              createDate: convertToDateString(createDate),
+              updateDate: convertToDateString(updateDate),
             }
           }),
         }

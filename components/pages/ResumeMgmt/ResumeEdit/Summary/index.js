@@ -6,7 +6,7 @@ import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
 const Summary = ({ resumes, onSubmit, onBack }) => {
   const DraftEditor = dynamic(() => import('@/components/commons/DraftEditor'))
 
-  const state = useRef(null)
+  const state = useRef(resumes.summary)
 
   return (
     <div>

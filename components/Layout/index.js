@@ -21,7 +21,7 @@ const Layout = ({ breadCrumbItems, children }) => {
       minBreakpoint="xxs"
     >
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
       </Head>
 
       <div className="main-layout">

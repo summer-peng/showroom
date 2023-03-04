@@ -1,17 +1,43 @@
+import classnames from 'classnames'
 import Link from 'next/link'
+
+import styles from './styles.module.scss'
 
 export const tableConfig = [
   {
-    dataKey: 'id',
-    label: 'ID',
-    width: 50,
-    cellRenderer: ({ cellData }) => {
+    dataKey: 'function',
+    label: '',
+    cellRenderer: ({ rowData }) => {
+      const { id } = rowData
       return (
-        <div className="text-primary text-center">
-          <Link href={`/resume-mgmt/resume-edit/${cellData}`}>{cellData}</Link>
+        <div>
+          <Link target="_blank" href={`/resume-mgmt/resume-viewer/${id}`}>
+            <i
+              className={classnames('fa-solid fa-user', styles['icon-style'])}
+              title="Go to resume page"
+            ></i>
+          </Link>
         </div>
       )
     },
+  },
+  {
+    dataKey: 'title',
+    label: 'Title',
+    width: 200,
+    cellRenderer: ({ cellData, rowData }) => {
+      const { id } = rowData
+      return (
+        <div>
+          <Link href={`/resume-mgmt/resume-edit/${id}`}>{cellData || id}</Link>
+        </div>
+      )
+    },
+  },
+  {
+    dataKey: 'remark',
+    label: 'Remark',
+    width: 200,
   },
   {
     dataKey: 'firstName',
@@ -27,6 +53,14 @@ export const tableConfig = [
     dataKey: 'email',
     label: 'Email',
     width: 200,
+  },
+  {
+    dataKey: 'createDate',
+    label: 'Create Date',
+  },
+  {
+    dataKey: 'updateDate',
+    label: 'Update Date',
   },
 ]
 
