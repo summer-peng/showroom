@@ -58,7 +58,10 @@ const Edit = ({ education, currentIndex, setState }) => {
               </Row>
               <Row>
                 <Col>
-                  <FormField label="Graduated Date" name="graduatedDate" />
+                  <FormField label="Start Date" name="startDate" />
+                </Col>
+                <Col>
+                  <FormField label="End Date" name="endDate" />
                 </Col>
               </Row>
               <ButtonGroup

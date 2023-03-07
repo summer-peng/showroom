@@ -1,58 +1,52 @@
 import DraftEditorPrinter from '@/components/commons/DraftEdiorPrinter'
 import TemplateWrapper from '@/components/pages/ResumeMgmt/ResumeViewer/TemplateWrapper'
 
+import InfoSection from '../Traditional/InfoSection'
+
 import EduSection from './EduSection'
 import ExperienceSection from './ExperienceSection'
-import InfoSection from './InfoSection'
 
 import styles from './styles.module.scss'
 
-const TraditionalTemplate = ({ resume }) => {
+const Engineer = ({ resume }) => {
   const {
     firstName,
     lastName,
     email,
     phoneNumber,
-    city,
-    province,
-    postalCode,
+    linkedinUrl,
+    githubUrl,
     summary,
-    skills = [],
     experience = [],
     education = [],
   } = resume
 
   return (
     <TemplateWrapper>
-      <div className={styles['circle']}>
-        {firstName && firstName.charAt(0)}
-        {lastName && lastName.charAt(0)}
+      <div className={styles['employee-info-wrapper']}>
+        <div className={styles['name']}>
+          <span>{firstName}</span>
+          <span>{lastName}</span>
+        </div>
+        <div>{phoneNumber}</div>
       </div>
-      <h2 className={styles['author-name']}>{`${firstName} ${lastName}`}</h2>
-      <div className={styles['contact-info']}>
-        {email && (
-          <>
-            <span>{email}</span>
-            <span>|</span>
-          </>
-        )}
-        {phoneNumber && (
-          <>
-            <span>{phoneNumber}</span>
-            <span>|</span>
-          </>
-        )}
-        <span>{`${city}, ${province} ${postalCode}`}</span>
+      <div className={styles['additional-info']}>
+        <div>
+          {linkedinUrl && (
+            <a target="_blank" href={linkedinUrl} rel="noreferrer">
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+          )}
+          {githubUrl && (
+            <a target="_blank" href={githubUrl} rel="noreferrer">
+              <i className="fa-brands fa-github"></i>
+            </a>
+          )}
+        </div>
+        <div>{email}</div>
       </div>
-      <InfoSection title="Summary" className={styles['summary-section']}>
+      <InfoSection title="Hightlights" className={styles['hightlighs-section']}>
         <DraftEditorPrinter contentState={summary} />
-      </InfoSection>
-      <InfoSection title="Skills">
-        <ul className={styles['skills-ul']}>
-          {skills.map((skill, index) => {
-            return <li key={index}>{skill}</li>
-          })}
-        </ul>
       </InfoSection>
       <InfoSection title="Experience">
         {experience.map((exp, index) => {
@@ -91,4 +85,4 @@ const TraditionalTemplate = ({ resume }) => {
   )
 }
 
-export default TraditionalTemplate
+export default Engineer

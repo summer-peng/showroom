@@ -12,4 +12,23 @@
 
 .right-section {
     width: 100%;
+    overflow: auto;
+}
+
+@media (max-width: 1200px) {
+    .left-section {
+        width: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-section {
+        width: 30%;
+    }
+}
+
+@media (max-width: 576px) {
+    .left-section {
+        width: 40%;
+    }
 }

@@ -8,7 +8,7 @@ const List = ({ education, setState }) => {
   return (
     <div className={styles['education-container']}>
       {education.map(
-        ({ name, location, degree, major, graduatedDate }, index) => {
+        ({ name, location, degree, major, startDate, endDate }, index) => {
           return (
             <div
               className={styles['education-item']}
@@ -26,7 +26,7 @@ const List = ({ education, setState }) => {
                 <div className={styles['major']}>{`${degree}-${major}`}</div>
                 <div className={styles['name']}>{name}</div>
                 <div className={styles['date']}>
-                  <span>{`${location} ${graduatedDate}`}</span>
+                  <span>{`${location} ${startDate} - ${endDate}`}</span>
                 </div>
               </div>
               <div className={styles['function']}>

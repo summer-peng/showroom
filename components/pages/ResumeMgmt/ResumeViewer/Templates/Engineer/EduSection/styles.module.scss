@@ -1,0 +1,17 @@
+.edu-section {
+    color: #4a4a4a;
+}
+
+.degree {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+        color: #000000;
+        font-weight: 600;
+    }
+}
+
+.graduation-date {
+    font-style: italic;
+}

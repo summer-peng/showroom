@@ -1,0 +1,20 @@
+.job-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .job-title {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+}
+
+.job-detail {
+    ul {
+        padding-left: 14px;
+    }
+}
+
+.duration {
+    font-style: italic;
+}

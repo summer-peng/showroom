@@ -1,5 +1,6 @@
 import classnames from 'classnames'
 import html2pdf from 'html2pdf.js'
+//import { jsPDF } from 'jspdf'
 import PropTypes from 'prop-types'
 
 import styles from './styles.module.scss'
@@ -13,6 +14,18 @@ const DownloadPdf = ({ element, className, downloadButton }) => {
 
   const handleOnClick = () => {
     html2pdf(element.current, opt)
+    //todo encoding problem
+    // const doc = new jsPDF('p', 'mm', 'a4')
+    // doc.setFont('normal')
+    // doc.html(element.current, {
+    //   callback: function (doc) {
+    //     doc.save('sample1.pdf')
+    //   },
+    //   x: 0,
+    //   y: 0,
+    //   width: 210, //target width in the PDF document
+    //   windowWidth: 793.7, //window width in CSS pixels
+    // })
   }
 
   const DownloadButton = downloadButton()
