@@ -23,3 +23,15 @@
 .page-bottom-space {
     height: 200px;
 }
+
+@media print {
+    .wrapper {
+        width: 100% !important;
+        height: 100%  !important;;
+        border: none  !important;;
+        box-shadow: none  !important;;
+    }
+    .download-section {
+        display: none !important;
+    }
+}

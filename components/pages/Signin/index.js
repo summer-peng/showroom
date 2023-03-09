@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Formik } from 'formik'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
 
@@ -58,6 +59,10 @@ const Signin = () => {
                 titleKey="Login"
                 onClick={handleSubmit}
               />
+              <div className={styles['regist']}>
+                <span>Do not have account?</span>
+                <Link href="/registration">Sign up</Link>
+              </div>
             </div>
           )
         }}

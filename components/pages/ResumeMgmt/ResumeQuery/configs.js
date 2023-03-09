@@ -13,7 +13,10 @@ export const tableConfig = [
         <div>
           <Link target="_blank" href={`/resume-mgmt/resume-viewer/${id}`}>
             <i
-              className={classnames('fa-solid fa-user', styles['icon-style'])}
+              className={classnames(
+                'fa-solid fa-address-card',
+                styles['icon-style'],
+              )}
               title="Go to resume page"
             ></i>
           </Link>

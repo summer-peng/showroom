@@ -6,9 +6,10 @@ import PropTypes from 'prop-types'
 
 import { BackButton, SubmitButton } from '@/components/commons/Buttons'
 import FormField from '@/components/commons/Forms/FormField'
-import API from '@/utils/apiUtils'
+import useBlockUI from '@/hooks/useBlockUI'
 import MessageUtils from '@/utils/messageUtils'
 
+import { checkEmailExisted, upsertUser } from './apis'
 import validationSchema from './validations'
 
 import styles from './styles.module.scss'
@@ -16,24 +17,43 @@ import styles from './styles.module.scss'
 const UserEdit = ({ title, initialValues, afterSubmit }) => {
   const router = useRouter()
   const { t } = useTranslation()
+  const { blockUI, unBlockUI } = useBlockUI()
 
-  const onSubmit = (values) => {
-    return API.post('/api/users/upsertUser', values)
-      .then(() => {
-        return MessageUtils.success()
-      })
-      .then(() => {
-        if (afterSubmit) {
-          afterSubmit()
-        } else {
-          router.push('/users/user-query')
-        }
-      })
-      .catch((e) => {
-        MessageUtils.error({ text: e })
-        console.error({ text: e })
-      })
+  const checkEmail = (email) => {
+    if (initialValues.email) {
+      return new Promise((resolve) => resolve(false))
+    } else {
+      return checkEmailExisted(email)
+    }
   }
+  const onSubmit = (values, { setFieldError }) => {
+    const { email } = values
+    blockUI()
+    return checkEmail(email).then((isExist) => {
+      if (isExist) {
+        setFieldError('email', 'The email is already registed')
+      } else {
+        upsertUser(values)
+          .then(() => {
+            unBlockUI()
+            return MessageUtils.success()
+          })
+          .then(() => {
+            if (afterSubmit) {
+              afterSubmit()
+            } else {
+              router.push('/users/user-query')
+            }
+          })
+          .catch((e) => {
+            MessageUtils.error({ text: e })
+            console.error({ text: e })
+            unBlockUI()
+          })
+      }
+    })
+  }
+
   return (
     <Formik
       initialValues={initialValues}

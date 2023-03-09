@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 
 export default function Navigation({ setToggle }) {
   const { data: session } = useSession()
-
+  const { user = {} } = session || {}
   return (
     <div className={styles['nav-bar']}>
       <i
@@ -20,14 +20,19 @@ export default function Navigation({ setToggle }) {
         <div className={styles['sign-in-section']}>
           <LanguageSelection />
           {session ? (
-            <i
-              title="Sign out"
-              onClick={() => signOut()}
-              className={classnames(
-                'fa-solid fa-arrow-right-from-bracket',
-                styles['sign-out-btn'],
-              )}
-            />
+            <span>
+              <span
+                className={styles['name']}
+              >{`| ${user?.firstName} ${user?.lastName}`}</span>
+              <i
+                title="Sign out"
+                onClick={() => signOut()}
+                className={classnames(
+                  'fa-solid fa-arrow-right-from-bracket',
+                  styles['sign-out-btn'],
+                )}
+              />
+            </span>
           ) : (
             <i
               title="Sign in"
