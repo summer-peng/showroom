@@ -7,6 +7,16 @@ export const nextPhaseAction = (nextPhase) => {
   }
 }
 
+export const resumeTypeAction = (resumeType, nextPhase) => {
+  return {
+    type: PHASES.CHOOSE_TEMPLATE,
+    payload: {
+      resumeType,
+      nextPhase,
+    },
+  }
+}
+
 export const headerAction = (header, nextPhase) => {
   return {
     type: PHASES.HEADER,

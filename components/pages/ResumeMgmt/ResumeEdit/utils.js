@@ -1,5 +1,6 @@
 export const CHANGE_PHASE = 'change_phase'
 export const PHASES = {
+  CHOOSE_TEMPLATE: 'choose_template',
   HEADER: 'header',
   SUMMARY: 'summary',
   SKILLS: 'skills',
@@ -7,11 +8,12 @@ export const PHASES = {
   EDUCATION: 'education',
 }
 
+const currentPhase = PHASES.CHOOSE_TEMPLATE
 export const steps = Object.keys(PHASES).map((key) => {
   return {
     id: PHASES[key],
     title: PHASES[key],
-    active: PHASES[key] === PHASES.HEADER ? true : false,
+    active: PHASES[key] === currentPhase ? true : false,
   }
 })
 
@@ -25,7 +27,7 @@ export const defaultState = {
     experience: [],
     education: [],
   },
-  currentPhase: PHASES.HEADER,
+  currentPhase: currentPhase,
   steps: [...steps],
 }
 
@@ -93,7 +95,7 @@ export const initialTestStates = {
       },
     ],
   },
-  currentPhase: PHASES.HEADER,
+  currentPhase: PHASES.CHOOSE_TEMPLATE,
   steps: [...steps],
 }
 

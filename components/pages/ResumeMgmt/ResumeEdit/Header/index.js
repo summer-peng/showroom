@@ -2,7 +2,6 @@ import { Col, Row } from 'react-bootstrap'
 import { Formik } from 'formik'
 
 import FormField from '@/components/commons/Forms/FormField'
-import TemplateSelect from '@/components/commons/selects/TemplateSelect'
 import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
 
 const Header = ({ resumes, onSubmit, onBack }) => {
@@ -18,9 +17,6 @@ const Header = ({ resumes, onSubmit, onBack }) => {
               </Col>
               <Col>
                 <FormField name="remark" label="remark" />
-              </Col>
-              <Col>
-                <TemplateSelect name="resumeType" label="Resume Type" />
               </Col>
             </Row>
             <h3>Fill out your header</h3>

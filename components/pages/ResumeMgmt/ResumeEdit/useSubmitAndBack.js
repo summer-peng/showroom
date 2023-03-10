@@ -8,6 +8,7 @@ import {
   experienceAction,
   headerAction,
   nextPhaseAction,
+  resumeTypeAction,
   skillsAction,
   summaryAction,
 } from './actions'
@@ -19,6 +20,9 @@ const useSubmitAndBack = ({ state, dispatch }) => {
   const router = useRouter()
 
   const SUBMIT_MAPPING = {
+    [PHASES.CHOOSE_TEMPLATE]: (resumeType) => {
+      dispatch(resumeTypeAction(resumeType, PHASES.HEADER))
+    },
     [PHASES.HEADER]: (header) => {
       dispatch(headerAction(header, PHASES.SUMMARY))
     },
@@ -54,8 +58,11 @@ const useSubmitAndBack = ({ state, dispatch }) => {
   }
 
   const BACK_MAPPING = {
+    [PHASES.CHOOSE_TEMPLATE]: () => {
+      router.push('/resume-mgmt/resume-query')
+    },
     [PHASES.HEADER]: () => {
-      router.push('/')
+      dispatch(nextPhaseAction(PHASES.CHOOSE_TEMPLATE))
     },
     [PHASES.SUMMARY]: () => {
       dispatch(nextPhaseAction(PHASES.HEADER))

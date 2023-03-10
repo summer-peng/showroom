@@ -27,6 +27,18 @@ const reducer = (state, action) => {
         steps: changeStep(nextPhase),
       }
     }
+    case PHASES.CHOOSE_TEMPLATE: {
+      const { resumeType, nextPhase } = payload
+      return {
+        ...state,
+        resumes: {
+          ...state.resumes,
+          resumeType,
+        },
+        currentPhase: nextPhase,
+        steps: changeStep(nextPhase),
+      }
+    }
     case PHASES.HEADER: {
       const { resume, nextPhase } = payload
       return {

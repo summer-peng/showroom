@@ -2,6 +2,7 @@ import { useMemo, useReducer } from 'react'
 import PropTypes from 'prop-types'
 
 import StepProgress from '@/components/commons/StepProgress'
+import ChooseTemplate from '@/components/pages/ResumeMgmt/ResumeEdit/ChooseTemplate'
 import Education from '@/components/pages/ResumeMgmt/ResumeEdit/Education'
 import Experience from '@/components/pages/ResumeMgmt/ResumeEdit/Experience'
 import Header from '@/components/pages/ResumeMgmt/ResumeEdit/Header'
@@ -28,6 +29,9 @@ const ResumeEdit = ({ initialResume }) => {
 
   const CurrentPhaseForm = useMemo(() => {
     switch (currentPhase) {
+      case PHASES.CHOOSE_TEMPLATE: {
+        return ChooseTemplate
+      }
       case PHASES.HEADER: {
         return Header
       }

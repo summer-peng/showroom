@@ -11,15 +11,19 @@ export const tableConfig = [
       const { id } = rowData
       return (
         <div>
-          <Link target="_blank" href={`/resume-mgmt/resume-viewer/${id}`}>
+          <a
+            target="_blank"
+            href={`/resume-mgmt/resume-viewer/${id}`}
+            rel="noreferrer"
+          >
             <i
               className={classnames(
-                'fa-solid fa-address-card',
+                'fa-regular fa-address-card',
                 styles['icon-style'],
               )}
               title="Go to resume page"
             ></i>
-          </Link>
+          </a>
         </div>
       )
     },

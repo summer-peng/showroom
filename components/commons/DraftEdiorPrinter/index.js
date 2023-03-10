@@ -6,7 +6,12 @@ const DraftEditorPrinter = ({ contentState }) => {
     return <div></div>
   }
 
-  let html = stateToHTML(convertFromRaw(contentState))
+  let html = null
+  if (typeof contentState === 'string') {
+    html = contentState
+  } else {
+    html = stateToHTML(convertFromRaw(contentState))
+  }
 
   return <div dangerouslySetInnerHTML={{ __html: html }}></div>
 }
