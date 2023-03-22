@@ -50,6 +50,18 @@ const reducer = (state, action) => {
         steps: changeStep(nextPhase),
       }
     }
+    case PHASES.OBJECTIVE: {
+      const { objective, nextPhase } = payload
+      return {
+        ...state,
+        resumes: {
+          ...state.resumes,
+          objective,
+        },
+        currentPhase: nextPhase,
+        steps: changeStep(nextPhase),
+      }
+    }
     case PHASES.SUMMARY: {
       const { summary, nextPhase } = payload
       return {

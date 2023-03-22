@@ -12,6 +12,10 @@
             margin-right: 10px;
         }
     }
+
+    .phone{
+        margin-left: 10px;
+    }
 }
 
 .hightlighs-section {
@@ -21,10 +25,16 @@
 }
 
 .additional-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     margin: 0px 20px;
+
+    .city-mail {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .links {
+        padding-left: 10px;
+    }
 
     a {
         font-size: 30px;

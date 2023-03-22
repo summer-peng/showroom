@@ -26,6 +26,7 @@ model resumes {
   phoneNumber String
   title       String?
   summary     Json?
+  objective   Json?
   remark      String?
   firstName   String?
   lastName    String?

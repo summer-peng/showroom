@@ -6,6 +6,7 @@ import ChooseTemplate from '@/components/pages/ResumeMgmt/ResumeEdit/ChooseTempl
 import Education from '@/components/pages/ResumeMgmt/ResumeEdit/Education'
 import Experience from '@/components/pages/ResumeMgmt/ResumeEdit/Experience'
 import Header from '@/components/pages/ResumeMgmt/ResumeEdit/Header'
+import Objective from '@/components/pages/ResumeMgmt/ResumeEdit/Objective'
 import Skills from '@/components/pages/ResumeMgmt/ResumeEdit/Skills'
 import Summary from '@/components/pages/ResumeMgmt/ResumeEdit/Summary'
 
@@ -34,6 +35,9 @@ const ResumeEdit = ({ initialResume }) => {
       }
       case PHASES.HEADER: {
         return Header
+      }
+      case PHASES.OBJECTIVE: {
+        return Objective
       }
       case PHASES.SUMMARY: {
         return Summary

@@ -17,7 +17,7 @@ const EduSection = ({
           <span>{degree}</span> in {major}
         </div>
         <div className={styles['graduation-date']}>
-          {startDate} - {endDate}
+          {startDate} {startDate ? '-' : ''} {endDate}
         </div>
       </div>
       <div className="schrool-name">

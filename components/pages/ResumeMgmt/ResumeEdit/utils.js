@@ -2,6 +2,7 @@ export const CHANGE_PHASE = 'change_phase'
 export const PHASES = {
   CHOOSE_TEMPLATE: 'choose_template',
   HEADER: 'header',
+  OBJECTIVE: 'objective',
   SUMMARY: 'summary',
   SKILLS: 'skills',
   EXPERIENCE: 'experience',

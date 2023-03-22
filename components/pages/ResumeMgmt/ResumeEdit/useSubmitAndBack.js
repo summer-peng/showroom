@@ -8,6 +8,7 @@ import {
   experienceAction,
   headerAction,
   nextPhaseAction,
+  objectiveAction,
   resumeTypeAction,
   skillsAction,
   summaryAction,
@@ -24,7 +25,10 @@ const useSubmitAndBack = ({ state, dispatch }) => {
       dispatch(resumeTypeAction(resumeType, PHASES.HEADER))
     },
     [PHASES.HEADER]: (header) => {
-      dispatch(headerAction(header, PHASES.SUMMARY))
+      dispatch(headerAction(header, PHASES.OBJECTIVE))
+    },
+    [PHASES.OBJECTIVE]: (objective) => {
+      dispatch(objectiveAction(objective, PHASES.SUMMARY))
     },
     [PHASES.SUMMARY]: (summary) => {
       dispatch(summaryAction(summary, PHASES.SKILLS))
@@ -64,8 +68,11 @@ const useSubmitAndBack = ({ state, dispatch }) => {
     [PHASES.HEADER]: () => {
       dispatch(nextPhaseAction(PHASES.CHOOSE_TEMPLATE))
     },
-    [PHASES.SUMMARY]: () => {
+    [PHASES.OBJECTIVE]: () => {
       dispatch(nextPhaseAction(PHASES.HEADER))
+    },
+    [PHASES.SUMMARY]: () => {
+      dispatch(nextPhaseAction(PHASES.OBJECTIVE))
     },
     [PHASES.SKILLS]: () => {
       dispatch(nextPhaseAction(PHASES.SUMMARY))

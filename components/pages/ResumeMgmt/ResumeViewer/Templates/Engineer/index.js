@@ -19,6 +19,8 @@ const Engineer = ({ resume }) => {
     summary,
     experience = [],
     education = [],
+    objective,
+    city,
   } = resume
 
   return (
@@ -28,10 +30,16 @@ const Engineer = ({ resume }) => {
           <span>{firstName}</span>
           <span>{lastName}</span>
         </div>
-        <div>{phoneNumber}</div>
+        <div>
+          <span className={styles['phone']}>{phoneNumber}</span>
+        </div>
       </div>
       <div className={styles['additional-info']}>
-        <div>
+        <div className={styles['city-mail']}>
+          <div>{city}</div>
+          <div>{email}</div>
+        </div>
+        <div className={styles['links']}>
           {linkedinUrl && (
             <a target="_blank" href={linkedinUrl} rel="noreferrer">
               <i className="fa-brands fa-linkedin"></i>
@@ -43,8 +51,10 @@ const Engineer = ({ resume }) => {
             </a>
           )}
         </div>
-        <div>{email}</div>
       </div>
+      <InfoSection title="Objective">
+        <DraftEditorPrinter contentState={objective} />
+      </InfoSection>
       <InfoSection title="Hightlights" className={styles['hightlighs-section']}>
         <DraftEditorPrinter contentState={summary} />
       </InfoSection>

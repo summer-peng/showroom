@@ -27,6 +27,16 @@ export const headerAction = (header, nextPhase) => {
   }
 }
 
+export const objectiveAction = (objectiveForm, nextPhase) => {
+  return {
+    type: PHASES.OBJECTIVE,
+    payload: {
+      objective: objectiveForm.objective,
+      nextPhase,
+    },
+  }
+}
+
 export const summaryAction = (summaryForm, nextPhase) => {
   return {
     type: PHASES.SUMMARY,
