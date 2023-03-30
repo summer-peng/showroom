@@ -4,11 +4,12 @@ import useBlockUI from '@/hooks/useBlockUI'
 import MessageUtils from '@/utils/messageUtils'
 
 import {
+  coreCompetenciesAction,
   educationAction,
   experienceAction,
   headerAction,
+  interestsAction,
   nextPhaseAction,
-  objectiveAction,
   resumeTypeAction,
   skillsAction,
   summaryAction,
@@ -17,34 +18,38 @@ import { upsertResume } from './api'
 import { PHASES } from './utils'
 
 const useSubmitAndBack = ({ state, dispatch }) => {
+  const { steps } = state
   const { blockUI, unBlockUI } = useBlockUI()
   const router = useRouter()
 
   const SUBMIT_MAPPING = {
     [PHASES.CHOOSE_TEMPLATE]: (resumeType) => {
-      dispatch(resumeTypeAction(resumeType, PHASES.HEADER))
+      dispatch(resumeTypeAction(resumeType))
     },
     [PHASES.HEADER]: (header) => {
-      dispatch(headerAction(header, PHASES.OBJECTIVE))
-    },
-    [PHASES.OBJECTIVE]: (objective) => {
-      dispatch(objectiveAction(objective, PHASES.SUMMARY))
+      dispatch(headerAction(header))
     },
     [PHASES.SUMMARY]: (summary) => {
-      dispatch(summaryAction(summary, PHASES.SKILLS))
+      dispatch(summaryAction(summary))
+    },
+    [PHASES.CORE_COMPENTENCIES]: (coreCompentencies) => {
+      dispatch(coreCompetenciesAction(coreCompentencies))
     },
     [PHASES.SKILLS]: (skills) => {
-      dispatch(skillsAction(skills, PHASES.EXPERIENCE))
+      dispatch(skillsAction(skills))
     },
     [PHASES.EXPERIENCE]: (experience) => {
-      dispatch(experienceAction(experience, PHASES.EDUCATION))
+      dispatch(experienceAction(experience))
     },
     [PHASES.EDUCATION]: (education) => {
+      dispatch(educationAction(education))
+    },
+    [PHASES.INTERESTS]: (interests) => {
       blockUI()
-      dispatch(educationAction(education, PHASES.EDUCATION))
+      dispatch(interestsAction(interests))
       const resumes = {
         ...state.resumes,
-        education,
+        interests,
       }
 
       upsertResume(resumes)
@@ -65,25 +70,15 @@ const useSubmitAndBack = ({ state, dispatch }) => {
     [PHASES.CHOOSE_TEMPLATE]: () => {
       router.push('/resume-mgmt/resume-query')
     },
-    [PHASES.HEADER]: () => {
-      dispatch(nextPhaseAction(PHASES.CHOOSE_TEMPLATE))
-    },
-    [PHASES.OBJECTIVE]: () => {
-      dispatch(nextPhaseAction(PHASES.HEADER))
-    },
-    [PHASES.SUMMARY]: () => {
-      dispatch(nextPhaseAction(PHASES.OBJECTIVE))
-    },
-    [PHASES.SKILLS]: () => {
-      dispatch(nextPhaseAction(PHASES.SUMMARY))
-    },
-    [PHASES.EXPERIENCE]: () => {
-      dispatch(nextPhaseAction(PHASES.SKILLS))
-    },
-    [PHASES.EDUCATION]: () => {
-      dispatch(nextPhaseAction(PHASES.EXPERIENCE))
-    },
   }
+
+  steps.forEach((step) => {
+    const id = step.id
+    if (id !== PHASES.CHOOSE_TEMPLATE)
+      BACK_MAPPING[id] = () => {
+        dispatch(nextPhaseAction('prev'))
+      }
+  })
 
   return { SUBMIT_MAPPING, BACK_MAPPING }
 }

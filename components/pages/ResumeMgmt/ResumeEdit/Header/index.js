@@ -38,12 +38,15 @@ const Header = ({ resumes, onSubmit, onBack }) => {
             </Row>
             <Row>
               <Col>
+                <FormField name="address" label="Address" />
+              </Col>
+              <Col xs={2} md={2} lg={2}>
                 <FormField name="city" label="City" />
               </Col>
-              <Col xs={3} md={3} lg={3}>
+              <Col xs={2} md={2} lg={2}>
                 <FormField name="province" label="Province" />
               </Col>
-              <Col xs={3} md={3} lg={3}>
+              <Col xs={2} md={2} lg={2}>
                 <FormField name="postalCode" label="Postal Code" />
               </Col>
             </Row>

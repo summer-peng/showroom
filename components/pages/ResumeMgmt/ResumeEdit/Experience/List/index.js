@@ -38,6 +38,18 @@ const List = ({ experience, setState }) => {
                   }
                 })
               }}
+              onDelete={() => {
+                setState((prev) => {
+                  const newList = [...prev.myExperience]
+                  newList.splice(index, 1)
+                  return {
+                    ...prev,
+                    myExperience: newList,
+                    page: ACTION.LIST,
+                    currentIndex: null,
+                  }
+                })
+              }}
             />
           )
         })}

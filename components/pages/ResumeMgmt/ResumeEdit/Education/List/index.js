@@ -1,52 +1,59 @@
-import classnames from 'classnames'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import { ACTION } from '../utils'
+
+import Item from './item'
 
 import styles from './styles.module.scss'
 
 const List = ({ education, setState }) => {
   return (
     <div className={styles['education-container']}>
-      {education.map(
-        ({ name, location, degree, major, startDate, endDate }, index) => {
+      <DndProvider backend={HTML5Backend}>
+        {education.map((edu, index) => {
           return (
-            <div
-              className={styles['education-item']}
+            <Item
+              education={edu}
+              index={index}
               key={index}
-              onClick={() =>
-                setState((prev) => ({
-                  ...prev,
-                  page: ACTION.EDIT,
-                  currentIndex: index,
-                }))
-              }
-            >
-              <div className={styles['index']}>{index + 1}</div>
-              <div className={styles['title']}>
-                <div className={styles['major']}>{`${degree}-${major}`}</div>
-                <div className={styles['name']}>{name}</div>
-                <div className={styles['date']}>
-                  <span>{`${location} ${startDate} - ${endDate}`}</span>
-                </div>
-              </div>
-              <div className={styles['function']}>
-                <i
-                  className={classnames('fa-solid fa-pen-to-square')}
-                  onClick={() =>
-                    setState((prev) => ({
-                      ...prev,
-                      page: ACTION.EDIT,
-                      currentIndex: index,
-                    }))
+              moveItem={(originalIndex, targetIndex) => {
+                setState((prev) => {
+                  const newList = [...prev.myEducation]
+                  const temp = newList[originalIndex]
+                  newList[originalIndex] = newList[targetIndex]
+                  newList[targetIndex] = temp
+                  return {
+                    ...prev,
+                    myEducation: newList,
                   }
-                />
-                <i className={classnames('fa-solid fa-trash')} />
-                <i className={classnames('fa-solid fa-up-down-left-right')} />
-              </div>
-            </div>
+                })
+              }}
+              onEdit={() => {
+                setState((prev) => {
+                  return {
+                    ...prev,
+                    page: ACTION.EDIT,
+                    currentIndex: index,
+                  }
+                })
+              }}
+              onDelete={() => {
+                setState((prev) => {
+                  const newList = [...prev.myEducation]
+                  newList.splice(index, 1)
+                  return {
+                    ...prev,
+                    myEducation: newList,
+                    page: ACTION.LIST,
+                    currentIndex: null,
+                  }
+                })
+              }}
+            ></Item>
           )
-        },
-      )}
+        })}
+      </DndProvider>
     </div>
   )
 }

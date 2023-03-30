@@ -20,25 +20,27 @@ model users {
 }
 
 model resumes {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  userId      Int
-  email       String
-  phoneNumber String
-  title       String?
-  summary     Json?
-  objective   Json?
-  remark      String?
-  firstName   String?
-  lastName    String?
-  city        String?
-  province    String?
-  postalCode  String?
-  skills      String[]
-  experience  Json?
-  education   Json?
-  resumeType  String?
-  linkedinUrl String?
-  githubUrl   String?
-  createDate  DateTime @default(now())
-  updateDate  DateTime @updatedAt
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId           Int
+  email            String
+  phoneNumber      String
+  title            String?
+  summary          Json?
+  coreCompetencies Json?
+  remark           String?
+  firstName        String?
+  lastName         String?
+  city             String?
+  province         String?
+  address          String?
+  postalCode       String?
+  skills           String[]
+  interests        String[]
+  experience       Json?
+  education        Json?
+  resumeType       String?
+  linkedinUrl      String?
+  githubUrl        String?
+  createDate       DateTime @default(now())
+  updateDate       DateTime @updatedAt
 }

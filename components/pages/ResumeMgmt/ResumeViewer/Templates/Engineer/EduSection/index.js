@@ -12,16 +12,22 @@ const EduSection = ({
 }) => {
   return (
     <section className={styles['edu-section']}>
-      <div className={styles['degree']}>
+      <div className={styles['degree-wrapper']}>
         <div>
-          <span>{degree}</span> in {major}
+          <span className={styles['degree']}>{degree}</span>
+          {degree && major && <span className={styles['sepreate']}>in</span>}
+          <span>{major}</span>
         </div>
         <div className={styles['graduation-date']}>
           {startDate} {startDate ? '-' : ''} {endDate}
         </div>
       </div>
       <div className="schrool-name">
-        {schoolName} | {location}
+        <span>{schoolName}</span>
+        {schoolName && location && (
+          <span className={styles['sepreate']}>|</span>
+        )}
+        <span>{location}</span>
       </div>
     </section>
   )

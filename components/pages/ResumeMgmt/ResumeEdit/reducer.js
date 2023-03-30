@@ -1,34 +1,44 @@
 import { CHANGE_PHASE, PHASES } from './utils'
 
+const changeStep = (currentPhase, steps, opeation) => {
+  // deep copy the steps array
+  const newSteps = JSON.parse(JSON.stringify(steps))
+  const currentIndex = steps.map((s) => s.id).indexOf(currentPhase)
+  const nextIndex =
+    currentIndex + 1 >= steps.length ? currentIndex : currentIndex + 1
+  const prevIndex = currentIndex - 1 <= 0 ? 0 : currentIndex - 1
+
+  const newIndex = opeation === 'prev' ? prevIndex : nextIndex
+  const nextPhase = steps[newIndex].id
+
+  for (let i = 0; i < steps.length; i++) {
+    if (i <= newIndex) {
+      newSteps[i].active = true
+    } else {
+      newSteps[i].active = false
+    }
+  }
+
+  return { newSteps, nextPhase }
+}
+
 const reducer = (state, action) => {
   const { type, payload } = action
-  const { steps } = state
-  const changeStep = (nextPhase) => {
-    // deep copy the steps array
-    const newStepStatus = JSON.parse(JSON.stringify(steps))
-    const nextIndex = steps.map((s) => s.id).indexOf(nextPhase)
-    for (let i = 0; i < steps.length; i++) {
-      if (i <= nextIndex) {
-        newStepStatus[i].active = true
-      } else {
-        newStepStatus[i].active = false
-      }
-    }
+  const { stepOperation = 'next' } = payload
+  const { steps, currentPhase } = state
 
-    return newStepStatus
-  }
+  const { newSteps, nextPhase } = changeStep(currentPhase, steps, stepOperation)
 
   switch (type) {
     case CHANGE_PHASE: {
-      const { nextPhase } = payload
       return {
         ...state,
         currentPhase: nextPhase,
-        steps: changeStep(nextPhase),
+        steps: newSteps,
       }
     }
     case PHASES.CHOOSE_TEMPLATE: {
-      const { resumeType, nextPhase } = payload
+      const { resumeType } = payload
       return {
         ...state,
         resumes: {
@@ -36,34 +46,34 @@ const reducer = (state, action) => {
           resumeType,
         },
         currentPhase: nextPhase,
-        steps: changeStep(nextPhase),
+        steps: newSteps,
       }
     }
     case PHASES.HEADER: {
-      const { resume, nextPhase } = payload
+      const { resume } = payload
       return {
         ...state,
         resumes: {
           ...resume,
         },
         currentPhase: nextPhase,
-        steps: changeStep(nextPhase),
+        steps: newSteps,
       }
     }
-    case PHASES.OBJECTIVE: {
-      const { objective, nextPhase } = payload
+    case PHASES.CORE_COMPENTENCIES: {
+      const { coreCompetencies } = payload
       return {
         ...state,
         resumes: {
           ...state.resumes,
-          objective,
+          coreCompetencies,
         },
         currentPhase: nextPhase,
-        steps: changeStep(nextPhase),
+        steps: newSteps,
       }
     }
     case PHASES.SUMMARY: {
-      const { summary, nextPhase } = payload
+      const { summary } = payload
       return {
         ...state,
         resumes: {
@@ -71,11 +81,11 @@ const reducer = (state, action) => {
           summary,
         },
         currentPhase: nextPhase,
-        steps: changeStep(nextPhase),
+        steps: newSteps,
       }
     }
     case PHASES.SKILLS: {
-      const { skills, nextPhase } = payload
+      const { skills } = payload
       return {
         ...state,
         resumes: {
@@ -83,11 +93,11 @@ const reducer = (state, action) => {
           skills,
         },
         currentPhase: nextPhase,
-        steps: changeStep(nextPhase),
+        steps: newSteps,
       }
     }
     case PHASES.EXPERIENCE: {
-      const { experience, nextPhase } = payload
+      const { experience } = payload
       return {
         ...state,
         resumes: {
@@ -95,11 +105,11 @@ const reducer = (state, action) => {
           experience,
         },
         currentPhase: nextPhase,
-        steps: changeStep(nextPhase),
+        steps: newSteps,
       }
     }
     case PHASES.EDUCATION: {
-      const { education, nextPhase } = payload
+      const { education } = payload
       return {
         ...state,
         resumes: {
@@ -107,7 +117,19 @@ const reducer = (state, action) => {
           education,
         },
         currentPhase: nextPhase,
-        steps: changeStep(nextPhase),
+        steps: newSteps,
+      }
+    }
+    case PHASES.INTERESTS: {
+      const { interests } = payload
+      return {
+        ...state,
+        resumes: {
+          ...state.resumes,
+          interests,
+        },
+        currentPhase: nextPhase,
+        steps: newSteps,
       }
     }
     default: {

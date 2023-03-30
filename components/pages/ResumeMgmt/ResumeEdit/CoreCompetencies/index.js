@@ -3,10 +3,10 @@ import dynamic from 'next/dynamic'
 
 import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
 
-const Objective = ({ resumes, onSubmit, onBack }) => {
+const CoreCompetencies = ({ resumes, onSubmit, onBack }) => {
   const DraftEditor = dynamic(() => import('@/components/commons/DraftEditor'))
 
-  const state = useRef(resumes.objective)
+  const state = useRef(resumes.coreCompetencies)
 
   return (
     <div>
@@ -14,16 +14,16 @@ const Objective = ({ resumes, onSubmit, onBack }) => {
         onChange={(contentState) => {
           state.current = contentState
         }}
-        initialVale={resumes.objective}
+        initialVale={resumes.coreCompetencies}
       />
       <ButtonGroup
         onBack={onBack}
         onNext={() => {
-          onSubmit({ objective: state.current })
+          onSubmit({ coreCompetencies: state.current })
         }}
       />
     </div>
   )
 }
 
-export default Objective
+export default CoreCompetencies

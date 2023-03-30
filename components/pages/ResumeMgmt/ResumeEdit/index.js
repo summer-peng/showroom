@@ -3,10 +3,11 @@ import PropTypes from 'prop-types'
 
 import StepProgress from '@/components/commons/StepProgress'
 import ChooseTemplate from '@/components/pages/ResumeMgmt/ResumeEdit/ChooseTemplate'
+import CoreCompetencies from '@/components/pages/ResumeMgmt/ResumeEdit/CoreCompetencies'
 import Education from '@/components/pages/ResumeMgmt/ResumeEdit/Education'
 import Experience from '@/components/pages/ResumeMgmt/ResumeEdit/Experience'
 import Header from '@/components/pages/ResumeMgmt/ResumeEdit/Header'
-import Objective from '@/components/pages/ResumeMgmt/ResumeEdit/Objective'
+import Interests from '@/components/pages/ResumeMgmt/ResumeEdit/Interests'
 import Skills from '@/components/pages/ResumeMgmt/ResumeEdit/Skills'
 import Summary from '@/components/pages/ResumeMgmt/ResumeEdit/Summary'
 
@@ -36,11 +37,11 @@ const ResumeEdit = ({ initialResume }) => {
       case PHASES.HEADER: {
         return Header
       }
-      case PHASES.OBJECTIVE: {
-        return Objective
-      }
       case PHASES.SUMMARY: {
         return Summary
+      }
+      case PHASES.CORE_COMPENTENCIES: {
+        return CoreCompetencies
       }
       case PHASES.SKILLS: {
         return Skills
@@ -50,6 +51,9 @@ const ResumeEdit = ({ initialResume }) => {
       }
       case PHASES.EDUCATION: {
         return Education
+      }
+      case PHASES.INTERESTS: {
+        return Interests
       }
     }
   }, [currentPhase])

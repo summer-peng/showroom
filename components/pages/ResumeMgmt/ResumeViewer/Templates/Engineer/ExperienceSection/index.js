@@ -13,13 +13,15 @@ const ExperienceSection = ({
   return (
     <section className={styles['experience-section']}>
       <div className={styles['job-intro']}>
-        <div className={styles['job-title']}>{jobTitle}</div>
+        <div>
+          <span className={styles['job-title']}>{jobTitle}</span>
+          <span>
+            {companyName} | {city}
+          </span>
+        </div>
         <div className={styles['duration']}>
           {startDate} - {endDate}
         </div>
-      </div>
-      <div className={styles['company-name']}>
-        {companyName} | {city}
       </div>
       <div className={styles['job-detail']}>
         <ul>

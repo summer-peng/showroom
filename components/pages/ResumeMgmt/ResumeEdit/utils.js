@@ -2,11 +2,12 @@ export const CHANGE_PHASE = 'change_phase'
 export const PHASES = {
   CHOOSE_TEMPLATE: 'choose_template',
   HEADER: 'header',
-  OBJECTIVE: 'objective',
   SUMMARY: 'summary',
+  CORE_COMPENTENCIES: 'core_compentencies',
   SKILLS: 'skills',
   EXPERIENCE: 'experience',
   EDUCATION: 'education',
+  INTERESTS: 'interests',
 }
 
 const currentPhase = PHASES.CHOOSE_TEMPLATE
@@ -25,6 +26,7 @@ export const defaultState = {
     phoneNumber: '',
     email: '',
     skills: [],
+    interests: [],
     experience: [],
     education: [],
   },

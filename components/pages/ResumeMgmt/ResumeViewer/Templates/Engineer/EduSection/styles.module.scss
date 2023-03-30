@@ -2,14 +2,19 @@
     color: #4a4a4a;
 }
 
-.degree {
+.degree-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    span {
-        color: #000000;
-        font-weight: 600;
-    }
+}
+
+.degree {
+    color: #000000;
+    font-weight: 600;
+}
+
+.sepreate {
+    margin: 0px 5px;
 }
 
 .graduation-date {

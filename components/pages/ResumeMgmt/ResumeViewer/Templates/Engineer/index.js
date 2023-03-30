@@ -19,8 +19,12 @@ const Engineer = ({ resume }) => {
     summary,
     experience = [],
     education = [],
-    objective,
+    coreCompetencies,
+    address,
     city,
+    province,
+    postalCode,
+    interests,
   } = resume
 
   return (
@@ -36,7 +40,7 @@ const Engineer = ({ resume }) => {
       </div>
       <div className={styles['additional-info']}>
         <div className={styles['city-mail']}>
-          <div>{city}</div>
+          <div>{`${address}, ${city}, ${province} ${postalCode}`}</div>
           <div>{email}</div>
         </div>
         <div className={styles['links']}>
@@ -52,13 +56,16 @@ const Engineer = ({ resume }) => {
           )}
         </div>
       </div>
-      <InfoSection title="Objective">
-        <DraftEditorPrinter contentState={objective} />
-      </InfoSection>
-      <InfoSection title="Hightlights" className={styles['hightlighs-section']}>
+      <InfoSection title="Summary" className={styles['hightlighs-section']}>
         <DraftEditorPrinter contentState={summary} />
       </InfoSection>
-      <InfoSection title="Experience">
+      <InfoSection
+        title="Core Competencies"
+        className={styles['hightlighs-section']}
+      >
+        <DraftEditorPrinter contentState={coreCompetencies} />
+      </InfoSection>
+      <InfoSection title="Achievements">
         {experience.map((exp, index) => {
           const { jobTitle, companyName, city, startDate, endDate, detail } =
             exp
@@ -90,6 +97,13 @@ const Engineer = ({ resume }) => {
             />
           )
         })}
+      </InfoSection>
+      <InfoSection title="Interests">
+        <ul className={styles['interests-ul']}>
+          {interests.map((intrs, index) => {
+            return <li key={index}>{intrs}</li>
+          })}
+        </ul>
       </InfoSection>
     </TemplateWrapper>
   )

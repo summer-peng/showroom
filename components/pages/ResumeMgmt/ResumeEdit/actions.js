@@ -1,78 +1,80 @@
 import { CHANGE_PHASE, PHASES } from './utils'
 
-export const nextPhaseAction = (nextPhase) => {
+export const nextPhaseAction = (stepOperation) => {
   return {
     type: CHANGE_PHASE,
-    payload: { nextPhase },
+    payload: { stepOperation },
   }
 }
 
-export const resumeTypeAction = (resumeType, nextPhase) => {
+export const resumeTypeAction = (resumeType) => {
   return {
     type: PHASES.CHOOSE_TEMPLATE,
     payload: {
       resumeType,
-      nextPhase,
     },
   }
 }
 
-export const headerAction = (header, nextPhase) => {
+export const headerAction = (header) => {
   return {
     type: PHASES.HEADER,
     payload: {
       resume: { ...header },
-      nextPhase,
     },
   }
 }
 
-export const objectiveAction = (objectiveForm, nextPhase) => {
+export const coreCompetenciesAction = (form) => {
   return {
-    type: PHASES.OBJECTIVE,
+    type: PHASES.CORE_COMPENTENCIES,
     payload: {
-      objective: objectiveForm.objective,
-      nextPhase,
+      coreCompetencies: form.coreCompetencies,
     },
   }
 }
 
-export const summaryAction = (summaryForm, nextPhase) => {
+export const summaryAction = (summaryForm) => {
   return {
     type: PHASES.SUMMARY,
     payload: {
       summary: summaryForm.summary,
-      nextPhase,
     },
   }
 }
 
-export const skillsAction = (skills, nextPhase) => {
+export const skillsAction = (skills) => {
   return {
     type: PHASES.SKILLS,
     payload: {
       skills,
-      nextPhase,
     },
   }
 }
 
-export const experienceAction = (experience, nextPhase) => {
+export const experienceAction = (experience) => {
   return {
     type: PHASES.EXPERIENCE,
     payload: {
       experience,
-      nextPhase,
     },
   }
 }
 
-export const educationAction = (education, nextPhase) => {
+export const educationAction = (education) => {
   return {
     type: PHASES.EDUCATION,
     payload: {
       education,
-      nextPhase,
+    },
+  }
+}
+
+export const interestsAction = (interests) => {
+  return {
+    type: PHASES.INTERESTS,
+    payload: {
+      interests,
     },
   }
 }

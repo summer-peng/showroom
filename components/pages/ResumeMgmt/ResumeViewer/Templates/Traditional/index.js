@@ -20,7 +20,7 @@ const TraditionalTemplate = ({ resume }) => {
     skills = [],
     experience = [],
     education = [],
-    objective,
+    coreCompetencies,
   } = resume
 
   return (
@@ -45,11 +45,11 @@ const TraditionalTemplate = ({ resume }) => {
         )}
         <span>{`${city}, ${province} ${postalCode}`}</span>
       </div>
-      <InfoSection title="Objective">
-        <DraftEditorPrinter contentState={objective} />
-      </InfoSection>
       <InfoSection title="Summary" className={styles['summary-section']}>
         <DraftEditorPrinter contentState={summary} />
+      </InfoSection>
+      <InfoSection title="Core Competencies">
+        <DraftEditorPrinter contentState={coreCompetencies} />
       </InfoSection>
       <InfoSection title="Skills">
         <ul className={styles['skills-ul']}>
