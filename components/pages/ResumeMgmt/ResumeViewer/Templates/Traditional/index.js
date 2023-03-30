@@ -1,9 +1,10 @@
-import DraftEditorPrinter from '@/components/commons/DraftEdiorPrinter'
-import TemplateWrapper from '@/components/pages/ResumeMgmt/ResumeViewer/TemplateWrapper'
+import DraftEdiorPrinterSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/DraftEditorPrinterSection'
+import EduSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/EduSection'
+import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection'
+import InterestsSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InterestsSection'
+import TemplateWrapper from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/TemplateWrapper'
 
-import EduSection from './EduSection'
 import ExperienceSection from './ExperienceSection'
-import InfoSection from './InfoSection'
 
 import styles from './styles.module.scss'
 
@@ -45,15 +46,11 @@ const TraditionalTemplate = ({ resume }) => {
         )}
         <span>{`${city}, ${province} ${postalCode}`}</span>
       </div>
-      <InfoSection title="Summary" className={styles['summary-section']}>
-        <DraftEditorPrinter contentState={summary} />
-      </InfoSection>
-      <InfoSection
+      <DraftEdiorPrinterSection title="Summary" contentState={summary} />
+      <DraftEdiorPrinterSection
         title="Core Competencies"
-        className={styles['summary-section']}
-      >
-        <DraftEditorPrinter contentState={coreCompetencies} />
-      </InfoSection>
+        contentState={coreCompetencies}
+      />
       <InfoSection title="Experience">
         {experience.map((exp, index) => {
           const { jobTitle, companyName, city, startDate, endDate, detail } =
@@ -71,29 +68,8 @@ const TraditionalTemplate = ({ resume }) => {
           )
         })}
       </InfoSection>
-      <InfoSection title="Education">
-        {education.map((edu, index) => {
-          const { name, location, degree, major, startDate, endDate } = edu
-          return (
-            <EduSection
-              key={index}
-              schoolName={name}
-              location={location}
-              degree={degree}
-              major={major}
-              startDate={startDate}
-              endDate={endDate}
-            />
-          )
-        })}
-      </InfoSection>
-      <InfoSection title="Interests">
-        <ul className={styles['interests-ul']}>
-          {interests.map((intrs, index) => {
-            return <li key={index}>{intrs}</li>
-          })}
-        </ul>
-      </InfoSection>
+      <EduSection education={education} />
+      <InterestsSection interests={interests} />
     </TemplateWrapper>
   )
 }

@@ -1,8 +1,3 @@
-@mixin common-ul {
-    padding-left: 14px;
-    margin-bottom: 0;
-}
-
 .employee-info-wrapper {
     display: flex;
     align-items: center;
@@ -22,20 +17,6 @@
         font-size: 14px;
         margin-left: 10px;
     }
-}
-
-.hightlighs-section {
-    ul{
-        @include common-ul;
-    }
-}
-
-.interests-ul {
-    @include common-ul;
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    list-style-type: none;
 }
 
 .additional-info {

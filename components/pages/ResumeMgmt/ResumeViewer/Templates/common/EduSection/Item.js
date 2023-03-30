@@ -2,14 +2,7 @@ import PropTypes from 'prop-types'
 
 import styles from './styles.module.scss'
 
-const EduSection = ({
-  schoolName,
-  location,
-  degree,
-  major,
-  startDate,
-  endDate,
-}) => {
+const Item = ({ schoolName, location, degree, major, startDate, endDate }) => {
   return (
     <section className={styles['edu-section']}>
       <div className={styles['degree-wrapper']}>
@@ -33,7 +26,7 @@ const EduSection = ({
   )
 }
 
-EduSection.propTypes = {
+Item.propTypes = {
   schoolName: PropTypes.string,
   location: PropTypes.string,
   degree: PropTypes.string,
@@ -41,4 +34,4 @@ EduSection.propTypes = {
   gradiatedDate: PropTypes.string,
 }
 
-export default EduSection
+export default Item
