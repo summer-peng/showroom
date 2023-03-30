@@ -11,7 +11,6 @@ import {
   interestsAction,
   nextPhaseAction,
   resumeTypeAction,
-  skillsAction,
   summaryAction,
 } from './actions'
 import { upsertResume } from './api'
@@ -32,11 +31,8 @@ const useSubmitAndBack = ({ state, dispatch }) => {
     [PHASES.SUMMARY]: (summary) => {
       dispatch(summaryAction(summary))
     },
-    [PHASES.CORE_COMPENTENCIES]: (coreCompentencies) => {
-      dispatch(coreCompetenciesAction(coreCompentencies))
-    },
-    [PHASES.SKILLS]: (skills) => {
-      dispatch(skillsAction(skills))
+    [PHASES.CORE_COMPENTENCIES]: (coreCompetencies) => {
+      dispatch(coreCompetenciesAction(coreCompetencies))
     },
     [PHASES.EXPERIENCE]: (experience) => {
       dispatch(experienceAction(experience))

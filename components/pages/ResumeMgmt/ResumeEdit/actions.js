@@ -43,15 +43,6 @@ export const summaryAction = (summaryForm) => {
   }
 }
 
-export const skillsAction = (skills) => {
-  return {
-    type: PHASES.SKILLS,
-    payload: {
-      skills,
-    },
-  }
-}
-
 export const experienceAction = (experience) => {
   return {
     type: PHASES.EXPERIENCE,

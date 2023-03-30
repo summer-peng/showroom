@@ -17,10 +17,10 @@ const TraditionalTemplate = ({ resume }) => {
     province,
     postalCode,
     summary,
-    skills = [],
     experience = [],
     education = [],
     coreCompetencies,
+    interests,
   } = resume
 
   return (
@@ -48,15 +48,11 @@ const TraditionalTemplate = ({ resume }) => {
       <InfoSection title="Summary" className={styles['summary-section']}>
         <DraftEditorPrinter contentState={summary} />
       </InfoSection>
-      <InfoSection title="Core Competencies">
+      <InfoSection
+        title="Core Competencies"
+        className={styles['summary-section']}
+      >
         <DraftEditorPrinter contentState={coreCompetencies} />
-      </InfoSection>
-      <InfoSection title="Skills">
-        <ul className={styles['skills-ul']}>
-          {skills.map((skill, index) => {
-            return <li key={index}>{skill}</li>
-          })}
-        </ul>
       </InfoSection>
       <InfoSection title="Experience">
         {experience.map((exp, index) => {
@@ -90,6 +86,13 @@ const TraditionalTemplate = ({ resume }) => {
             />
           )
         })}
+      </InfoSection>
+      <InfoSection title="Interests">
+        <ul className={styles['interests-ul']}>
+          {interests.map((intrs, index) => {
+            return <li key={index}>{intrs}</li>
+          })}
+        </ul>
       </InfoSection>
     </TemplateWrapper>
   )

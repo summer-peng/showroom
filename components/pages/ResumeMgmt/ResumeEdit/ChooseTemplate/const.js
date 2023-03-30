@@ -6,7 +6,6 @@ export const dummyData = {
   city: 'Vancouver',
   province: 'B.C.',
   postalCode: '3Z3 1AB',
-  skills: ['Make a joke', 'EEE', 'EEE', '123', 'SDSD'],
   summary: 'This is a demo',
   linkedinUrl: 'abc',
   githubUrl: 'cdff',

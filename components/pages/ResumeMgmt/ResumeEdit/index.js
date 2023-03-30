@@ -8,7 +8,6 @@ import Education from '@/components/pages/ResumeMgmt/ResumeEdit/Education'
 import Experience from '@/components/pages/ResumeMgmt/ResumeEdit/Experience'
 import Header from '@/components/pages/ResumeMgmt/ResumeEdit/Header'
 import Interests from '@/components/pages/ResumeMgmt/ResumeEdit/Interests'
-import Skills from '@/components/pages/ResumeMgmt/ResumeEdit/Skills'
 import Summary from '@/components/pages/ResumeMgmt/ResumeEdit/Summary'
 
 import reducer from './reducer'
@@ -42,9 +41,6 @@ const ResumeEdit = ({ initialResume }) => {
       }
       case PHASES.CORE_COMPENTENCIES: {
         return CoreCompetencies
-      }
-      case PHASES.SKILLS: {
-        return Skills
       }
       case PHASES.EXPERIENCE: {
         return Experience

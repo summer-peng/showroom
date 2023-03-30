@@ -4,7 +4,6 @@ export const PHASES = {
   HEADER: 'header',
   SUMMARY: 'summary',
   CORE_COMPENTENCIES: 'core_compentencies',
-  SKILLS: 'skills',
   EXPERIENCE: 'experience',
   EDUCATION: 'education',
   INTERESTS: 'interests',
@@ -25,7 +24,8 @@ export const defaultState = {
     lastName: '',
     phoneNumber: '',
     email: '',
-    skills: [],
+    summary: null,
+    coreCompetencies: null,
     interests: [],
     experience: [],
     education: [],
@@ -40,7 +40,6 @@ export const initialTestStates = {
     lastName: 'Peng',
     phoneNumber: '3345678',
     email: 'zjone.peng@gmail.com',
-    skills: ['JAVA', 'EEE', 'EEE', 'EESDSD', 'SDSD'],
     experience: [
       {
         jobTitle: 'Frontend Engineer',

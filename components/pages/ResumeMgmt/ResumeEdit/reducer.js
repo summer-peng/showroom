@@ -84,18 +84,6 @@ const reducer = (state, action) => {
         steps: newSteps,
       }
     }
-    case PHASES.SKILLS: {
-      const { skills } = payload
-      return {
-        ...state,
-        resumes: {
-          ...state.resumes,
-          skills,
-        },
-        currentPhase: nextPhase,
-        steps: newSteps,
-      }
-    }
     case PHASES.EXPERIENCE: {
       const { experience } = payload
       return {
