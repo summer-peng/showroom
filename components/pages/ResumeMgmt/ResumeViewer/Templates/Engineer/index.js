@@ -61,7 +61,7 @@ const Engineer = ({ resume }) => {
         title="Core Competencies"
         contentState={coreCompetencies}
       />
-      <InfoSection title="Achievements">
+      <InfoSection title="Experience">
         {experience.map((exp, index) => {
           const { jobTitle, companyName, city, startDate, endDate, detail } =
             exp

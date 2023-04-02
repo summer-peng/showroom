@@ -1,3 +1,4 @@
+import { convertFromRaw, EditorState } from 'draft-js'
 import PropTypes from 'prop-types'
 
 import DraftEditorPrinter from '@/components/commons/DraftEdiorPrinter'
@@ -6,6 +7,17 @@ import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/co
 import styles from './styles.module.scss'
 
 const DraftEdiorPrinterSection = ({ title, contentState }) => {
+  if (!contentState) {
+    return null
+  }
+
+  const editorState = EditorState.createWithContent(
+    convertFromRaw(contentState),
+  )
+  if (!editorState.getCurrentContent().hasText()) {
+    return null
+  }
+
   return (
     <InfoSection
       title={title}
