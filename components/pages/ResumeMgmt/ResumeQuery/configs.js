@@ -10,7 +10,7 @@ export const tableConfig = [
     cellRenderer: ({ rowData }) => {
       const { id } = rowData
       return (
-        <div>
+        <div className={styles['function-section']}>
           <a
             target="_blank"
             href={`/resume-mgmt/resume-viewer/${id}`}
@@ -22,7 +22,13 @@ export const tableConfig = [
                 styles['icon-style'],
               )}
               title="Go to resume page"
-            ></i>
+            />
+          </a>
+          <a href={`/resume-mgmt/resume-edit?copiedId=${id}`}>
+            <i
+              className={classnames('fa-regular fa-copy', styles['icon-style'])}
+              title="Copy resume"
+            />
           </a>
         </div>
       )

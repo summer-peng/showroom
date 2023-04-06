@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection'
 
 import styles from './styles.module.scss'
@@ -12,6 +14,14 @@ const InterestsSection = ({ interests }) => {
       </ul>
     </InfoSection>
   )
+}
+
+InterestsSection.defaultProps = {
+  interests: [],
+}
+
+InterestsSection.propTypes = {
+  interests: PropTypes.array,
 }
 
 export default InterestsSection

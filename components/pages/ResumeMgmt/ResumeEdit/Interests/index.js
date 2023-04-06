@@ -16,7 +16,7 @@ const Interests = ({ resumes, onSubmit, onBack }) => {
         setValueList={setInterestList}
         placeholder="Please add your interests"
       />
-      <ButtonGroup onNext={handleSubmit} onBack={onBack} />
+      <ButtonGroup nextTitle="Submit" onNext={handleSubmit} onBack={onBack} />
     </div>
   )
 }

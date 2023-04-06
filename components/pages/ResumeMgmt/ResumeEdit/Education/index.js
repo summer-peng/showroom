@@ -48,7 +48,6 @@ const Education = ({ onSubmit, onBack, resumes }) => {
               }
             })
           }}
-          nextTitle="Submit"
         />
       )}
     </div>

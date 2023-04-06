@@ -21,7 +21,7 @@ const ChooseTemplate = ({ resumes, onSubmit, onBack }) => {
   const selectedResumeType = { label: resumeType, value: resumeType }
   const [type, setType] = useState(selectedResumeType)
 
-  const demoResume = resumes.id ? resumes : dummyData
+  const demoResume = resumes.title ? resumes : dummyData
   return (
     <div className={styles['template-selection-container']}>
       <Select

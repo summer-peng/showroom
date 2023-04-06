@@ -1,4 +1,4 @@
-import { convertFromRaw, EditorState } from 'draft-js'
+import { ContentState, convertFromRaw, EditorState } from 'draft-js'
 import PropTypes from 'prop-types'
 
 import DraftEditorPrinter from '@/components/commons/DraftEdiorPrinter'
@@ -11,9 +11,15 @@ const DraftEdiorPrinterSection = ({ title, contentState }) => {
     return null
   }
 
-  const editorState = EditorState.createWithContent(
-    convertFromRaw(contentState),
-  )
+  let editorState = null
+  if (typeof contentState === 'string') {
+    editorState = EditorState.createWithContent(
+      ContentState.createFromText(contentState),
+    )
+  } else {
+    editorState = EditorState.createWithContent(convertFromRaw(contentState))
+  }
+
   if (!editorState.getCurrentContent().hasText()) {
     return null
   }
@@ -30,6 +36,6 @@ const DraftEdiorPrinterSection = ({ title, contentState }) => {
 
 DraftEdiorPrinterSection.propTypes = {
   title: PropTypes.string,
-  contentState: PropTypes.object,
+  contentState: PropTypes.any,
 }
 export default DraftEdiorPrinterSection

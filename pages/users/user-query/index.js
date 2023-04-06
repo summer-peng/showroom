@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
+import { getSession } from 'next-auth/react'
 
 import { CreateButton } from '@/components/commons/Buttons'
 import DataTable from '@/components/commons/DataTable'
@@ -9,7 +10,13 @@ import API from '@/utils/apiUtils'
 
 import styles from './styles.module.scss'
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context)
+  const user = session?.user || {}
+  if (user.email !== 'zjone.peng@gmail.com') {
+    return { notFound: true }
+  }
+
   const users = await getUserList({ page: 1, rows: 10 })
   const breadCrumbItems = [
     {

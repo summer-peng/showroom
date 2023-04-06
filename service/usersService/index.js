@@ -2,10 +2,10 @@ import { getHashBySha256 } from '@/service/utils/hashUtil'
 
 import prisma from '../utils/dbUtil'
 
-export const getUserByEmail = (email) => {
+export const getUserByEmail = (email = '') => {
   return prisma.users.findUnique({
     where: {
-      email: email,
+      email: email.toLowerCase(),
     },
     select: {
       password: true,
