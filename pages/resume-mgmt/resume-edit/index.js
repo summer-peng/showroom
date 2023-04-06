@@ -1,10 +1,4 @@
-import { useEffect, useState } from 'react'
-
 import ResumeEdit from '@/components/pages/ResumeMgmt/ResumeEdit'
-import {
-  deleteResumeFromStroage,
-  getResumeFromStorage,
-} from '@/components/pages/ResumeMgmt/ResumeEdit/utils'
 import { getResumeList } from '@/service/resumesService'
 
 export const getServerSideProps = async ({ query }) => {
