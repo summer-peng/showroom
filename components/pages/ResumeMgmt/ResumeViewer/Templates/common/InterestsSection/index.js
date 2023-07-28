@@ -5,6 +5,10 @@ import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/co
 import styles from './styles.module.scss'
 
 const InterestsSection = ({ interests }) => {
+  if (!interests || interests.length === 0) {
+    return
+  }
+
   return (
     <InfoSection title="Interests">
       <ul className={styles['interests-ul']}>
