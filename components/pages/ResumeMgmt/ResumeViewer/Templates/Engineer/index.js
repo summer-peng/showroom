@@ -27,6 +27,8 @@ const Engineer = ({ resume }) => {
     interests,
   } = resume
 
+  const addressInfo = address ? `${address}, ` : ''
+  const cityInfo = city ? `${city}, ` : ''
   return (
     <TemplateWrapper>
       <div className={styles['employee-info-wrapper']}>
@@ -40,7 +42,7 @@ const Engineer = ({ resume }) => {
       </div>
       <div className={styles['additional-info']}>
         <div className={styles['city-mail']}>
-          <div>{`${address}, ${city}, ${province} ${postalCode}`}</div>
+          <div>{`${addressInfo}${cityInfo}${province} ${postalCode}`}</div>
           <div>{email}</div>
         </div>
         <div className={styles['links']}>
