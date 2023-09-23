@@ -22,7 +22,14 @@ function MyApp({ Component, session, pageProps }) {
   const { toggle, open, close } = useToggle()
 
   if (Component.customizedPage) {
-    return <Component {...pageProps} />
+    return (
+      <BlockUIContext.Provider
+        value={{ show: toggle, blockUI: open, unBlockUI: close }}
+      >
+        <Component {...pageProps} />
+        <BlockUI />
+      </BlockUIContext.Provider>
+    )
   }
 
   return (

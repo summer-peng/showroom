@@ -32,6 +32,7 @@ const UserEdit = ({ title, initialValues, afterSubmit }) => {
     return checkEmail(email).then((isExist) => {
       if (isExist) {
         setFieldError('email', 'The email is already registed')
+        unBlockUI()
       } else {
         upsertUser({ ...values, email: email.toLowerCase() })
           .then(() => {
