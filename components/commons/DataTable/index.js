@@ -1,6 +1,7 @@
 import { AutoSizer, Column, Table } from 'react-virtualized'
 import PropTypes from 'prop-types'
 
+import NoData from './NoData'
 import Pagination from './Pagination'
 
 const DataTable = ({
@@ -39,13 +40,17 @@ const DataTable = ({
                   )
                 })}
               </Table>
-              <Pagination
-                page={page}
-                rows={rows}
-                totalRecords={totalRecords}
-                onPageChange={onPageChange}
-                style={{ width: `${width}px` }}
-              />
+              {dataList.length === 0 ? (
+                <NoData />
+              ) : (
+                <Pagination
+                  page={page}
+                  rows={rows}
+                  totalRecords={totalRecords}
+                  onPageChange={onPageChange}
+                  style={{ width: `${width}px` }}
+                />
+              )}
             </>
           )}
         </AutoSizer>
