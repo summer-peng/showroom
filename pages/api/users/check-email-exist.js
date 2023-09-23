@@ -6,6 +6,7 @@ export default function handler(req, res) {
     .then((result) => {
       if (result) {
         res.status(200).json(true)
+        return
       }
       res.status(200).json(false)
     })
