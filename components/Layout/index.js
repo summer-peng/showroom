@@ -27,11 +27,13 @@ const Layout = ({ breadCrumbItems, children }) => {
       <div className="main-layout">
         <Navigation setToggle={() => setToggle(!toggle)} />
         <div className={styles['content-container']}>
-          {toggle && (
-            <div className={classnames(styles['left-section'])}>
-              <Menu />
-            </div>
-          )}
+          <div
+            className={classnames(
+              styles[`left-section-${toggle ? 'active' : 'none'}`],
+            )}
+          >
+            <Menu />
+          </div>
           <div className={styles['right-section']}>
             <Breadcrumb items={breadCrumbItems} />
             <Container className="content-container">{children}</Container>

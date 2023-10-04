@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
 import styles from './styles.module.scss'
 
 const StepProgress = ({ steps }) => {
+  const { t } = useTranslation()
   const lastActiveIndex = steps.map((step) => step.active).lastIndexOf(true)
   return (
     <div className={styles['step-container']}>
@@ -17,7 +19,7 @@ const StepProgress = ({ steps }) => {
               lastActiveIndex === index ? styles['last-active'] : null,
             )}
           >
-            {title}
+            {t(title)}
           </div>
         )
       })}

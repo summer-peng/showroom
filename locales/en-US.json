@@ -2,5 +2,12 @@
     "title": "US Title",
     "language": "Language",
     "en_US": "English(U.S.)",
-    "required":"Required"
+    "required":"Required",
+    "choose_template": "Choose Template",
+    "header": "Header",
+    "summary": "Summary",
+    "core_compentencies": "Compentencies",
+    "experience": "Experience",
+    "education": "Education",
+    "interests": "Interests"
 }

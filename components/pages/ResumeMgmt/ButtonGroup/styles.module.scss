@@ -1,6 +1,45 @@
 .container {
-    display: flex;
-    position: fixed;
-    bottom: 10px;
-    right:20px
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+}
+
+.create-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.create-tips {
+  position: absolute;
+  animation: mover 1s infinite alternate;
+  top: -60px;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 5px;
+  border-radius: 5px;
+}
+
+.create-tips::after {
+  content: '';
+  border-top: 10px solid #000;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 45px;
+}
+
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }

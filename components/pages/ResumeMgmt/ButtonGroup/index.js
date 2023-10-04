@@ -4,11 +4,20 @@ import { BackButton, Button } from '@/components/commons/Buttons'
 
 import styles from './styles.module.scss'
 
-const ButtonGroup = ({ onBack, onNext, onCreate, nextTitle }) => {
+const ButtonGroup = ({ onBack, onNext, onCreate, nextTitle, createTipMsg }) => {
   return (
     <div className={styles['container']}>
       {onCreate && (
-        <Button type="primary" titleKey="Create" onClick={(e) => onCreate(e)} />
+        <div className={styles['create-container']}>
+          {createTipMsg && (
+            <div className={styles['create-tips']}>{createTipMsg}</div>
+          )}
+          <Button
+            type="primary"
+            titleKey="Create"
+            onClick={(e) => onCreate(e)}
+          />
+        </div>
       )}
       {onBack && <BackButton onClick={(e) => onBack(e)} />}
       {onNext && (
@@ -24,12 +33,14 @@ const ButtonGroup = ({ onBack, onNext, onCreate, nextTitle }) => {
 
 ButtonGroup.defaultProps = {
   nextTitle: 'Next',
+  createTipMsg: '',
 }
 
 ButtonGroup.propTypes = {
   onBack: PropTypes.func,
   onNext: PropTypes.func,
   nextTitle: PropTypes.string,
+  createTipMsg: PropTypes.string,
 }
 
 export default ButtonGroup

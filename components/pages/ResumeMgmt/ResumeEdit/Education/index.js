@@ -48,6 +48,7 @@ const Education = ({ onSubmit, onBack, resumes }) => {
               }
             })
           }}
+          createTipMsg={myEducation.length === 0 ? 'Create here' : ''}
         />
       )}
     </div>

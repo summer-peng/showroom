@@ -2,5 +2,12 @@
     "title": "標題",
     "language": "語言",
     "zh_TW": "繁中",
-    "required":"必填"
+    "required":"必填",
+    "choose_template": "選擇樣板",
+    "header": "標頭",
+    "summary": "概要",
+    "core_compentencies": "核心技能",
+    "experience": "經驗",
+    "education": "學歷",
+    "interests": "興趣"
 }

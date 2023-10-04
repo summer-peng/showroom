@@ -48,6 +48,7 @@ const Experience = ({ resumes, onSubmit, onBack }) => {
               }
             })
           }}
+          createTipMsg={myExperience.length === 0 ? 'Create here' : ''}
           nextTitle="Next"
         />
       )}
