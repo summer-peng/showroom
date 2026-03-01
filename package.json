@@ -10,8 +10,8 @@
     "generate-schema": "prisma generate"
   },
   "dependencies": {
-    "@prisma/client": "4.3.1",
-    "@prisma/nextjs-monorepo-workaround-plugin": "^7.4.2",
+    "@prisma/client": "6.19.2",
+    "@prisma/nextjs-monorepo-workaround-plugin": "^6.19.2",
     "bootstrap": "5.2.2",
     "date-fns": "^2.29.3",
     "draft-js": "^0.11.7",
@@ -23,7 +23,7 @@
     "jspdf": "^2.5.1",
     "next": "12.3.1",
     "next-auth": "^4.19.2",
-    "prisma": "4.3.1",
+    "prisma": "^6.19.2",
     "react": "18.2.0",
     "react-bootstrap": "2.5.0",
     "react-datepicker": "^4.10.0",
