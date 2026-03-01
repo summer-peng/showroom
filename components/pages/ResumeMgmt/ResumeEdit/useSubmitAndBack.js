@@ -10,8 +10,8 @@ import {
   headerAction,
   interestsAction,
   nextPhaseAction,
-  resumeTypeAction,
   summaryAction,
+  templateConfigAction,
 } from './actions'
 import { upsertResume } from './api'
 import { PHASES } from './utils'
@@ -22,8 +22,8 @@ const useSubmitAndBack = ({ state, dispatch }) => {
   const router = useRouter()
 
   const SUBMIT_MAPPING = {
-    [PHASES.CHOOSE_TEMPLATE]: (resumeType) => {
-      dispatch(resumeTypeAction(resumeType))
+    [PHASES.CHOOSE_TEMPLATE]: (templateConfig) => {
+      dispatch(templateConfigAction(templateConfig))
     },
     [PHASES.HEADER]: (header) => {
       dispatch(headerAction(header))

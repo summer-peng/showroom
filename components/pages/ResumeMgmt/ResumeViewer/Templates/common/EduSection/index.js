@@ -4,9 +4,9 @@ import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/co
 
 import Item from './Item'
 
-const EduSection = ({ education }) => {
+const EduSection = ({ title, education }) => {
   return (
-    <InfoSection title="Education">
+    <InfoSection title={title}>
       {education.map((edu, index) => {
         const { name, location, degree, major, startDate, endDate } = edu
         return (
@@ -26,10 +26,12 @@ const EduSection = ({ education }) => {
 }
 
 EduSection.defaultProps = {
+  title: "",
   education: [],
 }
 
 EduSection.propTypes = {
+  title: PropTypes.string,
   education: PropTypes.array,
 }
 

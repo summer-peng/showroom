@@ -38,12 +38,13 @@ const reducer = (state, action) => {
       }
     }
     case PHASES.CHOOSE_TEMPLATE: {
-      const { resumeType } = payload
+      const { resumeType, lang } = payload
       return {
         ...state,
         resumes: {
           ...state.resumes,
           resumeType,
+          lang,
         },
         currentPhase: nextPhase,
         steps: newSteps,

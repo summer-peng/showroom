@@ -1,4 +1,4 @@
-import { convertToDateString, convertToDateTimeString } from '@/utils/dateUtils'
+import { convertToDateString } from '@/utils/dateUtils'
 
 import prisma from '../utils/dbUtil'
 
@@ -21,6 +21,9 @@ export const getResumeList = (params) => {
       where: whereCondtion,
       skip: (page - 1) * rows,
       take: rows,
+      orderBy: [{
+        updateDate:"desc"
+      }]
     })
     .then((data) => {
       return prisma.resumes.count().then((count) => {

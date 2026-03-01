@@ -7,12 +7,10 @@ export const nextPhaseAction = (stepOperation) => {
   }
 }
 
-export const resumeTypeAction = (resumeType) => {
+export const templateConfigAction = (templateConfig) => {
   return {
     type: PHASES.CHOOSE_TEMPLATE,
-    payload: {
-      resumeType,
-    },
+    payload: { ...templateConfig },
   }
 }
 

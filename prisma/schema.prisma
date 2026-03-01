@@ -39,6 +39,7 @@ model resumes {
   experience       Json?
   education        Json?
   resumeType       String?
+  lang             String?
   linkedinUrl      String?
   githubUrl        String?
   createDate       DateTime @default(now())

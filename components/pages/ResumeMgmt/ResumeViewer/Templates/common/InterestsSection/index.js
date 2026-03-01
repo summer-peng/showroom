@@ -4,13 +4,13 @@ import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/co
 
 import styles from './styles.module.scss'
 
-const InterestsSection = ({ interests }) => {
+const InterestsSection = ({ title, interests }) => {
   if (!interests || interests.length === 0) {
     return
   }
 
   return (
-    <InfoSection title="Interests">
+    <InfoSection title={title}>
       <ul className={styles['interests-ul']}>
         {interests.map((intrs, index) => {
           return <li key={index}>{intrs}</li>
@@ -21,10 +21,12 @@ const InterestsSection = ({ interests }) => {
 }
 
 InterestsSection.defaultProps = {
+  title: "",
   interests: [],
 }
 
 InterestsSection.propTypes = {
+  title: PropTypes.string,
   interests: PropTypes.array,
 }
 

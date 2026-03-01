@@ -1,6 +1,8 @@
 import { NavDropdown } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 
+import { langOptions } from './const'
+
 const LanguageSelection = () => {
   const { t, i18n } = useTranslation()
 
@@ -11,14 +13,10 @@ const LanguageSelection = () => {
   }
   return (
     <NavDropdown className="language-section" title={t(currentLang)}>
-      {[
-        { locale: 'en-US', title: 'English(U.S.)' },
-        { locale: 'zh-CN', title: '簡體中文' },
-        { locale: 'zh-TW', title: '繁體中文' },
-      ].map(({ locale, title }) => {
+      {langOptions.map(({ value: locale, label }) => {
         return (
           <NavDropdown.Item key={locale} onClick={() => onLangChange(locale)}>
-            {title}
+            {label}
           </NavDropdown.Item>
         )
       })}

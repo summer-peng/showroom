@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import DraftEdiorPrinterSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/DraftEditorPrinterSection'
 import EduSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/EduSection'
 import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection'
@@ -29,6 +31,8 @@ const Engineer = ({ resume }) => {
 
   const addressInfo = address ? `${address}, ` : ''
   const cityInfo = city ? `${city}, ` : ''
+  const { t } = useTranslation()
+
   return (
     <TemplateWrapper>
       <div className={styles['employee-info-wrapper']}>
@@ -58,12 +62,15 @@ const Engineer = ({ resume }) => {
           )}
         </div>
       </div>
-      <DraftEdiorPrinterSection title="Summary" contentState={summary} />
+      <DraftEdiorPrinterSection
+        title={t('summary', { lng: resume.lang })}
+        contentState={summary}
+      />
       <DraftEdiorPrinterSection
         title="Core Competencies"
         contentState={coreCompetencies}
       />
-      <InfoSection title="Experience">
+      <InfoSection title={t('experience', { lng: resume.lang })}>
         {experience.map((exp, index) => {
           const { jobTitle, companyName, city, startDate, endDate, detail } =
             exp
@@ -80,8 +87,14 @@ const Engineer = ({ resume }) => {
           )
         })}
       </InfoSection>
-      <EduSection education={education} />
-      <InterestsSection interests={interests} />
+      <EduSection
+        title={t('education', { lng: resume.lang })}
+        education={education}
+      />
+      <InterestsSection
+        title={t('interests', { lng: resume.lang })}
+        interests={interests}
+      />
     </TemplateWrapper>
   )
 }
