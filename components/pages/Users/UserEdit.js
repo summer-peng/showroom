@@ -11,7 +11,6 @@ import MessageUtils from '@/utils/messageUtils'
 
 import { checkEmailExisted, upsertUser } from './apis'
 import validationSchema from './validations'
-
 import styles from './styles.module.scss'
 
 const UserEdit = ({ title, initialValues, afterSubmit }) => {

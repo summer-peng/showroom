@@ -26,7 +26,7 @@ const EduSection = ({ title, education }) => {
 }
 
 EduSection.defaultProps = {
-  title: "",
+  title: '',
   education: [],
 }
 

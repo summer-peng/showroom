@@ -12,7 +12,7 @@ export const getServerSideProps = async ({ query }) => {
       const { dataList = [] } = resume || {}
 
       // ignore key id
-      // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { id, title, ...restProps } = dataList[0] || {}
 
       newResume = {

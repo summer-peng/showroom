@@ -2,8 +2,7 @@ import { getServerSession } from 'next-auth/next'
 
 import ResumeQuery from '@/components/pages/ResumeMgmt/ResumeQuery'
 import { getResumeList } from '@/service/resumesService'
-
-import { authOptions } from '/pages/api/auth/[...nextauth]'
+import { authOptions } from '@/pages/api/auth/[...nextauth]'
 
 export const getServerSideProps = async ({ req, res }) => {
   const session = await getServerSession(req, res, authOptions)

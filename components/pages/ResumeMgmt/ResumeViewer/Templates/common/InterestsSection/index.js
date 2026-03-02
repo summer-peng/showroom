@@ -21,7 +21,7 @@ const InterestsSection = ({ title, interests }) => {
 }
 
 InterestsSection.defaultProps = {
-  title: "",
+  title: '',
   interests: [],
 }
 

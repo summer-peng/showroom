@@ -50,6 +50,8 @@ const DraftEditor = ({ initialVale, onChange, value }) => {
 
   useEffect(() => {
     if (value) {
+      // 先暫時關閉 lint
+      /* eslint-disable-next-line react-hooks/set-state-in-effect */
       setEditorState(EditorState.createWithContent(convertFromRaw(value)))
     }
   }, [value])

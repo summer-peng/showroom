@@ -1,8 +1,8 @@
 import SSRProvider from 'react-bootstrap/SSRProvider'
 import { withTranslation } from 'react-i18next'
-import useToggle from 'hooks/useToggle.js'
 import { SessionProvider } from 'next-auth/react'
 
+import useToggle from 'hooks/useToggle.js'
 import Auth from '@/components/Auth'
 import BlockUI from '@/components/commons/BlockUI'
 import BlockUIContext from '@/components/commons/BlockUI/context'

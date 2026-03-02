@@ -57,6 +57,7 @@ const useDragAndDrop = ({ targetRef, index, moveItem }) => {
     }),
   })
 
+  // eslint-disable-next-line react-hooks/refs
   drag(drop(targetRef))
   return { handlerId, isDragging }
 }

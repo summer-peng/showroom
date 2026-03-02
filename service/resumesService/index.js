@@ -21,9 +21,11 @@ export const getResumeList = (params) => {
       where: whereCondtion,
       skip: (page - 1) * rows,
       take: rows,
-      orderBy: [{
-        updateDate:"desc"
-      }]
+      orderBy: [
+        {
+          updateDate: 'desc',
+        },
+      ],
     })
     .then((data) => {
       return prisma.resumes.count().then((count) => {

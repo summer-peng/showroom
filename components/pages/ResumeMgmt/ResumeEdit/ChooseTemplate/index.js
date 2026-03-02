@@ -44,7 +44,10 @@ const ChooseTemplate = ({ resumes, onSubmit, onBack }) => {
         onChange={(v) => setType(v)}
       />
       <ResumeViewer resume={{ ...demoResume, resumeType: type.value }} />
-      <ButtonGroup onBack={onBack} onNext={() => onSubmit({resumeType: type.value, lang: lang.value})} />
+      <ButtonGroup
+        onBack={onBack}
+        onNext={() => onSubmit({ resumeType: type.value, lang: lang.value })}
+      />
     </div>
   )
 }
