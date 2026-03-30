@@ -1,12 +1,12 @@
-import { useCallback } from 'react'
-import { Col, Row } from 'react-bootstrap'
-import { Formik } from 'formik'
+import { useCallback } from "react"
+import { Col, Row } from "react-bootstrap"
+import { Formik } from "formik"
 
-import FormField from '@/components/commons/Forms/FormField'
-import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
-import CreateList from '@/components/pages/ResumeMgmt/CreateList'
+import FormField from "@/components/commons/Forms/FormField"
+import ButtonGroup from "@/components/pages/ResumeMgmt/ButtonGroup"
+import CreateList from "@/components/pages/ResumeMgmt/CreateList"
 
-import { ACTION } from '../utils'
+import { ACTION } from "../utils"
 
 const Edit = ({ experience, currentIndex, setState }) => {
   const exp = experience[currentIndex] || {}
@@ -84,7 +84,7 @@ const Edit = ({ experience, currentIndex, setState }) => {
                     placeholder="Please input some details"
                     valueList={detail}
                     setValueList={(valueList) => {
-                      setFieldValue('detail', valueList)
+                      setFieldValue("detail", valueList)
                     }}
                   />
                 </Col>

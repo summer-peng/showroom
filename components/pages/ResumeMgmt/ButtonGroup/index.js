@@ -1,16 +1,16 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
-import { BackButton, Button } from '@/components/commons/Buttons'
+import { BackButton, Button } from "@/components/commons/Buttons"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const ButtonGroup = ({ onBack, onNext, onCreate, nextTitle, createTipMsg }) => {
   return (
-    <div className={styles['container']}>
+    <div className={styles["container"]}>
       {onCreate && (
-        <div className={styles['create-container']}>
+        <div className={styles["create-container"]}>
           {createTipMsg && (
-            <div className={styles['create-tips']}>{createTipMsg}</div>
+            <div className={styles["create-tips"]}>{createTipMsg}</div>
           )}
           <Button
             type="primary"
@@ -32,8 +32,8 @@ const ButtonGroup = ({ onBack, onNext, onCreate, nextTitle, createTipMsg }) => {
 }
 
 ButtonGroup.defaultProps = {
-  nextTitle: 'Next',
-  createTipMsg: '',
+  nextTitle: "Next",
+  createTipMsg: "",
 }
 
 ButtonGroup.propTypes = {

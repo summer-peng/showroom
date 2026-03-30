@@ -1,11 +1,11 @@
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from "react-dnd"
+import { HTML5Backend } from "react-dnd-html5-backend"
 
-import TextAddingInput from '@/components/commons/Forms/TextAddingInput'
+import TextAddingInput from "@/components/commons/Forms/TextAddingInput"
 
-import ListItem from './ListItem'
+import ListItem from "./ListItem"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const CreateList = ({ label, valueList, setValueList, placeholder }) => {
   return (
@@ -19,7 +19,7 @@ const CreateList = ({ label, valueList, setValueList, placeholder }) => {
         }}
       />
       <DndProvider backend={HTML5Backend}>
-        <div className={styles['wrapper']}>
+        <div className={styles["wrapper"]}>
           {valueList.map((val, index) => {
             return (
               <ListItem

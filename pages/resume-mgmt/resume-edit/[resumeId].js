@@ -1,19 +1,19 @@
-import ResumeEdit from '@/components/pages/ResumeMgmt/ResumeEdit'
-import { getResumeList } from '@/service/resumesService'
+import ResumeEdit from "@/components/pages/ResumeMgmt/ResumeEdit"
+import { getResumeList } from "@/service/resumesService"
 
 export const getServerSideProps = async ({ params }) => {
   const { resumeId } = params
   const breadCrumbItems = [
     {
-      name: 'Home',
-      url: '/',
+      name: "Home",
+      url: "/",
     },
     {
-      name: 'User Query',
-      url: '/users/user-query',
+      name: "User Query",
+      url: "/users/user-query",
     },
     {
-      name: 'User edit',
+      name: "User edit",
       active: true,
     },
   ]

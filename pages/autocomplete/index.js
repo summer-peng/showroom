@@ -1,19 +1,19 @@
-import AsyncSelect from '@/components/commons/Forms/AsyncSelect'
-import PasswordInput from '@/components/commons/Forms/PasswordInput'
-import MyAutocomplete from '@/components/commons/MyAutocomplete'
-import API from '@/utils/apiUtils'
+import AsyncSelect from "@/components/commons/Forms/AsyncSelect"
+import PasswordInput from "@/components/commons/Forms/PasswordInput"
+import MyAutocomplete from "@/components/commons/MyAutocomplete"
+import API from "@/utils/apiUtils"
 
-import CustomizedOption from './CustomizedOptions'
+import CustomizedOption from "./CustomizedOptions"
 
 export const getServerSideProps = async () => {
   const breadCrumbItems = [
     {
-      name: 'Home',
-      url: '/',
+      name: "Home",
+      url: "/",
     },
     {
-      name: 'Autocomplete',
-      url: '/autocomplete',
+      name: "Autocomplete",
+      url: "/autocomplete",
       active: true,
     },
   ]
@@ -25,7 +25,7 @@ export const getServerSideProps = async () => {
 }
 
 const queryUsers = (inputValue) => {
-  return API.post('/api/users/getUsers', { name: inputValue }).then(
+  return API.post("/api/users/getUsers", { name: inputValue }).then(
     (response) => {
       const { dataList } = response
       return dataList.map(({ firstName, lastName, id }) => ({
@@ -39,7 +39,7 @@ const queryUsers = (inputValue) => {
 export default function AutoComplete() {
   return (
     <div>
-      <PasswordInput label={'password'} />
+      <PasswordInput label={"password"} />
       <h3>Test AutoComplete</h3>
       <div>
         <AsyncSelect

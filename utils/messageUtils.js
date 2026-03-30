@@ -1,40 +1,40 @@
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import Swal from "sweetalert2"
+import withReactContent from "sweetalert2-react-content"
 
 const MySwal = withReactContent(Swal)
 
 const messageUtils = {
   success: (props = {}) => {
-    const { title = 'Success', text, ...restProps } = props
+    const { title = "Success", text, ...restProps } = props
     return MySwal.fire({
-      icon: 'success',
+      icon: "success",
       title: title,
       text: text,
       ...restProps,
     })
   },
   error: (props = {}) => {
-    const { title = 'Error', text, ...restProps } = props
+    const { title = "Error", text, ...restProps } = props
     return MySwal.fire({
-      icon: 'error',
+      icon: "error",
       title: title,
       text: text,
       ...restProps,
     })
   },
   question: (props) => {
-    const { title = 'Question', text, ...restProps } = props
+    const { title = "Question", text, ...restProps } = props
     return MySwal.fire({
-      icon: 'question',
+      icon: "question",
       title: title,
       text: text,
       ...restProps,
     })
   },
   warning: (props) => {
-    const { title = 'Warning', text, ...restProps } = props
+    const { title = "Warning", text, ...restProps } = props
     return MySwal.fire({
-      icon: 'warning',
+      icon: "warning",
       title: title,
       text: text,
       ...restProps,

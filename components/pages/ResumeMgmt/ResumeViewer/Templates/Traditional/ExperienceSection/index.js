@@ -1,7 +1,7 @@
-import classnames from 'classnames'
-import PropTypes from 'prop-types'
+import classnames from "classnames"
+import PropTypes from "prop-types"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const ExperienceSection = ({
   jobTitle,
@@ -12,17 +12,17 @@ const ExperienceSection = ({
   experienceList,
 }) => {
   return (
-    <section className={styles['experience-section']}>
-      <div className={styles['job-intro']}>
-        <div className={classnames('company-name', styles['company-name'])}>
+    <section className={styles["experience-section"]}>
+      <div className={styles["job-intro"]}>
+        <div className={classnames("company-name", styles["company-name"])}>
           {companyName} | {city}
         </div>
-        <div className={styles['job-title']}>{jobTitle}</div>
-        <div className={styles['duration']}>
+        <div className={styles["job-title"]}>{jobTitle}</div>
+        <div className={styles["duration"]}>
           {startDate}~{endDate}
         </div>
       </div>
-      <div className={styles['job-detail']}>
+      <div className={styles["job-detail"]}>
         <ul>
           {experienceList.map((exp, index) => {
             return <li key={index}>{exp}</li>

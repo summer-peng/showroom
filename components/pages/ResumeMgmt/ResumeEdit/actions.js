@@ -1,4 +1,4 @@
-import { CHANGE_PHASE, PHASES } from './utils'
+import { CHANGE_PHASE, PHASES } from "./utils"
 
 export const nextPhaseAction = (stepOperation) => {
   return {

@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router"
 
-import useBlockUI from '@/hooks/useBlockUI'
-import MessageUtils from '@/utils/messageUtils'
+import useBlockUI from "@/hooks/useBlockUI"
+import MessageUtils from "@/utils/messageUtils"
 
 import {
   coreCompetenciesAction,
@@ -12,9 +12,9 @@ import {
   nextPhaseAction,
   summaryAction,
   templateConfigAction,
-} from './actions'
-import { upsertResume } from './api'
-import { PHASES } from './utils'
+} from "./actions"
+import { upsertResume } from "./api"
+import { PHASES } from "./utils"
 
 const useSubmitAndBack = ({ state, dispatch }) => {
   const { steps } = state
@@ -54,7 +54,7 @@ const useSubmitAndBack = ({ state, dispatch }) => {
           return MessageUtils.success()
         })
         .then(() => {
-          router.push('/resume-mgmt/resume-query')
+          router.push("/resume-mgmt/resume-query")
         })
         .catch(() => {
           unBlockUI()
@@ -64,7 +64,7 @@ const useSubmitAndBack = ({ state, dispatch }) => {
 
   const BACK_MAPPING = {
     [PHASES.CHOOSE_TEMPLATE]: () => {
-      router.push('/resume-mgmt/resume-query')
+      router.push("/resume-mgmt/resume-query")
     },
   }
 
@@ -72,7 +72,7 @@ const useSubmitAndBack = ({ state, dispatch }) => {
     const id = step.id
     if (id !== PHASES.CHOOSE_TEMPLATE)
       BACK_MAPPING[id] = () => {
-        dispatch(nextPhaseAction('prev'))
+        dispatch(nextPhaseAction("prev"))
       }
   })
 

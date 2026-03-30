@@ -1,8 +1,8 @@
-import { useMemo } from 'react'
+import { useMemo } from "react"
 
-import EngineerTemplate from './Templates/Engineer'
-import TraditionalTemplate from './Templates/Traditional'
-import { TEMPLATE_TYPE } from './const'
+import EngineerTemplate from "./Templates/Engineer"
+import TraditionalTemplate from "./Templates/Traditional"
+import { TEMPLATE_TYPE } from "./const"
 
 const ResumeViewer = ({ resume }) => {
   const { resumeType } = resume

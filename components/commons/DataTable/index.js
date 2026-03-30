@@ -1,8 +1,8 @@
-import { AutoSizer, Column, Table } from 'react-virtualized'
-import PropTypes from 'prop-types'
+import { AutoSizer, Column, Table } from "react-virtualized"
+import PropTypes from "prop-types"
 
-import NoData from './NoData'
-import Pagination from './Pagination'
+import NoData from "./NoData"
+import Pagination from "./Pagination"
 
 const DataTable = ({
   tableConfig,

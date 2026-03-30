@@ -1,14 +1,14 @@
-import SpinnerProps from './Spinner.type'
-import styles from './styles.module.scss'
+import SpinnerProps from "./Spinner.type"
+import styles from "./styles.module.scss"
 
-const Spinner = ({ size = 40, color = '#ffffffff' }: SpinnerProps) => {
+const Spinner = ({ size = 40, color = "#ffffffff" }: SpinnerProps) => {
   return (
     <div
       className={styles.spinner}
       style={
         {
-          '--size': typeof size === 'number' ? `${size}px` : size,
-          '--color': color,
+          "--size": typeof size === "number" ? `${size}px` : size,
+          "--color": color,
         } as React.CSSProperties
       }
     >

@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react'
-import classnames from 'classnames'
-import useDetectOutside from 'hooks/useDetectOutside'
-import PropTypes from 'prop-types'
+import { useRef, useState } from "react"
+import classnames from "classnames"
+import useDetectOutside from "hooks/useDetectOutside"
+import PropTypes from "prop-types"
 
-import OptionList from './OptionList'
+import OptionList from "./OptionList"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const MyAutocomplete = ({
   name,
@@ -46,9 +46,9 @@ const MyAutocomplete = ({
   }
 
   return (
-    <div ref={autocompleteRef} className={styles['my-autocomplete']}>
+    <div ref={autocompleteRef} className={styles["my-autocomplete"]}>
       <input
-        className={classnames(showOptions ? styles['input-on-focus'] : null)}
+        className={classnames(showOptions ? styles["input-on-focus"] : null)}
         type="text"
         name={name}
         placeholder="Please typing..."
@@ -60,8 +60,8 @@ const MyAutocomplete = ({
       {showOptions && (
         <div
           className={classnames(
-            styles['options-container'],
-            showOptions ? styles['show-options'] : null,
+            styles["options-container"],
+            showOptions ? styles["show-options"] : null,
           )}
         >
           <OptionList
@@ -77,7 +77,7 @@ const MyAutocomplete = ({
 }
 
 MyAutocomplete.defaultProps = {
-  defaultValue: '',
+  defaultValue: "",
   onSelected: () => null,
   components: {},
 }

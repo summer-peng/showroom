@@ -1,16 +1,16 @@
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from "react-dnd"
+import { HTML5Backend } from "react-dnd-html5-backend"
 
-import { ACTION } from '../utils'
+import { ACTION } from "../utils"
 
-import Item from './Item'
+import Item from "./Item"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const List = ({ experience, setState }) => {
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className={styles['experience-container']}>
+      <div className={styles["experience-container"]}>
         {experience.map((exp, index) => {
           return (
             <Item

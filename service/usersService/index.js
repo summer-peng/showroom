@@ -1,8 +1,8 @@
-import { getHashBySha256 } from '@/service/utils/hashUtil'
+import { getHashBySha256 } from "@/service/utils/hashUtil"
 
-import prisma from '../utils/dbUtil'
+import prisma from "../utils/dbUtil"
 
-export const getUserByEmail = (email = '') => {
+export const getUserByEmail = (email = "") => {
   return prisma.users.findUnique({
     where: {
       email: email.toLowerCase(),
@@ -62,7 +62,7 @@ export const getUserList = (params) => {
           dataList: data.map((d) => {
             return {
               ...d,
-              password: '',
+              password: "",
             }
           }),
         }

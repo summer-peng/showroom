@@ -1,15 +1,15 @@
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DndProvider } from "react-dnd"
+import { HTML5Backend } from "react-dnd-html5-backend"
 
-import { ACTION } from '../utils'
+import { ACTION } from "../utils"
 
-import Item from './item'
+import Item from "./item"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const List = ({ education, setState }) => {
   return (
-    <div className={styles['education-container']}>
+    <div className={styles["education-container"]}>
       <DndProvider backend={HTML5Backend}>
         {education.map((edu, index) => {
           return (

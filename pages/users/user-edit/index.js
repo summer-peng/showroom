@@ -1,17 +1,17 @@
-import UserEdit from '@/components/pages/Users/UserEdit'
+import UserEdit from "@/components/pages/Users/UserEdit"
 
 export const getServerSideProps = () => {
   const breadCrumbItems = [
     {
-      name: 'Home',
-      url: '/',
+      name: "Home",
+      url: "/",
     },
     {
-      name: 'User Query',
-      url: '/users/user-query',
+      name: "User Query",
+      url: "/users/user-query",
     },
     {
-      name: 'User Create',
+      name: "User Create",
       active: true,
     },
   ]
@@ -24,10 +24,10 @@ export const getServerSideProps = () => {
 
 const UserCreatePage = () => {
   const initialValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
   }
 
   return <UserEdit initialValues={initialValues} />

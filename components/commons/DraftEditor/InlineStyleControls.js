@@ -1,10 +1,10 @@
-import StyleButton from './StyleButton'
+import StyleButton from "./StyleButton"
 
 const INLINE_STYLES = [
-  { label: 'Bold', style: 'BOLD' },
-  { label: 'Italic', style: 'ITALIC' },
-  { label: 'Underline', style: 'UNDERLINE' },
-  { label: 'Monospace', style: 'CODE' },
+  { label: "Bold", style: "BOLD" },
+  { label: "Italic", style: "ITALIC" },
+  { label: "Underline", style: "UNDERLINE" },
+  { label: "Monospace", style: "CODE" },
 ]
 
 const InlineStyleControls = ({ editorState, onToggle }) => {

@@ -1,40 +1,40 @@
 .employee-info-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 20px 0px 20px;
-    border-bottom: 2px solid #756f6f;
-    .name {
-        font-size: 26px;
-        font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 20px 0px 20px;
+  border-bottom: 2px solid #756f6f;
+  .name {
+    font-size: 26px;
+    font-weight: 700;
 
-        & > span:first-child {
-            margin-right: 10px;
-        }
+    & > span:first-child {
+      margin-right: 10px;
     }
+  }
 
-    .phone{
-        font-size: 14px;
-        margin-left: 10px;
-    }
+  .phone {
+    font-size: 14px;
+    margin-left: 10px;
+  }
 }
 
 .additional-info {
-    margin: 0px 20px;
+  margin: 0px 20px;
 
-    .city-mail {
-        display: flex;
-        justify-content: space-between;
-        font-size: 14px;
-    }
+  .city-mail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
 
-    .links {
-        padding-left: 10px;
-    }
+  .links {
+    padding-left: 10px;
+  }
 
-    a {
-        font-size: 30px;
-        color: #000000;
-        margin-right: 10px;
-    }
+  a {
+    font-size: 30px;
+    color: #000000;
+    margin-right: 10px;
+  }
 }

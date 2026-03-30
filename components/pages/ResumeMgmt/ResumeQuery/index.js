@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
-import { useRouter } from 'next/router'
+import React, { useState } from "react"
+import { useRouter } from "next/router"
 
-import { CreateButton } from '@/components/commons/Buttons'
-import DataTable from '@/components/commons/DataTable'
-import API from '@/utils/apiUtils'
+import { CreateButton } from "@/components/commons/Buttons"
+import DataTable from "@/components/commons/DataTable"
+import API from "@/utils/apiUtils"
 
-import { tableConfig } from './configs'
+import { tableConfig } from "./configs"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 export default function ResumeQuery({ resumes: initialResumes }) {
   const router = useRouter()
   const [resumes, setResumes] = useState(initialResumes)
   const query = (params) => {
-    return API.post('/api/resume-mgmt/get-resumes', params)
+    return API.post("/api/resume-mgmt/get-resumes", params)
       .then((data) => {
         setResumes(data)
       })
@@ -27,14 +27,14 @@ export default function ResumeQuery({ resumes: initialResumes }) {
   }
 
   const createResume = () => {
-    router.push('/resume-mgmt/resume-edit')
+    router.push("/resume-mgmt/resume-edit")
   }
 
   return (
     <div>
-      <div className={styles['title-sction']}>
+      <div className={styles["title-sction"]}>
         <h1>Resume List</h1>
-        <CreateButton className={styles['create-btn']} onClick={createResume} />
+        <CreateButton className={styles["create-btn"]} onClick={createResume} />
       </div>
       <DataTable
         tableConfig={tableConfig}

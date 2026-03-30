@@ -1,12 +1,12 @@
-import DraftEdiorPrinterSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/DraftEditorPrinterSection'
-import EduSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/EduSection'
-import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection'
-import InterestsSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InterestsSection'
-import TemplateWrapper from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/TemplateWrapper'
+import DraftEdiorPrinterSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/DraftEditorPrinterSection"
+import EduSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/EduSection"
+import InfoSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection"
+import InterestsSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InterestsSection"
+import TemplateWrapper from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/TemplateWrapper"
 
-import ExperienceSection from './ExperienceSection'
+import ExperienceSection from "./ExperienceSection"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const TraditionalTemplate = ({ resume }) => {
   const {
@@ -26,12 +26,12 @@ const TraditionalTemplate = ({ resume }) => {
 
   return (
     <TemplateWrapper>
-      <div className={styles['circle']}>
+      <div className={styles["circle"]}>
         {firstName && firstName.charAt(0)}
         {lastName && lastName.charAt(0)}
       </div>
-      <h2 className={styles['author-name']}>{`${firstName} ${lastName}`}</h2>
-      <div className={styles['contact-info']}>
+      <h2 className={styles["author-name"]}>{`${firstName} ${lastName}`}</h2>
+      <div className={styles["contact-info"]}>
         {email && (
           <>
             <span>{email}</span>

@@ -1,10 +1,10 @@
-import { ContentState, convertFromRaw, EditorState } from 'draft-js'
-import PropTypes from 'prop-types'
+import { ContentState, convertFromRaw, EditorState } from "draft-js"
+import PropTypes from "prop-types"
 
-import DraftEditorPrinter from '@/components/commons/DraftEdiorPrinter'
-import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection'
+import DraftEditorPrinter from "@/components/commons/DraftEdiorPrinter"
+import InfoSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const DraftEdiorPrinterSection = ({ title, contentState }) => {
   if (!contentState) {
@@ -12,7 +12,7 @@ const DraftEdiorPrinterSection = ({ title, contentState }) => {
   }
 
   let editorState = null
-  if (typeof contentState === 'string') {
+  if (typeof contentState === "string") {
     editorState = EditorState.createWithContent(
       ContentState.createFromText(contentState),
     )
@@ -27,7 +27,7 @@ const DraftEdiorPrinterSection = ({ title, contentState }) => {
   return (
     <InfoSection
       title={title}
-      className={styles['draft-editor-printer-section']}
+      className={styles["draft-editor-printer-section"]}
     >
       <DraftEditorPrinter contentState={contentState} />
     </InfoSection>

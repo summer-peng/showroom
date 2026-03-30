@@ -1,17 +1,17 @@
-import classnames from 'classnames'
+import classnames from "classnames"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 export const Container = ({ children }) => {
-  return <div className={styles['pagination-container']}>{children}</div>
+  return <div className={styles["pagination-container"]}>{children}</div>
 }
 
 export const Item = ({ active, children, className, ...restProp }) => {
   return (
     <div
       className={classnames(
-        styles['item'],
-        active ? styles['active-item'] : null,
+        styles["item"],
+        active ? styles["active-item"] : null,
         className,
       )}
       {...restProp}
@@ -22,12 +22,12 @@ export const Item = ({ active, children, className, ...restProp }) => {
 }
 
 export const Ellipsis = () => {
-  return <div className={styles['ellipsis']}>...</div>
+  return <div className={styles["ellipsis"]}>...</div>
 }
 
 export const First = ({ className, ...restProps }) => {
   return (
-    <div className={classnames(styles['first-item'], className)} {...restProps}>
+    <div className={classnames(styles["first-item"], className)} {...restProps}>
       «
     </div>
   )
@@ -35,7 +35,7 @@ export const First = ({ className, ...restProps }) => {
 
 export const Last = ({ className, ...restProps }) => {
   return (
-    <div className={classnames(styles['last-item'], className)} {...restProps}>
+    <div className={classnames(styles["last-item"], className)} {...restProps}>
       »
     </div>
   )

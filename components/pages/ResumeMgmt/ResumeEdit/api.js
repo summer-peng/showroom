@@ -1,7 +1,7 @@
-import API from '@/utils/apiUtils'
+import API from "@/utils/apiUtils"
 
 export const upsertResume = (resume) => {
-  return API.post('/api/resume-mgmt/upsert-resume', resume).then((response) => {
+  return API.post("/api/resume-mgmt/upsert-resume", resume).then((response) => {
     return response
   })
 }

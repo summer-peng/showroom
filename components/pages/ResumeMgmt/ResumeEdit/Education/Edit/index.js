@@ -1,11 +1,11 @@
-import { useCallback } from 'react'
-import { Col, Row } from 'react-bootstrap'
-import { Formik } from 'formik'
+import { useCallback } from "react"
+import { Col, Row } from "react-bootstrap"
+import { Formik } from "formik"
 
-import FormField from '@/components/commons/Forms/FormField'
-import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
+import FormField from "@/components/commons/Forms/FormField"
+import ButtonGroup from "@/components/pages/ResumeMgmt/ButtonGroup"
 
-import { ACTION } from '../utils'
+import { ACTION } from "../utils"
 
 const Edit = ({ education, currentIndex, setState }) => {
   const edu = education[currentIndex] || {}

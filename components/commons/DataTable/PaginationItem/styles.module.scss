@@ -1,52 +1,52 @@
-@import '/styles/variables.scss';
+@import "/styles/variables.scss";
 
 .common {
-    display: flex;
-    min-width: 40px;
-    justify-content: center;
-    padding: 6px 12px;
-    border: 1px solid #dee2e6;
-    cursor: pointer;
-    &:hover {
-        background-color: #eff2f6;
-    }
+  display: flex;
+  min-width: 40px;
+  justify-content: center;
+  padding: 6px 12px;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+  &:hover {
+    background-color: #eff2f6;
+  }
 }
 
 .pagination-container {
-    display: flex;
-    margin-top: 20px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
+  display: flex;
+  margin-top: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .item {
-    @extend .common;
-    color: $second-primary-color;
-    background-color: #ffffff;
-    border-left: none;
+  @extend .common;
+  color: $second-primary-color;
+  background-color: #ffffff;
+  border-left: none;
 }
 
 .active-item {
-    @extend .common;
-    color: #ffffff;
+  @extend .common;
+  color: #ffffff;
+  background-color: $second-primary-color;
+  &:hover {
     background-color: $second-primary-color;
-    &:hover {
-        background-color: $second-primary-color;
-    }
+  }
 }
 
 .ellipsis {
-    @extend .common;
+  @extend .common;
 }
 
 .first-item {
-   @extend .common;
-    border-radius: 5px 0px 0px 5px;
+  @extend .common;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .last-item {
-    @extend .common;
-    border-radius: 0px 5px 5px 0px;
-    margin-left: -1px;
+  @extend .common;
+  border-radius: 0px 5px 5px 0px;
+  margin-left: -1px;
 }

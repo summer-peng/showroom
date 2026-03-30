@@ -1,5 +1,5 @@
-import { BLOCK_TYPES } from './configs'
-import StyleButton from './StyleButton'
+import { BLOCK_TYPES } from "./configs"
+import StyleButton from "./StyleButton"
 
 const BlockStyleControls = ({ editorState, onToggle }) => {
   const selection = editorState.getSelection()

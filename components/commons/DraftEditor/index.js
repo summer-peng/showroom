@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import {
   ContentState,
   convertFromRaw,
@@ -7,16 +7,16 @@ import {
   EditorState,
   getDefaultKeyBinding,
   RichUtils,
-} from 'draft-js'
-import PropTypes from 'prop-types'
+} from "draft-js"
+import PropTypes from "prop-types"
 
-import BlockStyleControls from './BlockStyleControls'
-import InlineStyleControls from './InlineStyleControls'
+import BlockStyleControls from "./BlockStyleControls"
+import InlineStyleControls from "./InlineStyleControls"
 
 // Custom overrides for "code" style.
 const styleMap = {
   CODE: {
-    backgroundColor: 'rgba(0, 0, 0, 0.05)',
+    backgroundColor: "rgba(0, 0, 0, 0.05)",
     fontFamily: '"Inconsolata", "Menlo", "Consolas", monospace',
     fontSize: 16,
     padding: 2,
@@ -25,8 +25,8 @@ const styleMap = {
 
 function getBlockStyle(block) {
   switch (block.getType()) {
-    case 'blockquote':
-      return 'RichEditor-blockquote'
+    case "blockquote":
+      return "RichEditor-blockquote"
     default:
       return null
   }
@@ -37,8 +37,8 @@ const DraftEditor = ({ initialVale, onChange, value }) => {
     if (!initialVale) {
       return EditorState.createEmpty()
     }
-    if (typeof initialVale === 'string') {
-      return EditorState.createWithContent(ContentState.createFromText('hello'))
+    if (typeof initialVale === "string") {
+      return EditorState.createWithContent(ContentState.createFromText("hello"))
     }
 
     return EditorState.createWithContent(convertFromRaw(initialVale))
@@ -109,11 +109,11 @@ const DraftEditor = ({ initialVale, onChange, value }) => {
 
   // If the user changes block type before entering any text, we can
   // either style the placeholder or hide it. Let's just hide it now.
-  let className = 'RichEditor-editor'
+  let className = "RichEditor-editor"
   const contentState = editorState.getCurrentContent()
   if (!contentState.hasText()) {
-    if (contentState.getBlockMap().first().getType() !== 'unstyled') {
-      className += ' RichEditor-hidePlaceholder'
+    if (contentState.getBlockMap().first().getType() !== "unstyled") {
+      className += " RichEditor-hidePlaceholder"
     }
   }
   return (

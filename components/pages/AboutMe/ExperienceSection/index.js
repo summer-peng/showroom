@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const ExperienceSection = ({
   jobTitle,
@@ -11,13 +11,13 @@ const ExperienceSection = ({
   experienceList,
 }) => {
   return (
-    <section className={styles['experience-section']}>
-      <div className={styles['job-intro']}>
-        <div className={styles['company-name']}>
+    <section className={styles["experience-section"]}>
+      <div className={styles["job-intro"]}>
+        <div className={styles["company-name"]}>
           {companyName} | {city}
         </div>
-        <div className={styles['job-title']}>{jobTitle}</div>
-        <div className={styles['duration']}>
+        <div className={styles["job-title"]}>{jobTitle}</div>
+        <div className={styles["duration"]}>
           {startDate}~{endDate}
         </div>
       </div>

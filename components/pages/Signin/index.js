@@ -1,32 +1,32 @@
-import { useState } from 'react'
-import { Formik } from 'formik'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { signIn } from 'next-auth/react'
+import { useState } from "react"
+import { Formik } from "formik"
+import Link from "next/link"
+import { useRouter } from "next/router"
+import { signIn } from "next-auth/react"
 
-import { Button } from '@/components/commons/Buttons'
-import FormField from '@/components/commons/Forms/FormField'
+import { Button } from "@/components/commons/Buttons"
+import FormField from "@/components/commons/Forms/FormField"
 
-import validationSchema from './validations'
+import validationSchema from "./validations"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const initialValues = {
-  email: '',
-  password: '',
+  email: "",
+  password: "",
 }
 
 const Signin = () => {
   const router = useRouter()
-  const [error, setError] = useState('')
+  const [error, setError] = useState("")
   const onSubmit = ({ email, password }) => {
-    return signIn('credentials', { email, password, redirect: false }).then(
+    return signIn("credentials", { email, password, redirect: false }).then(
       (response) => {
         const { status, ok, error: resError } = response
         if (ok && status === 200) {
           const queryString = window.location.search
           const urlParams = new URLSearchParams(queryString)
-          const redirectUrl = urlParams.get('redirectUrl') || '/'
+          const redirectUrl = urlParams.get("redirectUrl") || "/"
           router.push(redirectUrl)
         } else {
           setError(resError)
@@ -36,7 +36,7 @@ const Signin = () => {
   }
 
   return (
-    <div className={styles['container']}>
+    <div className={styles["container"]}>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -44,7 +44,7 @@ const Signin = () => {
       >
         {({ handleSubmit }) => {
           return (
-            <div className={styles['signin-form']}>
+            <div className={styles["signin-form"]}>
               <h2>Login to my website</h2>
               <div>
                 <FormField label="Email" name="email" />
@@ -52,14 +52,14 @@ const Signin = () => {
               <div>
                 <FormField type="password" label="Password" name="password" />
               </div>
-              <div className={styles['error']}>{error}</div>
+              <div className={styles["error"]}>{error}</div>
               <Button
-                className={styles['signin-btn']}
+                className={styles["signin-btn"]}
                 type="primary"
                 titleKey="Login"
                 onClick={handleSubmit}
               />
-              <div className={styles['regist']}>
+              <div className={styles["regist"]}>
                 <span>Do not have account?</span>
                 <Link href="/registration">Sign up</Link>
               </div>

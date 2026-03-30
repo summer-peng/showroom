@@ -1,15 +1,15 @@
-import classnames from 'classnames'
-import html2pdf from 'html2pdf.js'
+import classnames from "classnames"
+import html2pdf from "html2pdf.js"
 //import { jsPDF } from 'jspdf'
-import PropTypes from 'prop-types'
-import { Button } from '@/components/commons/Buttons'
-import styles from './styles.module.scss'
+import PropTypes from "prop-types"
+import { Button } from "@/components/commons/Buttons"
+import styles from "./styles.module.scss"
 
 const DownloadPdf = ({ element, className, downloadButton }) => {
   const opt = {
-    filename: 'chen-tsung-resume.pdf',
-    image: { type: 'jpeg', quality: 1 },
-    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
+    filename: "chen-tsung-resume.pdf",
+    image: { type: "jpeg", quality: 1 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
   }
 
   const handleOnClick = () => {
@@ -30,7 +30,7 @@ const DownloadPdf = ({ element, className, downloadButton }) => {
 
   return (
     <div>
-      <Button type="primary" titleKey={'Download'} onClick={handleOnClick} />
+      <Button type="primary" titleKey={"Download"} onClick={handleOnClick} />
     </div>
   )
 }
@@ -40,8 +40,8 @@ DownloadPdf.defaultProps = {
     return ({ className, ...restProps }) => (
       <i
         className={classnames(
-          'fa-solid fa-cloud-arrow-down',
-          styles['download-icon'],
+          "fa-solid fa-cloud-arrow-down",
+          styles["download-icon"],
           className,
         )}
         {...restProps}

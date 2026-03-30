@@ -1,34 +1,33 @@
 .my-autocomplete {
-    input {
-        width: 100%;
-        border: 1px solid #cccccc;
-        border-radius: 5px;
-        padding: 6px 12px;
-    }
+  input {
+    width: 100%;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 6px 12px;
+  }
 
-    .input-on-focus {
-        border-bottom: none;
-        outline: none;
-        border-radius: 5px 5px 0px 0px;
-    }
+  .input-on-focus {
+    border-bottom: none;
+    outline: none;
+    border-radius: 5px 5px 0px 0px;
+  }
 }
 
-
 .options-container {
-    div {
-        &:hover {
-            background-color: #cccccc;
-        }
-
-        & > span {
-            padding: 6px 12px;
-        }
+  div {
+    &:hover {
+      background-color: #cccccc;
     }
+
+    & > span {
+      padding: 6px 12px;
+    }
+  }
 }
 
 .show-options {
-    border: 1px solid #cccccc;
-    border-top: none;
-    height: 200px;
-    overflow: auto;
+  border: 1px solid #cccccc;
+  border-top: none;
+  height: 200px;
+  overflow: auto;
 }

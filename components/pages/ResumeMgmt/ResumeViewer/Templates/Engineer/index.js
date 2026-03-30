@@ -1,14 +1,14 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next"
 
-import DraftEdiorPrinterSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/DraftEditorPrinterSection'
-import EduSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/EduSection'
-import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection'
-import InterestsSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InterestsSection'
-import TemplateWrapper from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/TemplateWrapper'
+import DraftEdiorPrinterSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/DraftEditorPrinterSection"
+import EduSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/EduSection"
+import InfoSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection"
+import InterestsSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InterestsSection"
+import TemplateWrapper from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/TemplateWrapper"
 
-import ExperienceSection from './ExperienceSection'
+import ExperienceSection from "./ExperienceSection"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const Engineer = ({ resume }) => {
   const {
@@ -29,27 +29,27 @@ const Engineer = ({ resume }) => {
     interests,
   } = resume
 
-  const addressInfo = address ? `${address}, ` : ''
-  const cityInfo = city ? `${city}, ` : ''
+  const addressInfo = address ? `${address}, ` : ""
+  const cityInfo = city ? `${city}, ` : ""
   const { t } = useTranslation()
 
   return (
     <TemplateWrapper>
-      <div className={styles['employee-info-wrapper']}>
-        <div className={styles['name']}>
+      <div className={styles["employee-info-wrapper"]}>
+        <div className={styles["name"]}>
           <span>{firstName}</span>
           <span>{lastName}</span>
         </div>
         <div>
-          <span className={styles['phone']}>{phoneNumber}</span>
+          <span className={styles["phone"]}>{phoneNumber}</span>
         </div>
       </div>
-      <div className={styles['additional-info']}>
-        <div className={styles['city-mail']}>
+      <div className={styles["additional-info"]}>
+        <div className={styles["city-mail"]}>
           <div>{`${addressInfo}${cityInfo}${province} ${postalCode}`}</div>
           <div>{email}</div>
         </div>
-        <div className={styles['links']}>
+        <div className={styles["links"]}>
           {linkedinUrl && (
             <a target="_blank" href={linkedinUrl} rel="noreferrer">
               <i className="fa-brands fa-linkedin"></i>
@@ -63,14 +63,14 @@ const Engineer = ({ resume }) => {
         </div>
       </div>
       <DraftEdiorPrinterSection
-        title={t('summary', { lng: resume.lang })}
+        title={t("summary", { lng: resume.lang })}
         contentState={summary}
       />
       <DraftEdiorPrinterSection
         title="Core Competencies"
         contentState={coreCompetencies}
       />
-      <InfoSection title={t('experience', { lng: resume.lang })}>
+      <InfoSection title={t("experience", { lng: resume.lang })}>
         {experience.map((exp, index) => {
           const { jobTitle, companyName, city, startDate, endDate, detail } =
             exp
@@ -88,11 +88,11 @@ const Engineer = ({ resume }) => {
         })}
       </InfoSection>
       <EduSection
-        title={t('education', { lng: resume.lang })}
+        title={t("education", { lng: resume.lang })}
         education={education}
       />
       <InterestsSection
-        title={t('interests', { lng: resume.lang })}
+        title={t("interests", { lng: resume.lang })}
         interests={interests}
       />
     </TemplateWrapper>

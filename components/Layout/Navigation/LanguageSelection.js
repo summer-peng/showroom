@@ -1,12 +1,12 @@
-import { NavDropdown } from 'react-bootstrap'
-import { useTranslation } from 'react-i18next'
+import { NavDropdown } from "react-bootstrap"
+import { useTranslation } from "react-i18next"
 
-import { langOptions } from './const'
+import { langOptions } from "./const"
 
 const LanguageSelection = () => {
   const { t, i18n } = useTranslation()
 
-  const currentLang = i18n.language.replace('-', '_')
+  const currentLang = i18n.language.replace("-", "_")
 
   const onLangChange = (locale) => {
     i18n.changeLanguage(locale)

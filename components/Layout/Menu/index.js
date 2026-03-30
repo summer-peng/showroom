@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
-import classnames from 'classnames'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useEffect, useState } from "react"
+import classnames from "classnames"
+import Link from "next/link"
+import { useRouter } from "next/router"
 
-import { menuService } from './api'
+import { menuService } from "./api"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 export default function Menu() {
   const [menu, setMenu] = useState([])
@@ -20,7 +20,7 @@ export default function Menu() {
   }, [])
 
   return (
-    <nav className={styles['menu']}>
+    <nav className={styles["menu"]}>
       <ul>
         {menu.map(({ name, link, children = [] }, index) => {
           const childNode = children.find(({ link }) => {
@@ -29,7 +29,7 @@ export default function Menu() {
           return (
             <li
               className={classnames(
-                pathname === link || childNode ? styles['nav-active'] : null,
+                pathname === link || childNode ? styles["nav-active"] : null,
               )}
               key={index}
             >

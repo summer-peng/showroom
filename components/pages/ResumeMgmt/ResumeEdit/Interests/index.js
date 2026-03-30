@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState } from "react"
 
-import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
-import CreateList from '@/components/pages/ResumeMgmt/CreateList'
+import ButtonGroup from "@/components/pages/ResumeMgmt/ButtonGroup"
+import CreateList from "@/components/pages/ResumeMgmt/CreateList"
 
 const Interests = ({ resumes, onSubmit, onBack }) => {
   const [interestList, setInterestList] = useState(resumes.interests || [])

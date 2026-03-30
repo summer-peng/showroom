@@ -1,8 +1,8 @@
-import { useDrag, useDrop } from 'react-dnd'
+import { useDrag, useDrop } from "react-dnd"
 
 const useDragAndDrop = ({ targetRef, index, moveItem }) => {
   const [{ handlerId }, drop] = useDrop({
-    accept: 'ListItem',
+    accept: "ListItem",
     collect(monitor) {
       return {
         handlerId: monitor.getHandlerId(),
@@ -48,7 +48,7 @@ const useDragAndDrop = ({ targetRef, index, moveItem }) => {
     },
   })
   const [{ isDragging }, drag] = useDrag({
-    type: 'ListItem',
+    type: "ListItem",
     item: () => {
       return { id: index, index }
     },

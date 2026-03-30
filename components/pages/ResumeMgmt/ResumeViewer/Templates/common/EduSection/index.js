@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
-import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection'
+import InfoSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection"
 
-import Item from './Item'
+import Item from "./Item"
 
 const EduSection = ({ title, education }) => {
   return (
@@ -26,7 +26,7 @@ const EduSection = ({ title, education }) => {
 }
 
 EduSection.defaultProps = {
-  title: '',
+  title: "",
   education: [],
 }
 

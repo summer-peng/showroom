@@ -1,20 +1,20 @@
-import UserEdit from '@/components/pages/Users/UserEdit'
-import { getUserList } from '@/service/usersService'
+import UserEdit from "@/components/pages/Users/UserEdit"
+import { getUserList } from "@/service/usersService"
 
 export const getServerSideProps = async ({ params }) => {
   const { uid } = params
 
   const breadCrumbItems = [
     {
-      name: 'Home',
-      url: '/',
+      name: "Home",
+      url: "/",
     },
     {
-      name: 'User Query',
-      url: '/users/user-query',
+      name: "User Query",
+      url: "/users/user-query",
     },
     {
-      name: 'User edit',
+      name: "User edit",
       active: true,
     },
   ]

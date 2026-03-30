@@ -1,5 +1,5 @@
-import ResumeEdit from '@/components/pages/ResumeMgmt/ResumeEdit'
-import { getResumeList } from '@/service/resumesService'
+import ResumeEdit from "@/components/pages/ResumeMgmt/ResumeEdit"
+import { getResumeList } from "@/service/resumesService"
 
 export const getServerSideProps = async ({ query }) => {
   const { copiedId } = query

@@ -1,7 +1,7 @@
-import classnames from 'classnames'
-import PropTypes from 'prop-types'
+import classnames from "classnames"
+import PropTypes from "prop-types"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const Modal = ({
   toggle,
@@ -16,14 +16,14 @@ const Modal = ({
   }
 
   return (
-    <div className={styles['modal']} onDoubleClickCapture={onMaskDbClick}>
-      <div className={classnames(styles['content'], contentStyles)}>
+    <div className={styles["modal"]} onDoubleClickCapture={onMaskDbClick}>
+      <div className={classnames(styles["content"], contentStyles)}>
         {defaultCloseBtn && (
           <i
             onClick={() => setToggle(false)}
             className={classnames(
-              'fa-regular fa-circle-xmark',
-              styles['close-btn'],
+              "fa-regular fa-circle-xmark",
+              styles["close-btn"],
             )}
           ></i>
         )}
@@ -37,9 +37,9 @@ Modal.defaultProps = {
   toggle: false,
   setToggle: () => null,
   defaultCloseBtn: true,
-  content: '',
+  content: "",
   onMaskDbClick: () => null,
-  contentStyles: '',
+  contentStyles: "",
 }
 
 Modal.propTypes = {

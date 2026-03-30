@@ -1,6 +1,6 @@
-import { convertToDateString } from '@/utils/dateUtils'
+import { convertToDateString } from "@/utils/dateUtils"
 
-import prisma from '../utils/dbUtil'
+import prisma from "../utils/dbUtil"
 
 export const getResumesByUserId = (userId) => {
   return prisma.resumes.findMany({
@@ -23,7 +23,7 @@ export const getResumeList = (params) => {
       take: rows,
       orderBy: [
         {
-          updateDate: 'desc',
+          updateDate: "desc",
         },
       ],
     })

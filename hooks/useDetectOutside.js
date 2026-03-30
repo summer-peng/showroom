@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect } from "react"
 
 const useDetectOutside = (targetRef, callback) => {
   useEffect(() => {
@@ -11,10 +11,10 @@ const useDetectOutside = (targetRef, callback) => {
       }
     }
     // Bind the event listener
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside)
     return () => {
       // Unbind the event listener on clean up
-      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener("mousedown", handleClickOutside)
     }
   }, [callback, targetRef])
 }

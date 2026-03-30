@@ -1,4 +1,4 @@
-import classnames from 'classnames'
+import classnames from "classnames"
 
 const StyleButton = ({ label, onToggle, active, style }) => {
   const handleToggle = (e) => {
@@ -8,8 +8,8 @@ const StyleButton = ({ label, onToggle, active, style }) => {
 
   return (
     <span
-      className={classnames('RichEditor-styleButton', {
-        'RichEditor-activeButton': active,
+      className={classnames("RichEditor-styleButton", {
+        "RichEditor-activeButton": active,
       })}
       onMouseDown={handleToggle}
     >

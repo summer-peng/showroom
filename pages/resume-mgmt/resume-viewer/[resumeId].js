@@ -1,5 +1,5 @@
-import ResumeViewer from '@/components/pages/ResumeMgmt/ResumeViewer'
-import { getResumeList } from '@/service/resumesService'
+import ResumeViewer from "@/components/pages/ResumeMgmt/ResumeViewer"
+import { getResumeList } from "@/service/resumesService"
 
 export const getServerSideProps = async ({ params }) => {
   const { resumeId } = params

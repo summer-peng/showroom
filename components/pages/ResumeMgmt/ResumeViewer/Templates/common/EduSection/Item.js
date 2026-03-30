@@ -1,24 +1,24 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const Item = ({ schoolName, location, degree, major, startDate, endDate }) => {
   return (
-    <section className={styles['edu-section']}>
-      <div className={styles['degree-wrapper']}>
+    <section className={styles["edu-section"]}>
+      <div className={styles["degree-wrapper"]}>
         <div>
-          <span className={styles['degree']}>{degree}</span>
-          {degree && major && <span className={styles['sepreate']}>in</span>}
+          <span className={styles["degree"]}>{degree}</span>
+          {degree && major && <span className={styles["sepreate"]}>in</span>}
           <span>{major}</span>
         </div>
-        <div className={styles['graduation-date']}>
-          {startDate} {startDate ? '-' : ''} {endDate}
+        <div className={styles["graduation-date"]}>
+          {startDate} {startDate ? "-" : ""} {endDate}
         </div>
       </div>
       <div className="schrool-name">
         <span>{schoolName}</span>
         {schoolName && location && (
-          <span className={styles['sepreate']}>|</span>
+          <span className={styles["sepreate"]}>|</span>
         )}
         <span>{location}</span>
       </div>

@@ -1,9 +1,9 @@
-import { useRef } from 'react'
-import classnames from 'classnames'
+import { useRef } from "react"
+import classnames from "classnames"
 
-import useDragAndDrop from '@/hooks/useDragAndDrop'
+import useDragAndDrop from "@/hooks/useDragAndDrop"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const Item = ({ onEdit, index, experience, moveItem, onDelete }) => {
   const ref = useRef(null)
@@ -19,16 +19,16 @@ const Item = ({ onEdit, index, experience, moveItem, onDelete }) => {
   return (
     <div
       ref={ref}
-      className={styles['experience-item']}
+      className={styles["experience-item"]}
       key={index}
       onClick={onEdit}
     >
-      <div className={styles['index']}>{index + 1}</div>
-      <div className={styles['title']}>
-        <div className={styles['job-title']}>{jobTitle}</div>
-        <div className={styles['company-name']}>{companyName}</div>
-        <div className={styles['footer']}>
-          <span className={styles['location']}>
+      <div className={styles["index"]}>{index + 1}</div>
+      <div className={styles["title"]}>
+        <div className={styles["job-title"]}>{jobTitle}</div>
+        <div className={styles["company-name"]}>{companyName}</div>
+        <div className={styles["footer"]}>
+          <span className={styles["location"]}>
             {city} {province}
           </span>
           <span>|</span>
@@ -37,23 +37,23 @@ const Item = ({ onEdit, index, experience, moveItem, onDelete }) => {
           </span>
         </div>
       </div>
-      <div className={styles['detail']}>
+      <div className={styles["detail"]}>
         <ul>
           {detail.map((item, index) => {
             return <li key={index}>{item}</li>
           })}
         </ul>
       </div>
-      <div className={styles['function']}>
+      <div className={styles["function"]}>
         <i
-          className={classnames('fa-solid fa-pen-to-square')}
+          className={classnames("fa-solid fa-pen-to-square")}
           onClick={(e) => {
             e.stopPropagation()
             onEdit()
           }}
         />
         <i
-          className={classnames('fa-solid fa-trash')}
+          className={classnames("fa-solid fa-trash")}
           onClick={(e) => {
             e.stopPropagation()
             onDelete()

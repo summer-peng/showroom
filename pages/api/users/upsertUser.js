@@ -1,4 +1,4 @@
-import { upsertUser } from '@/service/usersService'
+import { upsertUser } from "@/service/usersService"
 
 export default function handler(req, res) {
   upsertUser(req.body)

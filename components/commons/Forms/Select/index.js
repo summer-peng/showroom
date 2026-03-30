@@ -1,9 +1,9 @@
-import { Form } from 'react-bootstrap'
-import dynamic from 'next/dynamic'
-import PropTypes from 'prop-types'
+import { Form } from "react-bootstrap"
+import dynamic from "next/dynamic"
+import PropTypes from "prop-types"
 
 const Select = ({ label, name, options, defaultValue, ...restProps }) => {
-  const ReactSelect = dynamic(() => import('react-select'), {
+  const ReactSelect = dynamic(() => import("react-select"), {
     ssr: false,
   })
 
@@ -21,7 +21,7 @@ const Select = ({ label, name, options, defaultValue, ...restProps }) => {
 }
 
 Select.defaultProps = {
-  label: '',
+  label: "",
   options: [],
 }
 

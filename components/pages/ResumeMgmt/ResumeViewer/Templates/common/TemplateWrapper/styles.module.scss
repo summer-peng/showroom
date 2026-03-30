@@ -1,37 +1,39 @@
 .container {
-    width: 21cm;
-    margin: 0 auto;
-    .download-section {
-        margin-top: 30px;
-        margin-bottom: 20px;
-        text-align: right;
-    }
+  width: 21cm;
+  margin: 0 auto;
+  .download-section {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: right;
+  }
 }
 
 .wrapper {
-    //A4 SIZE
-    width: 21cm;
-    height: 29.7cm;
-    border: 1px solid #d3d3d3;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  //A4 SIZE
+  width: 21cm;
+  height: 29.7cm;
+  border: 1px solid #d3d3d3;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .resume {
-    margin: 0.5cm;
+  margin: 0.5cm;
 }
 
 .page-bottom-space {
-    height: 200px;
+  height: 200px;
 }
 
 @media print {
-    .wrapper {
-        width: 100% !important;
-        height: 100%  !important;;
-        border: none  !important;;
-        box-shadow: none  !important;;
-    }
-    .download-section {
-        display: none !important;
-    }
+  .wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .download-section {
+    display: none !important;
+  }
 }

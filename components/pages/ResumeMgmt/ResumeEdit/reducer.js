@@ -1,4 +1,4 @@
-import { CHANGE_PHASE, PHASES } from './utils'
+import { CHANGE_PHASE, PHASES } from "./utils"
 
 const changeStep = (currentPhase, steps, opeation) => {
   // deep copy the steps array
@@ -8,7 +8,7 @@ const changeStep = (currentPhase, steps, opeation) => {
     currentIndex + 1 >= steps.length ? currentIndex : currentIndex + 1
   const prevIndex = currentIndex - 1 <= 0 ? 0 : currentIndex - 1
 
-  const newIndex = opeation === 'prev' ? prevIndex : nextIndex
+  const newIndex = opeation === "prev" ? prevIndex : nextIndex
   const nextPhase = steps[newIndex].id
 
   for (let i = 0; i < steps.length; i++) {
@@ -24,7 +24,7 @@ const changeStep = (currentPhase, steps, opeation) => {
 
 const reducer = (state, action) => {
   const { type, payload } = action
-  const { stepOperation = 'next' } = payload
+  const { stepOperation = "next" } = payload
   const { steps, currentPhase } = state
 
   const { newSteps, nextPhase } = changeStep(currentPhase, steps, stepOperation)

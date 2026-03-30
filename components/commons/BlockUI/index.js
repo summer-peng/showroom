@@ -1,12 +1,12 @@
-import { useContext } from 'react'
+import { useContext } from "react"
 
-import Modal from '@/components/commons/Modal'
+import Modal from "@/components/commons/Modal"
 
-import Spinner from '../Spinner'
+import Spinner from "../Spinner"
 
-import context from './context'
+import context from "./context"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 export default function BlockUI() {
   const { show, unBlockUI } = useContext(context)
@@ -17,7 +17,7 @@ export default function BlockUI() {
       toggle={show}
       content={<Spinner />}
       defaultCloseBtn={false}
-      contentStyles={styles['content-style']}
+      contentStyles={styles["content-style"]}
     ></Modal>
   )
 }

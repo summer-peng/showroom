@@ -1,9 +1,9 @@
-import Link from 'next/link'
+import Link from "next/link"
 
 export const tableConfig = [
   {
-    dataKey: 'id',
-    label: 'ID',
+    dataKey: "id",
+    label: "ID",
     width: 50,
     cellRenderer: ({ cellData, rowData }) => {
       const { userId } = rowData
@@ -15,13 +15,13 @@ export const tableConfig = [
     },
   },
   {
-    dataKey: 'firstName',
-    label: 'First name',
+    dataKey: "firstName",
+    label: "First name",
     width: 100,
   },
   {
-    dataKey: 'lastName',
-    label: 'Last name',
+    dataKey: "lastName",
+    label: "Last name",
     width: 100,
   },
 ]

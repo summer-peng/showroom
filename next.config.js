@@ -1,4 +1,4 @@
-const { PrismaPlugin } = require('@prisma/nextjs-monorepo-workaround-plugin')
+const { PrismaPlugin } = require("@prisma/nextjs-monorepo-workaround-plugin")
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -7,8 +7,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '**',
+        protocol: "https",
+        hostname: "**",
       },
     ],
   },

@@ -1,36 +1,37 @@
 .nav-bar {
-    display: flex;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    color: #ffffff;
-    background-color: #000000;
-    align-items: center;
-    z-index: 9999;
+  display: flex;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  color: #ffffff;
+  background-color: #000000;
+  align-items: center;
+  z-index: 9999;
 }
 
 .menu-bar {
-    font-size: larger;
-    cursor: pointer;
+  font-size: larger;
+  cursor: pointer;
 }
 .nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0px 20px;
 }
 
 .sign-in-section {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    .sign-in-btn, .sign-out-btn {
-        cursor: pointer;
-        margin-left: 10px;
-    }
+  .sign-in-btn,
+  .sign-out-btn {
+    cursor: pointer;
+    margin-left: 10px;
+  }
 }
 
 .name {
-    margin: 0px 0px 0px 5px;
+  margin: 0px 0px 0px 5px;
 }

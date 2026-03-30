@@ -1,17 +1,17 @@
-import { Col, Container, Form, Row } from 'react-bootstrap'
-import { useTranslation } from 'react-i18next'
-import { Formik } from 'formik'
-import { useRouter } from 'next/router'
-import PropTypes from 'prop-types'
+import { Col, Container, Form, Row } from "react-bootstrap"
+import { useTranslation } from "react-i18next"
+import { Formik } from "formik"
+import { useRouter } from "next/router"
+import PropTypes from "prop-types"
 
-import { BackButton, SubmitButton } from '@/components/commons/Buttons'
-import FormField from '@/components/commons/Forms/FormField'
-import useBlockUI from '@/hooks/useBlockUI'
-import MessageUtils from '@/utils/messageUtils'
+import { BackButton, SubmitButton } from "@/components/commons/Buttons"
+import FormField from "@/components/commons/Forms/FormField"
+import useBlockUI from "@/hooks/useBlockUI"
+import MessageUtils from "@/utils/messageUtils"
 
-import { checkEmailExisted, upsertUser } from './apis'
-import validationSchema from './validations'
-import styles from './styles.module.scss'
+import { checkEmailExisted, upsertUser } from "./apis"
+import validationSchema from "./validations"
+import styles from "./styles.module.scss"
 
 const UserEdit = ({ title, initialValues, afterSubmit }) => {
   const router = useRouter()
@@ -30,7 +30,7 @@ const UserEdit = ({ title, initialValues, afterSubmit }) => {
     blockUI()
     return checkEmail(email).then((isExist) => {
       if (isExist) {
-        setFieldError('email', 'The email is already registed')
+        setFieldError("email", "The email is already registed")
         unBlockUI()
       } else {
         upsertUser({ ...values, email: email.toLowerCase() })
@@ -42,7 +42,7 @@ const UserEdit = ({ title, initialValues, afterSubmit }) => {
             if (afterSubmit) {
               afterSubmit()
             } else {
-              router.push('/users/user-query')
+              router.push("/users/user-query")
             }
           })
           .catch((e) => {
@@ -66,27 +66,27 @@ const UserEdit = ({ title, initialValues, afterSubmit }) => {
             <h2>{title}</h2>
             <Row>
               <Col>
-                <FormField label={t('email')} name="email" />
+                <FormField label={t("email")} name="email" />
               </Col>
             </Row>
             <Row>
               <Col>
                 <FormField
                   type="password"
-                  label={t('password')}
+                  label={t("password")}
                   name="password"
                 />
               </Col>
             </Row>
             <Row>
               <Col>
-                <FormField label={t('firstName')} name="firstName" />
+                <FormField label={t("firstName")} name="firstName" />
               </Col>
               <Col>
-                <FormField label={t('lastName')} name="lastName" />
+                <FormField label={t("lastName")} name="lastName" />
               </Col>
             </Row>
-            <div className={styles['button-section']}>
+            <div className={styles["button-section"]}>
               <BackButton />
               <SubmitButton onClick={handleSubmit} />
             </div>
@@ -98,7 +98,7 @@ const UserEdit = ({ title, initialValues, afterSubmit }) => {
 }
 
 UserEdit.defaultProps = {
-  title: '',
+  title: "",
   initialValues: {},
 }
 

@@ -1,4 +1,4 @@
-import { getUserByEmail } from '@/service/usersService'
+import { getUserByEmail } from "@/service/usersService"
 
 export default function handler(req, res) {
   const { email } = req.body

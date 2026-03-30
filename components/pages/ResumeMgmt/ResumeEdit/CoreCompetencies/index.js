@@ -1,10 +1,10 @@
-import { useRef } from 'react'
-import dynamic from 'next/dynamic'
+import { useRef } from "react"
+import dynamic from "next/dynamic"
 
-import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
+import ButtonGroup from "@/components/pages/ResumeMgmt/ButtonGroup"
 
 const CoreCompetencies = ({ resumes, onSubmit, onBack }) => {
-  const DraftEditor = dynamic(() => import('@/components/commons/DraftEditor'))
+  const DraftEditor = dynamic(() => import("@/components/commons/DraftEditor"))
 
   const state = useRef(resumes.coreCompetencies)
 

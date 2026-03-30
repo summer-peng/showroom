@@ -1,4 +1,4 @@
 export const ACTION = {
-  LIST: 'LIST',
-  EDIT: 'EDIT',
+  LIST: "LIST",
+  EDIT: "EDIT",
 }

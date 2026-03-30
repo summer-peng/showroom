@@ -1,18 +1,18 @@
-import { useMemo, useReducer } from 'react'
-import PropTypes from 'prop-types'
+import { useMemo, useReducer } from "react"
+import PropTypes from "prop-types"
 
-import StepProgress from '@/components/commons/StepProgress'
-import ChooseTemplate from '@/components/pages/ResumeMgmt/ResumeEdit/ChooseTemplate'
-import CoreCompetencies from '@/components/pages/ResumeMgmt/ResumeEdit/CoreCompetencies'
-import Education from '@/components/pages/ResumeMgmt/ResumeEdit/Education'
-import Experience from '@/components/pages/ResumeMgmt/ResumeEdit/Experience'
-import Header from '@/components/pages/ResumeMgmt/ResumeEdit/Header'
-import Interests from '@/components/pages/ResumeMgmt/ResumeEdit/Interests'
-import Summary from '@/components/pages/ResumeMgmt/ResumeEdit/Summary'
+import StepProgress from "@/components/commons/StepProgress"
+import ChooseTemplate from "@/components/pages/ResumeMgmt/ResumeEdit/ChooseTemplate"
+import CoreCompetencies from "@/components/pages/ResumeMgmt/ResumeEdit/CoreCompetencies"
+import Education from "@/components/pages/ResumeMgmt/ResumeEdit/Education"
+import Experience from "@/components/pages/ResumeMgmt/ResumeEdit/Experience"
+import Header from "@/components/pages/ResumeMgmt/ResumeEdit/Header"
+import Interests from "@/components/pages/ResumeMgmt/ResumeEdit/Interests"
+import Summary from "@/components/pages/ResumeMgmt/ResumeEdit/Summary"
 
-import reducer from './reducer'
-import useSubmitAndBack from './useSubmitAndBack'
-import { defaultState, PHASES } from './utils'
+import reducer from "./reducer"
+import useSubmitAndBack from "./useSubmitAndBack"
+import { defaultState, PHASES } from "./utils"
 
 const ResumeEdit = ({ initialResume }) => {
   const initialStates = {

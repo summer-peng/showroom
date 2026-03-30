@@ -1,7 +1,7 @@
-import { getIn, useFormikContext } from 'formik'
+import { getIn, useFormikContext } from "formik"
 
-import FormField from '@/components/commons/Forms/FormField'
-import { TEMPLATE_TYPE } from '@/components/pages/ResumeMgmt/ResumeViewer/const'
+import FormField from "@/components/commons/Forms/FormField"
+import { TEMPLATE_TYPE } from "@/components/pages/ResumeMgmt/ResumeViewer/const"
 const options = Object.keys(TEMPLATE_TYPE).map((key) => {
   return {
     label: key,

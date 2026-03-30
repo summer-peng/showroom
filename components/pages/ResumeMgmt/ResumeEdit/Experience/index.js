@@ -1,10 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState } from "react"
 
-import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
+import ButtonGroup from "@/components/pages/ResumeMgmt/ButtonGroup"
 
-import Edit from './Edit'
-import List from './List'
-import { ACTION } from './utils'
+import Edit from "./Edit"
+import List from "./List"
+import { ACTION } from "./utils"
 
 const Experience = ({ resumes, onSubmit, onBack }) => {
   const [state, setState] = useState({
@@ -48,7 +48,7 @@ const Experience = ({ resumes, onSubmit, onBack }) => {
               }
             })
           }}
-          createTipMsg={myExperience.length === 0 ? 'Create here' : ''}
+          createTipMsg={myExperience.length === 0 ? "Create here" : ""}
           nextTitle="Next"
         />
       )}

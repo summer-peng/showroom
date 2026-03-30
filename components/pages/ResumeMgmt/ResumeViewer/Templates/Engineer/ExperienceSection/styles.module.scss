@@ -1,21 +1,20 @@
 .job-intro {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .job-title {
-        font-weight: 700;
-        margin-right: 10px;
-    }
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .job-title {
+    font-weight: 700;
+    margin-right: 10px;
+  }
 }
 
 .job-detail {
-    ul {
-        padding-left: 14px;
-        margin-bottom: 5px;
-    }
+  ul {
+    padding-left: 14px;
+    margin-bottom: 5px;
+  }
 }
 
 .duration {
-    font-style: italic;
+  font-style: italic;
 }

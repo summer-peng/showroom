@@ -1,9 +1,9 @@
-import { Form } from 'react-bootstrap'
-import dynamic from 'next/dynamic'
-import PropTypes from 'prop-types'
+import { Form } from "react-bootstrap"
+import dynamic from "next/dynamic"
+import PropTypes from "prop-types"
 
 const Select = ({ label, name, asyncOptions, ...restProps }) => {
-  const AsyncSelect = dynamic(() => import('react-select/async'), {
+  const AsyncSelect = dynamic(() => import("react-select/async"), {
     ssr: false,
   })
 

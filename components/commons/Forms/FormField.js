@@ -1,28 +1,28 @@
-import { useMemo } from 'react'
-import { Field } from 'formik'
+import { useMemo } from "react"
+import { Field } from "formik"
 
-import AsyncSelect from './AsyncSelect'
-import PasswordInput from './PasswordInput'
-import Select from './Select'
-import Textarea from './Textarea'
-import TextInput from './TextInput'
+import AsyncSelect from "./AsyncSelect"
+import PasswordInput from "./PasswordInput"
+import Select from "./Select"
+import Textarea from "./Textarea"
+import TextInput from "./TextInput"
 
 const FormField = ({ name, type, ...restProps }) => {
   const FieldInput = useMemo(() => {
     switch (type) {
-      case 'text': {
+      case "text": {
         return TextInput
       }
-      case 'textarea': {
+      case "textarea": {
         return Textarea
       }
-      case 'password': {
+      case "password": {
         return PasswordInput
       }
-      case 'select': {
+      case "select": {
         return Select
       }
-      case 'async-select': {
+      case "async-select": {
         return AsyncSelect
       }
       default:

@@ -1,8 +1,8 @@
-import { Container } from 'react-bootstrap'
-import Link from 'next/link'
-import PropTypes from 'prop-types'
+import { Container } from "react-bootstrap"
+import Link from "next/link"
+import PropTypes from "prop-types"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const MyBreadcrumb = ({ items }) => {
   if (!items || items.length === 0) {
@@ -11,11 +11,11 @@ const MyBreadcrumb = ({ items }) => {
 
   return (
     <Container>
-      <div className={styles['breadcrumb-container']}>
+      <div className={styles["breadcrumb-container"]}>
         {items.map(({ name, url, active }, index) => {
           if (active) {
             return (
-              <div className={styles['breadcrumb-item']} key={index}>
+              <div className={styles["breadcrumb-item"]} key={index}>
                 {name}
               </div>
             )

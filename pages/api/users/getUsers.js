@@ -1,4 +1,4 @@
-import { getUserList } from '@/service/usersService'
+import { getUserList } from "@/service/usersService"
 
 export default function handler(req, res) {
   getUserList(req.body)

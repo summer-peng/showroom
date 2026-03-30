@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
-import InfoSection from '@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection'
+import InfoSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/InfoSection"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 const InterestsSection = ({ title, interests }) => {
   if (!interests || interests.length === 0) {
@@ -11,7 +11,7 @@ const InterestsSection = ({ title, interests }) => {
 
   return (
     <InfoSection title={title}>
-      <ul className={styles['interests-ul']}>
+      <ul className={styles["interests-ul"]}>
         {interests.map((intrs, index) => {
           return <li key={index}>{intrs}</li>
         })}
@@ -21,7 +21,7 @@ const InterestsSection = ({ title, interests }) => {
 }
 
 InterestsSection.defaultProps = {
-  title: '',
+  title: "",
   interests: [],
 }
 

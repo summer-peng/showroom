@@ -1,5 +1,5 @@
-import { convertFromRaw } from 'draft-js'
-import { stateToHTML } from 'draft-js-export-html'
+import { convertFromRaw } from "draft-js"
+import { stateToHTML } from "draft-js-export-html"
 
 const DraftEditorPrinter = ({ contentState }) => {
   if (!contentState) {
@@ -7,7 +7,7 @@ const DraftEditorPrinter = ({ contentState }) => {
   }
 
   let html = null
-  if (typeof contentState === 'string') {
+  if (typeof contentState === "string") {
     html = contentState
   } else {
     html = stateToHTML(convertFromRaw(contentState))

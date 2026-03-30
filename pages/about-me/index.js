@@ -1,20 +1,20 @@
-import { useRef } from 'react'
-import dynamic from 'next/dynamic'
+import { useRef } from "react"
+import dynamic from "next/dynamic"
 
-import EduSection from '@/components/pages/AboutMe/EduSection'
-import ExperienceSection from '@/components/pages/AboutMe/ExperienceSection'
-import InfoSection from '@/components/pages/AboutMe/InfoSection'
+import EduSection from "@/components/pages/AboutMe/EduSection"
+import ExperienceSection from "@/components/pages/AboutMe/ExperienceSection"
+import InfoSection from "@/components/pages/AboutMe/InfoSection"
 
-import styles from './styles.module.scss'
+import styles from "./styles.module.scss"
 
 export const getServerSideProps = () => {
   const breadCrumbItems = [
     {
-      name: 'Home',
-      url: '/',
+      name: "Home",
+      url: "/",
     },
     {
-      name: 'About me',
+      name: "About me",
       active: true,
     },
   ]
@@ -27,7 +27,7 @@ export const getServerSideProps = () => {
 
 const AboutMePage = () => {
   const DownloadPdf = dynamic(
-    () => import('@/components/commons/DownloadPdf'),
+    () => import("@/components/commons/DownloadPdf"),
     {
       ssr: false,
     },
@@ -36,12 +36,12 @@ const AboutMePage = () => {
 
   return (
     <div>
-      <div className={styles['download-icon']}>
+      <div className={styles["download-icon"]}>
         <DownloadPdf element={cvRef} />
       </div>
-      <div className={styles['resume']} ref={cvRef}>
-        <h2 className={styles['author-name']}>Chen-Tsung, Peng</h2>
-        <div className={styles['contact-info']}>zjone.peng@gmail.com</div>
+      <div className={styles["resume"]} ref={cvRef}>
+        <h2 className={styles["author-name"]}>Chen-Tsung, Peng</h2>
+        <div className={styles["contact-info"]}>zjone.peng@gmail.com</div>
         <InfoSection title="Summary">
           <div>
             <ul>
@@ -61,7 +61,7 @@ const AboutMePage = () => {
           </div>
         </InfoSection>
         <InfoSection title="Skills">
-          <ul className={styles['skills-ul']}>
+          <ul className={styles["skills-ul"]}>
             <li>
               Frontend Programming: Javascript, React and <br /> React Hooks,
               jQuery, HTML, CSS, Bootstrap
@@ -81,9 +81,9 @@ const AboutMePage = () => {
             startDate="04/2020"
             endDate="04/2022"
             experienceList={[
-              'Launched several systems to help administrators, warehouse employees, and clients to manage and track shipments by React, React Hook, Formik (Including User Mgmt, Shipment Mgmt, Tracking Mgmt, Cargo Mgmt)',
-              'Led junior engineers to develop the features and deployment for a product by Github flow',
-              'Negotiated requirements and release schedule with business analyst and backend engineers to ensure that our business model would provide satisfactory results',
+              "Launched several systems to help administrators, warehouse employees, and clients to manage and track shipments by React, React Hook, Formik (Including User Mgmt, Shipment Mgmt, Tracking Mgmt, Cargo Mgmt)",
+              "Led junior engineers to develop the features and deployment for a product by Github flow",
+              "Negotiated requirements and release schedule with business analyst and backend engineers to ensure that our business model would provide satisfactory results",
             ]}
           />
           <ExperienceSection
@@ -93,9 +93,9 @@ const AboutMePage = () => {
             startDate="10/2017"
             endDate="04/2020"
             experienceList={[
-              'Launched new systems by Java, Oracle Spring framework, MyBatis, Hibernate, JQuery, Reactjs',
-              'Assisted team members to learn new frontend framework and develop new features',
-              'Analyzed and integrated old system to present system',
+              "Launched new systems by Java, Oracle Spring framework, MyBatis, Hibernate, JQuery, Reactjs",
+              "Assisted team members to learn new frontend framework and develop new features",
+              "Analyzed and integrated old system to present system",
             ]}
           />
           <ExperienceSection
@@ -105,7 +105,7 @@ const AboutMePage = () => {
             startDate="10/2015"
             endDate="10/2017"
             experienceList={[
-              'Designed and implemented new features to systems by Java, Spring framework, Hibernate, Jquery',
+              "Designed and implemented new features to systems by Java, Spring framework, Hibernate, Jquery",
             ]}
           />
           <ExperienceSection
@@ -115,7 +115,7 @@ const AboutMePage = () => {
             startDate="09/2014"
             endDate="09/2015"
             experienceList={[
-              'Developed and maintained content management system for online shopping mall by Java, Spring MVC, Oracle, MyBatis',
+              "Developed and maintained content management system for online shopping mall by Java, Spring MVC, Oracle, MyBatis",
             ]}
           />
           <ExperienceSection
@@ -124,7 +124,7 @@ const AboutMePage = () => {
             startDate="08/2013"
             endDate="08/2014"
             experienceList={[
-              'Maintained campus safety and dealt with general affairs in elementary school',
+              "Maintained campus safety and dealt with general affairs in elementary school",
             ]}
           />
         </InfoSection>
@@ -138,7 +138,7 @@ const AboutMePage = () => {
           />
         </InfoSection>
       </div>
-      <div className={styles['page-bottom-space']} />
+      <div className={styles["page-bottom-space"]} />
     </div>
   )
 }

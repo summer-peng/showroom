@@ -1,10 +1,10 @@
-import { getServerSession } from 'next-auth/next'
+import { getServerSession } from "next-auth/next"
 
-import { upsertResumes } from '@/service/resumesService'
+import { upsertResumes } from "@/service/resumesService"
 
-import { authOptions } from '../auth/[...nextauth]'
+import { authOptions } from "../auth/[...nextauth]"
 
-const methods = ['POST', 'PUT']
+const methods = ["POST", "PUT"]
 
 export default async function handler(req, res) {
   const { method, body } = req
@@ -13,12 +13,12 @@ export default async function handler(req, res) {
   const { user } = session
   const { userId } = user || {}
   if (!session) {
-    res.status(400).json('invalid token')
+    res.status(400).json("invalid token")
     return
   }
 
   if (methods.indexOf(method) < 0) {
-    res.status(405).json('Method not support')
+    res.status(405).json("Method not support")
     return
   }
 

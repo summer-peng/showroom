@@ -1,9 +1,9 @@
-@import '/styles/variables.scss';
+@import "/styles/variables.scss";
 
 .download-icon {
-    color: $primary-color;
-    cursor: pointer;
-    &:hover {
-        opacity: 0.7;
-    }
+  color: $primary-color;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
 }

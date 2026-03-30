@@ -1,8 +1,8 @@
-import { Col, Row } from 'react-bootstrap'
-import { Formik } from 'formik'
+import { Col, Row } from "react-bootstrap"
+import { Formik } from "formik"
 
-import FormField from '@/components/commons/Forms/FormField'
-import ButtonGroup from '@/components/pages/ResumeMgmt/ButtonGroup'
+import FormField from "@/components/commons/Forms/FormField"
+import ButtonGroup from "@/components/pages/ResumeMgmt/ButtonGroup"
 
 const Header = ({ resumes, onSubmit, onBack }) => {
   return (
