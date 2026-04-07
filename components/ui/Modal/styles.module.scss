@@ -1,0 +1,42 @@
+.overlay {
+  display: flex;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal {
+  padding: 10px;
+  width: min(600px, 90vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: relative;
+}
+
+.close-btn {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  line-height: 0;
+}

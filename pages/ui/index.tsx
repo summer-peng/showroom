@@ -6,8 +6,10 @@ import {
   Trash,
   ArrowLeft,
 } from "react-feather"
+import { useState } from "react"
 
-import { Button } from "../../components/ui/Button"
+import Modal from "@/components/ui/Modal/Modal"
+import { Button } from "@/components/ui/Button"
 
 import styles from "./styles.module.scss"
 
@@ -31,6 +33,9 @@ export const getServerSideProps = async () => {
 }
 
 export default function UI() {
+  const [showModal, setShowModal] = useState(false)
+  const [showModal2, setShowModal2] = useState(false)
+
   return (
     <div>
       <div>
@@ -97,6 +102,17 @@ export default function UI() {
             </span>
           </div>
         </div>
+      </div>
+      <div>
+        <h3>Modal</h3>
+        <Button onClick={() => setShowModal(true)}>Open Modal</Button>
+        <Modal open={showModal} onClose={() => setShowModal(false)}>
+          <h2>Modal 1</h2>
+          <Button onClick={() => setShowModal2(true)}>Open Modal2</Button>
+        </Modal>
+        <Modal open={showModal2} onClose={() => setShowModal2(false)}>
+          <h2>Modal2</h2>
+        </Modal>
       </div>
     </div>
   )
