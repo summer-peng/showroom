@@ -8,10 +8,10 @@ import {
 } from "react-feather"
 import { useState } from "react"
 
-import Modal from "@/components/ui/Modal/Modal"
-import { Button } from "@/components/ui/Button"
-
 import styles from "./styles.module.scss"
+
+import { Modal } from "@/components/ui/Modal"
+import { Button } from "@/components/ui/Button"
 
 export const getServerSideProps = async () => {
   const breadCrumbItems = [
