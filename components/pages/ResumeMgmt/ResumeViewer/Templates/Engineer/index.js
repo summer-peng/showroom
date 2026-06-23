@@ -7,7 +7,6 @@ import InterestsSection from "@/components/pages/ResumeMgmt/ResumeViewer/Templat
 import TemplateWrapper from "@/components/pages/ResumeMgmt/ResumeViewer/Templates/common/TemplateWrapper"
 
 import ExperienceSection from "./ExperienceSection"
-
 import styles from "./styles.module.scss"
 
 const Engineer = ({ resume }) => {
@@ -67,7 +66,7 @@ const Engineer = ({ resume }) => {
         contentState={summary}
       />
       <DraftEdiorPrinterSection
-        title="Core Competencies"
+        title={t("core_competencies", { lng: resume.lang })}
         contentState={coreCompetencies}
       />
       <InfoSection title={t("experience", { lng: resume.lang })}>

@@ -20,7 +20,7 @@ const ExperienceSection = ({
           </span>
         </div>
         <div className={styles["duration"]}>
-          {startDate} - {endDate}
+          {startDate} - {endDate ?? "present"}
         </div>
       </div>
       <div className={styles["job-detail"]}>
