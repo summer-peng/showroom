@@ -2,7 +2,9 @@ import classnames from "classnames"
 import html2pdf from "html2pdf.js"
 //import { jsPDF } from 'jspdf'
 import PropTypes from "prop-types"
+
 import { Button } from "@/components/commons/Buttons"
+
 import styles from "./styles.module.scss"
 
 const DownloadPdf = ({ element, className, downloadButton }) => {

@@ -50,12 +50,17 @@ const Engineer = ({ resume }) => {
         </div>
         <div className={styles["links"]}>
           {linkedinUrl && (
-            <a target="_blank" href={linkedinUrl} rel="noreferrer">
+            <a
+              target="_blank"
+              href={linkedinUrl}
+              rel="noreferrer"
+              title="Linkedin"
+            >
               <i className="fa-brands fa-linkedin"></i>
             </a>
           )}
           {githubUrl && (
-            <a target="_blank" href={githubUrl} rel="noreferrer">
+            <a target="_blank" href={githubUrl} rel="noreferrer" title="Github">
               <i className="fa-brands fa-github"></i>
             </a>
           )}
