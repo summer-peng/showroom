@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import { useTranslation } from "react-i18next"
 
 import styles from "./styles.module.scss"
 
@@ -10,6 +11,8 @@ const ExperienceSection = ({
   endDate,
   experienceList,
 }) => {
+  const { t } = useTranslation()
+
   return (
     <section className={styles["experience-section"]}>
       <div className={styles["job-intro"]}>
@@ -20,7 +23,7 @@ const ExperienceSection = ({
           </span>
         </div>
         <div className={styles["duration"]}>
-          {startDate} - {endDate ?? "present"}
+          {startDate} - {endDate ?? t("present")}
         </div>
       </div>
       <div className={styles["job-detail"]}>
