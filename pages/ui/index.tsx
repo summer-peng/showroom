@@ -8,10 +8,13 @@ import {
 } from "react-feather"
 import { useState } from "react"
 
-import styles from "./styles.module.scss"
-
 import { Modal } from "@/components/ui/Modal"
 import { Button } from "@/components/ui/Button"
+import { TextInput, PasswordInput } from "@/components/ui/Forms/TextInput"
+import { Textarea } from "@/components/ui/Forms/Textarea"
+import { Select } from "@/components/ui/Forms/Select"
+
+import styles from "./styles.module.scss"
 
 export const getServerSideProps = async () => {
   const breadCrumbItems = [
@@ -113,6 +116,20 @@ export default function UI() {
         <Modal open={showModal2} onClose={() => setShowModal2(false)}>
           <h2>Modal2</h2>
         </Modal>
+      </div>
+      <div>
+        <h3>text form</h3>
+        <TextInput label="it is label" name="test-input" />
+        <PasswordInput label="password" name="password" />
+        <Textarea label={"old label"} name={"test"} />
+        <Select
+          label="select"
+          name="select"
+          options={[
+            { label: "選項一", value: 1 },
+            { label: "選項二", value: 2 },
+          ]}
+        />
       </div>
     </div>
   )
