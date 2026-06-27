@@ -10,6 +10,7 @@ const ExperienceSection = ({
   startDate,
   endDate,
   experienceList,
+  lng,
 }) => {
   const { t } = useTranslation()
 
@@ -23,7 +24,7 @@ const ExperienceSection = ({
           </span>
         </div>
         <div className={styles["duration"]}>
-          {startDate} - {endDate ?? t("present")}
+          {startDate} - {endDate ?? t("present", { lng: lng })}
         </div>
       </div>
       <div className={styles["job-detail"]}>

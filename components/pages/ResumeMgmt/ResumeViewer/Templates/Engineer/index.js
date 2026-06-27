@@ -87,6 +87,7 @@ const Engineer = ({ resume }) => {
               startDate={startDate}
               endDate={endDate}
               experienceList={detail}
+              lng={resume.lang}
             />
           )
         })}
